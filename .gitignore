@@ -1,0 +1,53 @@
+# ── Virtual environment ───────────────────────────────────────────────────────
+.venv/
+venv/
+env/
+
+# ── Python cache ──────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# ── Jupyter ───────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# ── Build / packaging ─────────────────────────────────────────────────────────
+*.egg-info/
+dist/
+build/
+*.egg
+
+# ── macOS ─────────────────────────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+
+# ── Editor / IDE ──────────────────────────────────────────────────────────────
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+
+# ── Generated plots (students produce their own) ──────────────────────────────
+assignments_ema/plots/
+model_answers_ema/plots/
+labs/plots/
+
+# ── Large data / model output caches ─────────────────────────────────────────
+*.h5
+*.hdf5
+*.nc
+*.npy
+*.npz
+
+# ── JUSTICE model (separate repository) ──────────────────────────────────────
+JUSTICE-main/
+
+# ── Pre-built archives (large binaries) ───────────────────────────────────────
+archives/
+
+# ── Generated MOEA results (large, student-produced) ─────────────────────────
+assignments_ema/results/
+model_answers_ema/results/

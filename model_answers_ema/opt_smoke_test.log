@@ -1,0 +1,26 @@
+=================================================================
+JUSTICE — Local MOEA Optimisation  (Assignment 5)
+=================================================================
+  Welfare function  : UTILITARIAN
+  Config            : config/config_ssp245.json
+  NFE per seed      : 500
+  Seeds (1)        : [9845531]
+  FAIR ensembles    : 10  (indices ≈ [np.int64(1), np.int64(112), np.int64(223), np.int64(334), np.int64(445), np.int64(556), np.int64(667), np.int64(778), np.int64(889), np.int64(1000)])
+  Population size   : 100
+  Worker processes  : auto
+  Output directory  : /Users/jzatarinsalaza/Library/CloudStorage/OneDrive-DelftUniversityofTechnology/epa141a-MBDM/epa141a/JUSTICE-0.1.4/results_local
+=================================================================
+
+[1/1] seed = 9845531
+----------------------------------------
+    workers = auto (cpu_count-1)
+[MainProcess/INFO] pool started with 14 workers
+  0%|                                                  | 0/500 [00:00<?, ?it/s] 20%|████████                                | 100/500 [00:20<01:20,  4.97it/s] 39%|███████████████▌                        | 195/500 [00:49<01:20,  3.80it/s] 58%|███████████████████████▎                | 292/500 [01:21<01:00,  3.42it/s] 78%|███████████████████████████████▏        | 390/500 [03:01<01:03,  1.72it/s] 98%|███████████████████████████████████████ | 489/500 [06:56<00:13,  1.24s/it]588it [07:11,  1.16it/s]                                                       588it [07:11,  1.36it/s]
+[MainProcess/INFO] optimization completed, found 8 solutions
+[MainProcess/INFO] terminating pool
+    8 Pareto solutions  →  /Users/jzatarinsalaza/Library/CloudStorage/OneDrive-DelftUniversityofTechnology/epa141a-MBDM/epa141a/JUSTICE-0.1.4/results_local/UTILITARIAN_2026_03_17_13_44_24_9845531/pareto_front_9845531.csv
+    convergence archive  →  /Users/jzatarinsalaza/Library/CloudStorage/OneDrive-DelftUniversityofTechnology/epa141a-MBDM/epa141a/JUSTICE-0.1.4/results_local/UTILITARIAN_2026_03_17_13_44_24_9845531/UTILITARIAN_500_9845531.tar.gz
+    elapsed: 7.5 min
+
+All 1 seeds done in 7 min (0.12 h).
+Results → /Users/jzatarinsalaza/Library/CloudStorage/OneDrive-DelftUniversityofTechnology/epa141a-MBDM/epa141a/JUSTICE-0.1.4/results_local

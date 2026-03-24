@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Set-up and orientation | EPA141A</title>
+
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']], tags: 'ams' },
+    options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+<style>
+  :root {
+    --tud-blue: #00A6D6;
+    --tud-dark: #003D6C;
+    --tud-mid:  #0077B3;
+    --accent:   #E87722;
+    --green:    #12A64E;
+    --red:      #C8262D;
+    --bg:       #F7F8FA;
+    --sidebar-w: 270px;
+    --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    --mono: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+    --max-content: 900px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--font);
+    font-size: 15px;
+    line-height: 1.7;
+    color: #1a1a2e;
+    background: var(--bg);
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: linear-gradient(135deg, var(--tud-dark) 0%, var(--tud-mid) 60%, var(--tud-blue) 100%);
+    color: white;
+    padding: 40px 48px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute; top: -60px; right: -60px;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+  }
+  header .badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-size: 12px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  header h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 6px; }
+  header p.subtitle { font-size: 1.1rem; opacity: 0.88; max-width: 650px; }
+  header .meta { margin-top: 20px; font-size: 13px; opacity: 0.7; display: flex; gap: 24px; flex-wrap: wrap; }
+
+  /* ── LAYOUT ── */
+  .layout { display: flex; min-height: calc(100vh - 160px); }
+
+  /* ── SIDEBAR ── */
+  nav.sidebar {
+    width: var(--sidebar-w);
+    flex-shrink: 0;
+    background: #fff;
+    border-right: 1px solid #e0e4ea;
+    padding: 28px 0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+  }
+  nav.sidebar .nav-section-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #9aa0b0;
+    padding: 18px 20px 6px;
+  }
+  nav.sidebar a {
+    display: block;
+    padding: 7px 20px 7px 24px;
+    color: #3a4060;
+    text-decoration: none;
+    font-size: 13.5px;
+    border-left: 3px solid transparent;
+    transition: all 0.15s;
+  }
+  nav.sidebar a:hover { background: #f0f4ff; color: var(--tud-mid); border-left-color: var(--tud-blue); }
+  nav.sidebar a.active { color: var(--tud-dark); font-weight: 600; border-left-color: var(--tud-blue); background: #eaf6fb; }
+  nav.sidebar .step-num {
+    display: inline-block;
+    background: var(--tud-blue);
+    color: white;
+    border-radius: 50%;
+    width: 20px; height: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    margin-right: 8px;
+  }
+
+  /* ── MAIN CONTENT ── */
+  main {
+    flex: 1;
+    padding: 40px 56px;
+    max-width: var(--max-content);
+  }
+
+  section { margin-bottom: 56px; }
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--tud-dark);
+    border-bottom: 2px solid var(--tud-blue);
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    margin-top: 8px;
+  }
+  h3 { font-size: 1.1rem; font-weight: 600; color: #2a3050; margin: 24px 0 10px; }
+  p  { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 14px 22px; }
+  li { margin-bottom: 5px; }
+
+  /* ── STEP CARDS ── */
+  .step {
+    background: #fff;
+    border: 1px solid #dde2ec;
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin-bottom: 18px;
+    position: relative;
+  }
+  .step-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 12px;
+  }
+  .step-circle {
+    width: 36px; height: 36px;
+    background: var(--tud-dark);
+    color: white;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 15px;
+    flex-shrink: 0;
+  }
+  .step-title { font-size: 1rem; font-weight: 600; color: var(--tud-dark); }
+  .step-sub   { font-size: 13px; color: #6b7290; margin-top: 1px; }
+
+  /* ── CODE BLOCKS ── */
+  pre {
+    background: #1e2235;
+    color: #e8eaf6;
+    border-radius: 8px;
+    padding: 16px 18px;
+    overflow-x: auto;
+    font-family: var(--mono);
+    font-size: 13.5px;
+    line-height: 1.6;
+    margin: 10px 0;
+  }
+  pre .comment { color: #6d8a99; }
+  code.inline {
+    background: #e8edf5;
+    color: #003D6C;
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-family: var(--mono);
+    font-size: 13px;
+  }
+  .hljs { background: #1e2235 !important; color: #e8eaf6; }
+
+  /* ── PLATFORM TABS ── */
+  .platform-tabs { display: flex; gap: 8px; margin-bottom: 0; }
+  .platform-tabs button {
+    padding: 6px 16px;
+    border: 1px solid #c8d0e0;
+    background: #fff;
+    border-radius: 6px 6px 0 0;
+    font-size: 13px;
+    cursor: pointer;
+    color: #555;
+    font-family: var(--font);
+    transition: all 0.12s;
+  }
+  .platform-tabs button.active { background: #1e2235; color: #fff; border-color: #1e2235; }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* ── CALLOUTS ── */
+  .callout {
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 14px 0;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .callout-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+  .callout.info   { background: #e8f4fb; border-left: 4px solid var(--tud-blue); }
+  .callout.warn   { background: #fff8e6; border-left: 4px solid var(--accent); }
+  .callout.ok     { background: #eafaf0; border-left: 4px solid var(--green); }
+  .callout.danger { background: #fdecea; border-left: 4px solid var(--red); }
+
+  /* ── ASSIGNMENT / LAB TABLE ── */
+  .assignment-table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+  .assignment-table th {
+    background: var(--tud-dark); color: white;
+    padding: 10px 14px; text-align: left; font-size: 13px;
+  }
+  .assignment-table td {
+    padding: 11px 14px;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 13.5px;
+    vertical-align: top;
+  }
+  .assignment-table tr:nth-child(even) td { background: #f8fafc; }
+  .assignment-table tr:hover td { background: #eaf6fb; }
+  .assignment-table .a-num {
+    font-weight: 700;
+    color: var(--tud-dark);
+    white-space: nowrap;
+  }
+  .tag {
+    display: inline-block;
+    background: #e0ecf8;
+    color: var(--tud-dark);
+    border-radius: 4px;
+    padding: 1px 7px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-right: 4px;
+    white-space: nowrap;
+  }
+  .tag.orange { background: #fff0e0; color: #a05000; }
+  .tag.green  { background: #e0f5e8; color: #0a6630; }
+  .tag.red    { background: #fde8e8; color: #8b1a1a; }
+
+  /* ── PREREQ BADGES ── */
+  .prereq-grid { display: flex; flex-wrap: wrap; gap: 12px; margin: 14px 0; }
+  .prereq-card {
+    background: #fff;
+    border: 1px solid #dde2ec;
+    border-radius: 8px;
+    padding: 14px 18px;
+    min-width: 160px;
+    flex: 1;
+  }
+  .prereq-card .prereq-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; color: #888; font-weight: 700; }
+  .prereq-card .prereq-val   { font-size: 1rem; font-weight: 700; color: var(--tud-dark); margin-top: 4px; }
+  .prereq-card .prereq-note  { font-size: 12px; color: #666; margin-top: 2px; }
+
+  /* ── VERIFY BOX ── */
+  .verify-box {
+    background: #fff;
+    border: 2px dashed var(--green);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-top: 14px;
+  }
+  .verify-box h4 { color: var(--green); margin-bottom: 8px; }
+
+  /* ── MODEL CARDS ── */
+  .model-card {
+    background: #fff;
+    border: 1px solid #dde2ec;
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin-bottom: 20px;
+  }
+  .model-card h3 { margin-top: 0; font-size: 1.15rem; color: var(--tud-dark); }
+  .model-params {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 14px 0;
+  }
+  .param-badge {
+    background: #eaf1fb;
+    border: 1px solid #c0d4ee;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 12.5px;
+    font-family: var(--mono);
+  }
+  .param-badge .param-name { font-weight: 700; color: var(--tud-dark); }
+  .param-badge .param-desc { color: #555; font-size: 11.5px; margin-top: 1px; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--tud-dark);
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    padding: 20px;
+    font-size: 13px;
+  }
+
+  @media (max-width: 800px) {
+    nav.sidebar { display: none; }
+    main { padding: 24px 20px; }
+    header { padding: 28px 24px 22px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="badge">EPA141A · Model-Based Decision Making</div>
+  <h1>Set-up and orientation</h1>
+  <p class="subtitle">Understand the course structure, meet the models, and get your environment running from scratch.</p>
+  <p style="font-size:13px;opacity:0.65;margin-top:6px;">Jazmin Zatarain Salazar</p>
+  <div class="meta">
+    <span>🏛 Delft University of Technology</span>
+    <span>🌊 Lake Problem (Labs)</span>
+    <span>🌍 JUSTICE climate–economy model (Assignments)</span>
+    <span>🐍 Python 3.10 – 3.14</span>
+  </div>
+</header>
+
+<div class="layout">
+
+<!-- ── SIDEBAR ── -->
+<nav class="sidebar">
+  <div class="nav-section-label">Course</div>
+  <a href="#course-overview">Labs &amp; assignments overview</a>
+  <div class="nav-section-label">Models</div>
+  <a href="#lake-model">The Lake Problem</a>
+  <a href="#justice-model">The JUSTICE Model</a>
+  <div class="nav-section-label">Labs</div>
+  <a href="#lab-overview">Lab overview (L1 – L6)</a>
+  <div class="nav-section-label">Assignments</div>
+  <a href="#overview">Assignment overview</a>
+  <a href="#workflow">How assignments connect</a>
+  <a href="#key-packages">Key packages</a>
+  <div class="nav-section-label">Setup</div>
+  <a href="#install-tools">Install Python &amp; VS Code</a>
+  <a href="#prerequisites"><span class="step-num">0</span>Prerequisites</a>
+  <a href="#step1"><span class="step-num">1</span>Get the repository</a>
+  <a href="#step2"><span class="step-num">2</span>Create a virtual env</a>
+  <a href="#step3"><span class="step-num">3</span>Install dependencies</a>
+  <a href="#step4"><span class="step-num">4</span>Install JUSTICE</a>
+  <a href="#step5"><span class="step-num">5</span>Register the kernel</a>
+  <a href="#step6"><span class="step-num">6</span>Launch JupyterLab</a>
+  <a href="#step7"><span class="step-num">7</span>Verify installation</a>
+  <div class="nav-section-label">Help</div>
+  <a href="#troubleshooting">Troubleshooting</a>
+</nav>
+
+<!-- ── MAIN ── -->
+<main>
+
+<!-- ── LABS & ASSIGNMENTS OVERVIEW ── -->
+<section id="course-overview">
+  <h2>Labs &amp; Assignments Overview</h2>
+
+  <p>The course is structured around six <strong>labs</strong> and eight <strong>assignments</strong>. Labs use a simple lake model to let you focus on learning the methods. Assignments apply the full MBDM cycle to <strong>JUSTICE</strong>, a climate–economy model, giving you experience with a real-world integrated assessment model.</p>
+</section>
+
+<!-- ── THE LAKE MODEL ── -->
+<section id="lake-model">
+  <h2>The Lake Problem</h2>
+
+  <p>The <strong>shallow lake eutrophication problem</strong> is the classic teaching model used in <strong>Labs 1 – 6</strong>. It is small enough to run thousands of simulations in seconds, making it ideal for exploring methods before applying them to the larger JUSTICE model.</p>
+
+  <h3>What the model represents</h3>
+  <p>A municipality releases phosphorus into a shallow lake year by year (from agriculture, sewage, etc.). Phosphorus builds up and, beyond a critical threshold, the lake flips into a eutrophic (algae-choked) state that is very hard to reverse. The question is: <em>how much phosphorus can we safely release each year while maximising economic benefit?</em></p>
+
+  <div class="model-card">
+    <h3>Model structure</h3>
+    <p>The lake model comes in two flavours used in different labs:</p>
+
+    <p><strong>Intertemporal version</strong> (Labs 1 – 5) — the policy is a fixed schedule of 100 annual release rates decided in advance. This gives a 100-dimensional lever space.</p>
+
+    <p><strong>DPS (Direct Policy Search) version</strong> (Lab 6) — the policy is a <em>closed-loop</em> rule: the release rate adapts to the current phosphorus level via five radial basis functions. This reduces the lever space to 5 dimensions and produces more realistic adaptive policies.</p>
+  </div>
+
+  <h3>Uncertain parameters</h3>
+  <div class="model-params">
+    <div class="param-badge">
+      <div class="param-name">b</div>
+      <div class="param-desc">phosphorus removal rate</div>
+    </div>
+    <div class="param-badge">
+      <div class="param-name">q</div>
+      <div class="param-desc">recycling nonlinearity exponent</div>
+    </div>
+    <div class="param-badge">
+      <div class="param-name">mean</div>
+      <div class="param-desc">mean natural inflow</div>
+    </div>
+    <div class="param-badge">
+      <div class="param-name">stdev</div>
+      <div class="param-desc">variability of natural inflow</div>
+    </div>
+    <div class="param-badge">
+      <div class="param-name">delta</div>
+      <div class="param-desc">discount rate (time preference)</div>
+    </div>
+  </div>
+
+  <h3>Outcomes</h3>
+  <table class="assignment-table" style="margin-top:10px">
+    <thead><tr><th>Outcome</th><th>What it measures</th><th>Goal</th></tr></thead>
+    <tbody>
+      <tr><td><code class="inline">max_P</code></td><td>Peak phosphorus concentration</td><td>Minimise</td></tr>
+      <tr><td><code class="inline">utility</code></td><td>Discounted sum of utility from releases</td><td>Maximise</td></tr>
+      <tr><td><code class="inline">inertia</code></td><td>Fraction of years with small year-to-year change</td><td>Maximise</td></tr>
+      <tr><td><code class="inline">reliability</code></td><td>Fraction of years the lake stays below the critical threshold</td><td>Maximise</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout ok">
+    <span class="callout-icon">✅</span>
+    <div>The lake model is already included in the <code class="inline">ema_workbench</code> package — no separate installation is needed. The files <code class="inline">labs/lakemodel_function.py</code> and <code class="inline">labs/dps_lake_model.py</code> are thin wrappers that make it compatible with the EMA Workbench API.</div>
+  </div>
+</section>
+
+<!-- ── THE JUSTICE MODEL ── -->
+<section id="justice-model">
+  <h2>The JUSTICE Model</h2>
+
+  <p><strong>JUSTICE</strong> (Just Climate Economy model) is a multi-regional Integrated Assessment Model (IAM) used in <strong>Assignments 1 – 8</strong>. It couples a neoclassical economy across 57 world regions with a physical climate model and a set of distributive justice welfare functions, allowing you to explore how different climate policies perform under deep uncertainty about both the physical climate and contested normative values.</p>
+
+  <p>Each world region produces output, emits CO₂, and suffers economic damages from warming. You control how aggressively each region cuts emissions (the <em>emission control rate</em>). The model returns how warm the planet gets, how costly the damages are, and how good or bad the outcome is according to different concepts of welfare. In Assignments 1–3 the policy is fixed; in Assignments 4–8 it is optimised using an evolutionary algorithm.</p>
+
+  <h3>Repository layout</h3>
+
+  <details style="margin:12px 0;">
+    <summary style="cursor:pointer;font-size:13.5px;color:var(--tud-mid);font-weight:600;padding:10px 14px;background:#eaf6fb;border:1px solid #c0ddf0;border-radius:8px;list-style:none;display:flex;align-items:center;gap:8px;">
+      <span style="font-size:11px;">&#9654;</span> Show / hide JUSTICE-main file tree
+    </summary>
+<pre style="background:#1e2235;color:#e8eaf6;border-radius:0 0 8px 8px;padding:18px;font-size:13px;line-height:1.9;margin:0;">JUSTICE-main/
+├── justice/                  <span style="color:#6d8a99;"># Core model package</span>
+│   ├── model.py              <span style="color:#6d8a99;"># JUSTICE class — main entry point</span>
+│   ├── economy/
+│   │   └── neoclassical.py   <span style="color:#6d8a99;"># GDP growth, capital, consumption</span>
+│   ├── climate/
+│   │   ├── coupled_fair.py   <span style="color:#6d8a99;"># FaIR climate integration (emissions → temperature)</span>
+│   │   └── temperature_downscaler.py  <span style="color:#6d8a99;"># Global → regional temperatures</span>
+│   ├── damage/
+│   │   └── kalkuhl.py        <span style="color:#6d8a99;"># Kalkuhl damage function (temperature → GDP loss)</span>
+│   ├── emissions/
+│   │   └── emission.py       <span style="color:#6d8a99;"># Economic output → CO₂ emissions</span>
+│   ├── abatement/
+│   │   └── abatement_enerdata.py  <span style="color:#6d8a99;"># Marginal abatement cost curves</span>
+│   ├── welfare/
+│   │   └── social_welfare_function.py  <span style="color:#6d8a99;"># 8 justice welfare functions</span>
+│   ├── objectives/
+│   │   └── objective_functions.py  <span style="color:#6d8a99;"># years_above_threshold, Gini, costs</span>
+│   └── util/
+│       ├── EMA_model_wrapper.py    <span style="color:#6d8a99;"># EMA Workbench interface + RBF policy</span>
+│       ├── enumerations.py         <span style="color:#6d8a99;"># WelfareFunction, Scenario, etc.</span>
+│       ├── data_loader.py          <span style="color:#6d8a99;"># Loads HDF5 input datasets</span>
+│       └── output_data_processor.py  <span style="color:#6d8a99;"># Structures model outputs</span>
+├── solvers/
+│   ├── moea/                 <span style="color:#6d8a99;"># Borg MOEA wrapper + Platypus adapter</span>
+│   ├── emodps/
+│   │   └── rbf.py            <span style="color:#6d8a99;"># Radial Basis Function policy representation</span>
+│   └── convergence/          <span style="color:#6d8a99;"># Hypervolume, Pareto metrics</span>
+├── config/
+│   ├── JUSTICE_config.yaml   <span style="color:#6d8a99;"># Master config (defaults, lever bounds)</span>
+│   └── default_parameters.py <span style="color:#6d8a99;"># Python defaults for each component</span>
+├── analysis/
+│   └── hpc_run.py            <span style="color:#6d8a99;"># HPC cluster entry point</span>
+├── docs/diagrams/            <span style="color:#6d8a99;"># Architecture diagrams and logos</span>
+├── JUSTICE_example.py        <span style="color:#6d8a99;"># Standalone runnable example</span>
+└── run_optimization.py       <span style="color:#6d8a99;"># Full MOEA optimisation orchestration</span></pre>
+  </details>
+
+  <h3>Model components</h3>
+  <table class="assignment-table" style="margin-top:10px">
+    <thead><tr><th>Component</th><th>Class</th><th>What it does</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Economy</strong></td>
+        <td><code class="inline">NeoclassicalEconomyModel</code><br><small style="color:#666">economy/neoclassical.py</small></td>
+        <td>Cobb-Douglas production across 57 RICE-50 regions. Tracks capital accumulation, labour, consumption, and savings. Damage costs are subtracted from consumption each timestep.</td>
+      </tr>
+      <tr>
+        <td><strong>Climate</strong></td>
+        <td><code class="inline">CoupledFAIR</code><br><small style="color:#666">climate/coupled_fair.py</small></td>
+        <td>Wraps FaIR v2.1.3 to convert regional CO₂ emissions into global mean temperature. Supports 1001 calibrated ensemble members, each representing a different Equilibrium Climate Sensitivity (ECS).</td>
+      </tr>
+      <tr>
+        <td><strong>Damage</strong></td>
+        <td><code class="inline">DamageKalkuhl</code><br><small style="color:#666">damage/kalkuhl.py</small></td>
+        <td>Kalkuhl et al. damage function: temperature change relative to a baseline reduces regional GDP via empirically estimated coefficients. Includes lagged temperature effects.</td>
+      </tr>
+      <tr>
+        <td><strong>Abatement</strong></td>
+        <td><code class="inline">AbatementEnerdata</code><br><small style="color:#666">abatement/abatement_enerdata.py</small></td>
+        <td>Marginal Abatement Cost (MAC) curves from Enerdata data. Transitions from near-term empirical estimates through IPCC SR1.5 mid-century costs to a long-run backstop technology price.</td>
+      </tr>
+      <tr>
+        <td><strong>Welfare</strong></td>
+        <td><code class="inline">SocialWelfareFunction</code><br><small style="color:#666">welfare/social_welfare_function.py</small></td>
+        <td>Implements eight distributive justice principles: Utilitarian, Prioritarian, Sufficientarian, Egalitarian, Limitarian variants, and Consumption Corridor variants. In Assignments 1–3 you use the Utilitarian function.</td>
+      </tr>
+      <tr>
+        <td><strong>Policy</strong></td>
+        <td><code class="inline">RBF</code> / ECR matrix<br><small style="color:#666">solvers/emodps/rbf.py</small></td>
+        <td>The emission control rate (ECR) is a matrix of shape (57 regions × timesteps). In Assignments 1–3 it is set to a fixed plateau value. In Assignments 4–8 it is an adaptive closed-loop policy encoded as Radial Basis Functions.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>How the model runs</h3>
+  <p>All assignment notebooks interact with JUSTICE through a thin wrapper function that matches the EMA Workbench function-model interface:</p>
+<pre><code class="language-python">from justice.model import JUSTICE
+from justice.util.enumerations import WelfareFunction
+
+JUSTICE.hard_reset()                    # clear singleton state between runs
+model = JUSTICE(
+    start_year=2015, end_year=2300, timestep=1,
+    scenario=2,                         # SSP2-RCP4.5
+    climate_ensembles=1,                # single FaIR ensemble member
+    social_welfare_function=WelfareFunction.UTILITARIAN,
+)
+model.run(emission_control_rate=ecr, endogenous_savings_rate=True)
+datasets = model.evaluate()             # returns dict of output arrays</code></pre>
+
+  <div class="callout info">
+    <span class="callout-icon">ℹ️</span>
+    <div>A single run (2015–2300 at 1-year timestep) takes roughly <strong>1–3 seconds</strong>. The 100-scenario ensembles in Assignments 1–3 take 5–15 minutes sequentially.</div>
+  </div>
+
+  <h3>Deep uncertain parameters (Assignments 1–3)</h3>
+  <div class="model-params">
+    <div class="param-badge">
+      <div class="param-name">ρ (rho)</div>
+      <div class="param-desc">pure rate of social time preference<br>range [0.001, 0.030] — normative</div>
+    </div>
+    <div class="param-badge">
+      <div class="param-name">η (eta)</div>
+      <div class="param-desc">elasticity of marginal utility<br>range [0.5, 1.5] — normative</div>
+    </div>
+    <div class="param-badge">
+      <div class="param-name">δ (delta)</div>
+      <div class="param-desc">damage function scale factor<br>range [0.5, 2.0] — normative</div>
+    </div>
+    <div class="param-badge">
+      <div class="param-name">ecs_ensemble</div>
+      <div class="param-desc">FaIR ensemble member index<br>range [1, 1001] — physical</div>
+    </div>
+  </div>
+
+  <h3>Model outcomes</h3>
+  <table class="assignment-table" style="margin-top:10px">
+    <thead><tr><th>Outcome</th><th>What it measures</th><th>Type</th></tr></thead>
+    <tbody>
+      <tr><td><code class="inline">welfare</code></td><td>Aggregate discounted social welfare across all regions and years</td><td>Scalar</td></tr>
+      <tr><td><code class="inline">years_above_temperature_threshold</code></td><td>Number of simulated years global mean temperature exceeds 2 °C above pre-industrial</td><td>Scalar</td></tr>
+      <tr><td><code class="inline">welfare_loss_damage</code></td><td>Welfare lost due to climate damages</td><td>Scalar</td></tr>
+      <tr><td><code class="inline">welfare_loss_abatement</code></td><td>Welfare lost due to emission reduction costs</td><td>Scalar</td></tr>
+      <tr><td><code class="inline">temperature_trajectory</code></td><td>Global mean temperature time series 2015–2300</td><td>Array (286 values)</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout warn">
+    <span class="callout-icon">⚠️</span>
+    <div>JUSTICE must be run from the <code class="inline">JUSTICE-main/</code> directory — it resolves data files using relative paths. The setup cell at the top of every assignment notebook calls <code class="inline">os.chdir()</code> automatically. Always run the setup cell before any other cell.</div>
+  </div>
+</section>
+
+<!-- ── LAB OVERVIEW ── -->
+<section id="lab-overview">
+  <h2>Lab Overview</h2>
+  <p>The six labs use the <strong>Lake Problem</strong> to teach each MBDM method in isolation before you apply it to JUSTICE in the assignments. Labs are shorter and more guided; each lab introduces one method that the corresponding assignment then applies independently.</p>
+
+  <table class="assignment-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>What you learn</th>
+        <th>Key methods</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="a-num">L1</td>
+        <td><strong>Exploratory Modelling</strong></td>
+        <td>Connect a model to EMA Workbench. Run open exploration across uncertain parameters and multiple policies. Visualise outcome distributions and pairwise trade-offs.</td>
+        <td><span class="tag">EMA Workbench</span><span class="tag">Monte Carlo</span><span class="tag">Pairs scatter</span></td>
+      </tr>
+      <tr>
+        <td class="a-num">L2</td>
+        <td><strong>Sensitivity Analysis</strong></td>
+        <td>Quantify which uncertain inputs most strongly drive output variance. Compare three methods: OLS regression, Sobol indices, and Extra-Trees feature scoring.</td>
+        <td><span class="tag">Sobol S₁/Sₜ</span><span class="tag orange">SALib</span><span class="tag">Extra-Trees</span><span class="tag">LHS</span></td>
+      </tr>
+      <tr>
+        <td class="a-num">L3</td>
+        <td><strong>Scenario Discovery</strong></td>
+        <td>Given a fixed policy, find the combinations of uncertain conditions that cause it to fail. Interpret coverage, density, and the peeling trajectory of PRIM boxes.</td>
+        <td><span class="tag">PRIM</span><span class="tag">Dimensional stacking</span><span class="tag">Scenario boxes</span></td>
+      </tr>
+      <tr>
+        <td class="a-num">L4</td>
+        <td><strong>MOEA Setup &amp; Optimisation</strong></td>
+        <td>Define a many-objective problem and use ε-NSGA-II to search a 100-dimensional lever space. Explore how epsilon parameters control Pareto-front granularity.</td>
+        <td><span class="tag green">ε-NSGA-II</span><span class="tag">Pareto dominance</span><span class="tag">ε-progress</span></td>
+      </tr>
+      <tr>
+        <td class="a-num">L5</td>
+        <td><strong>Pareto Analysis &amp; Convergence</strong></td>
+        <td>Load archived Pareto sets from multiple MOEA seeds. Compute six convergence metrics and build a cross-seed reference set using epsilon-nondominated sorting.</td>
+        <td><span class="tag orange">Hypervolume</span><span class="tag">GD</span><span class="tag">ε-indicator</span><span class="tag">Seed analysis</span></td>
+      </tr>
+      <tr>
+        <td class="a-num">L6</td>
+        <td><strong>MORDM</strong></td>
+        <td>Complete the full Multi-Objective Robust Decision Making cycle on the DPS lake model: optimise, re-evaluate under 1,000 scenarios, compute robustness metrics, and discover failure conditions.</td>
+        <td><span class="tag red">Signal-to-noise</span><span class="tag red">Max regret</span><span class="tag">DPS / RBF</span><span class="tag">PRIM</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout info">
+    <span class="callout-icon">ℹ️</span>
+    <div>Labs are located in the <code class="inline">labs/</code> folder. They use the <strong>same EPA141A (JUSTICE)</strong> kernel as the assignments — all required packages (EMA Workbench, SALib, etc.) are already installed in the shared virtual environment.</div>
+  </div>
+</section>
+
+<!-- ── ASSIGNMENT OVERVIEW ── -->
+<section id="overview">
+  <h2>Assignment Overview</h2>
+  <p>The eight assignments form a single end-to-end MBDM workflow applied to the JUSTICE climate–economy model. Each assignment builds on the outputs of the previous ones. Start from A1 and work in order.</p>
+
+  <table class="assignment-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>What you do</th>
+        <th>Key methods</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="a-num">A1</td>
+        <td><strong>Exploratory Modeling</strong></td>
+        <td>Run JUSTICE across an ensemble of scenarios and characterise how uncertainty propagates through the model outcomes.</td>
+        <td><span class="tag">LHS</span><span class="tag">EMA Workbench</span><span class="tag">Ensemble</span></td>
+      </tr>
+      <tr>
+        <td class="a-num">A2</td>
+        <td><strong>Sensitivity Analysis</strong></td>
+        <td>Identify which uncertain inputs matter most for each outcome and compare the results across sensitivity methods.</td>
+        <td><span class="tag">Sobol S₁/Sₜ</span><span class="tag orange">SALib</span><span class="tag">Extra-Trees</span></td>
+      </tr>
+      <tr>
+        <td class="a-num">A3</td>
+        <td><strong>Scenario Discovery</strong></td>
+        <td>Find the conditions under which a given policy fails and describe the vulnerability space.</td>
+        <td><span class="tag">PRIM</span><span class="tag">Scenario discovery</span></td>
+      </tr>
+      <tr>
+        <td class="a-num">A4</td>
+        <td><strong>Problem Formulation</strong></td>
+        <td>Define the decision problem — objectives, levers, uncertainties, and relationships — and choose a policy representation.</td>
+        <td><span class="tag orange">XLRM</span><span class="tag">RBF</span><span class="tag">EMODPS</span></td>
+      </tr>
+      <tr>
+        <td class="a-num">A5</td>
+        <td><strong>MOEA Local Run</strong></td>
+        <td>Search the policy space for trade-off solutions using a many-objective evolutionary algorithm and inspect the Pareto front.</td>
+        <td><span class="tag green">Borg MOEA</span><span class="tag">Pareto front</span></td>
+      </tr>
+      <tr>
+        <td class="a-num">A6</td>
+        <td><strong>MOEA Convergence</strong></td>
+        <td>Assess whether the optimisation has converged and consolidate results across seeds into a reference set.</td>
+        <td><span class="tag green">ε-dominance</span><span class="tag">Hypervolume</span><span class="tag">GD</span></td>
+      </tr>
+      <tr>
+        <td class="a-num">A7</td>
+        <td><strong>Pareto Visualisation</strong></td>
+        <td>Explore and communicate the trade-offs in the reference set and map the policy choices across world regions.</td>
+        <td><span class="tag orange">Parallel coords</span><span class="tag">GeoPandas</span><span class="tag">RICE-50</span></td>
+      </tr>
+      <tr>
+        <td class="a-num">A8</td>
+        <td><strong>Robustness Analysis</strong></td>
+        <td>Stress-test the Pareto policies across a broad range of scenarios and identify which policy is most robust.</td>
+        <td><span class="tag red">Satisficing</span><span class="tag red">Regret</span><span class="tag">FAIR ensemble</span></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ── WORKFLOW ── -->
+<section id="workflow">
+  <h2>How Assignments Connect</h2>
+
+  <p>The assignments form a linear pipeline. Later assignments load outputs saved by earlier ones.</p>
+
+  <div style="background:#fff;border:1px solid #dde2ec;border-radius:10px;padding:24px;font-family:var(--mono);font-size:13px;line-height:2;">
+    <span style="color:var(--tud-dark);font-weight:700;">A1</span> → ensemble runs (saved to <code class="inline">results/</code>)<br>
+    <span style="color:var(--tud-dark);font-weight:700;">A2</span> → reads A1 ensemble → sensitivity indices<br>
+    <span style="color:var(--tud-dark);font-weight:700;">A3</span> → reads A1 ensemble → scenario boxes<br>
+    <span style="color:var(--tud-dark);font-weight:700;">A4</span> → defines objectives &amp; policy structure → <code class="inline">config_student.json</code><br>
+    <span style="color:var(--tud-dark);font-weight:700;">A5</span> → runs MOEA → Pareto CSVs in <code class="inline">results/</code><br>
+    <span style="color:var(--tud-dark);font-weight:700;">A6</span> → merges A5 seeds → <code class="inline">reference_set.csv</code><br>
+    <span style="color:var(--tud-dark);font-weight:700;">A7</span> → reads A6 reference set → plots &amp; maps<br>
+    <span style="color:var(--tud-dark);font-weight:700;">A8</span> → reads A6 reference set → robustness metrics
+  </div>
+
+</section>
+
+<!-- ── KEY PACKAGES ── -->
+<section id="key-packages">
+  <h2>Key Packages</h2>
+  <p>The assignments rely on five groups of packages. All are installed automatically in Step 3; this table is a quick reference for when you want to read further.</p>
+
+  <table style="width:100%;border-collapse:collapse;margin-top:16px;font-size:14px;">
+    <thead>
+      <tr style="background:var(--tud-dark);color:#fff;">
+        <th style="padding:10px 14px;text-align:left;border-radius:6px 0 0 0;">Package</th>
+        <th style="padding:10px 14px;text-align:left;">Role in the assignments</th>
+        <th style="padding:10px 14px;text-align:left;border-radius:0 6px 0 0;">Documentation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="background:#fff;">
+        <td style="padding:9px 14px;border-bottom:1px solid #eef0f5;"><code class="inline">ema-workbench</code></td>
+        <td style="padding:9px 14px;border-bottom:1px solid #eef0f5;">Exploratory modelling &amp; analysis workbench — built around the XLRM framework; connects uncertainties, levers, and outcomes into reproducible experiment ensembles</td>
+        <td style="padding:9px 14px;border-bottom:1px solid #eef0f5;"><a href="https://emaworkbench.readthedocs.io/en/latest/" target="_blank">emaworkbench.readthedocs.io</a></td>
+      </tr>
+      <tr style="background:#f7f8fa;">
+        <td style="padding:9px 14px;border-bottom:1px solid #eef0f5;"><code class="inline">SALib</code></td>
+        <td style="padding:9px 14px;border-bottom:1px solid #eef0f5;">Sensitivity analysis library</td>
+        <td style="padding:9px 14px;border-bottom:1px solid #eef0f5;"><a href="https://salib.readthedocs.io" target="_blank">salib.readthedocs.io</a></td>
+      </tr>
+      <tr style="background:#fff;">
+        <td style="padding:9px 14px;border-bottom:1px solid #eef0f5;"><code class="inline">platypus-opt</code></td>
+        <td style="padding:9px 14px;border-bottom:1px solid #eef0f5;">Many-objective evolutionary optimisation algorithms</td>
+        <td style="padding:9px 14px;border-bottom:1px solid #eef0f5;"><a href="https://platypus.readthedocs.io" target="_blank">platypus.readthedocs.io</a></td>
+      </tr>
+      <tr style="background:#f7f8fa;">
+        <td style="padding:9px 14px;border-bottom:1px solid #eef0f5;"><code class="inline">geopandas</code></td>
+        <td style="padding:9px 14px;border-bottom:1px solid #eef0f5;">Geospatial data and mapping</td>
+        <td style="padding:9px 14px;border-bottom:1px solid #eef0f5;"><a href="https://geopandas.org/en/stable/docs.html" target="_blank">geopandas.org/docs</a></td>
+      </tr>
+      <tr style="background:#fff;">
+        <td style="padding:9px 14px;"><code class="inline">pandas · numpy · matplotlib · seaborn</code></td>
+        <td style="padding:9px 14px;">Data wrangling, numerical computation, and visualisation</td>
+        <td style="padding:9px 14px;"><a href="https://pandas.pydata.org/docs" target="_blank">pandas</a> · <a href="https://numpy.org/doc" target="_blank">numpy</a> · <a href="https://matplotlib.org/stable/contents.html" target="_blank">matplotlib</a> · <a href="https://seaborn.pydata.org" target="_blank">seaborn</a></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ── INSTALL TOOLS ── -->
+<section id="install-tools">
+  <h2>Install Python, VS Code &amp; Git</h2>
+  <p>If you are starting from a completely fresh computer, follow these steps in order. If you already have Python, VS Code, and Git installed, skip to <a href="#prerequisites">Prerequisites</a>.</p>
+
+  <!-- Terminal -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-circle" style="background:#2d2d2d;">&#9654;</div>
+      <div>
+        <div class="step-title">1 — Using the terminal</div>
+        <div class="step-sub">All setup commands are typed into a terminal. Here is everything you need to know before starting.</div>
+      </div>
+    </div>
+
+    <div class="platform-tabs">
+      <button class="active" onclick="showTab(this,'term-mac')">macOS</button>
+      <button onclick="showTab(this,'term-win')">Windows</button>
+      <button onclick="showTab(this,'term-lin')">Linux</button>
+    </div>
+
+    <div id="term-mac" class="tab-content active">
+      <h3>How to open a terminal</h3>
+      <p>Press <kbd>⌘ Space</kbd>, type <em>Terminal</em>, press <kbd>Enter</kbd>.<br>Or in VS Code: <strong>Terminal → New Terminal</strong> (opens directly in your project folder).</p>
+      <h3>Essential commands</h3>
+<pre><code class="language-bash">cd ~/courses/epa141a   # navigate to the repo folder
+ls                     # list files — you should see JUSTICE-main/
+cd ..                  # go up one level if needed</code></pre>
+      <p>Paste commands with <kbd>⌘V</kbd> and run them with <kbd>Enter</kbd>.</p>
+    </div>
+
+    <div id="term-win" class="tab-content">
+      <h3>How to open a terminal</h3>
+      <p>Press <kbd>Win</kbd>, type <em>cmd</em> or <em>PowerShell</em>, press <kbd>Enter</kbd>.<br>Or in VS Code: <strong>Terminal → New Terminal</strong> (opens directly in your project folder).</p>
+      <h3>Essential commands</h3>
+<pre><code class="language-bash">cd C:\Users\yourname\courses\epa141a   # navigate to the repo folder
+dir                                    # list files — you should see JUSTICE-main/
+cd ..                                  # go up one level if needed</code></pre>
+      <p>Paste commands with <kbd>Ctrl+V</kbd> and run them with <kbd>Enter</kbd>. Use <code class="inline">.venv\Scripts\</code> instead of <code class="inline">.venv/bin/</code> in every command in this guide.</p>
+    </div>
+
+    <div id="term-lin" class="tab-content">
+      <h3>How to open a terminal</h3>
+      <p>Press <kbd>Ctrl+Alt+T</kbd>, or find <em>Terminal</em> in your app launcher.<br>Or in VS Code: <strong>Terminal → New Terminal</strong>.</p>
+      <h3>Essential commands</h3>
+<pre><code class="language-bash">cd ~/courses/epa141a   # navigate to the repo folder
+ls                     # list files — you should see JUSTICE-main/
+cd ..                  # go up one level if needed</code></pre>
+      <p>Paste commands with <kbd>Ctrl+V</kbd> and run them with <kbd>Enter</kbd>.</p>
+    </div>
+
+    <div class="callout ok">
+      <span class="callout-icon">✅</span>
+      <div>Every command in the rest of this guide must be run from the <strong>repository root</strong> — the folder containing <code class="inline">JUSTICE-main/</code>. Opening VS Code's built-in terminal puts you there automatically.</div>
+    </div>
+  </div>
+
+  <!-- Python -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-circle" style="background:var(--tud-blue);">🐍</div>
+      <div>
+        <div class="step-title">2 — Install Python 3.12</div>
+        <div class="step-sub">Python 3.12 is recommended. Any version from 3.10 to 3.14 works.</div>
+      </div>
+    </div>
+
+    <div class="platform-tabs">
+      <button class="active" onclick="showTab(this,'py-mac')">macOS</button>
+      <button onclick="showTab(this,'py-win')">Windows</button>
+      <button onclick="showTab(this,'py-lin')">Linux</button>
+    </div>
+
+    <div id="py-mac" class="tab-content active">
+      <p style="margin-top:10px"><strong>Option A — Homebrew (recommended)</strong></p>
+      <p>Open Terminal, paste these commands one at a time:</p>
+<pre><code class="language-bash"># 1. Install Homebrew (skip if already installed)
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# 2. Install Python 3.12
+brew install python@3.12
+
+# 3. Verify
+python3 --version</code></pre>
+      <p style="margin-top:12px"><strong>Option B — Official installer</strong></p>
+      <p>Download the macOS <code class="inline">.pkg</code> installer from <strong>python.org/downloads</strong>, run it, then verify in Terminal:</p>
+<pre><code class="language-bash">python3 --version</code></pre>
+      <div class="callout warn">
+        <span class="callout-icon">⚠️</span>
+        <div>Do <strong>not</strong> use the pre-installed <code class="inline">/usr/bin/python3</code> — the macOS system Python is too old and cannot be updated.</div>
+      </div>
+    </div>
+
+    <div id="py-win" class="tab-content" style="display:none">
+      <p style="margin-top:10px"><strong>Option A — Official installer (recommended)</strong></p>
+      <ol>
+        <li>Download the Windows installer (<code class="inline">.exe</code>) from <strong>python.org/downloads</strong>.</li>
+        <li>Run it. On the first screen, tick <strong>"Add python.exe to PATH"</strong> — this is critical.</li>
+        <li>Click <strong>Install Now</strong>.</li>
+        <li>Open Command Prompt and verify:</li>
+      </ol>
+<pre><code class="language-bash">python --version</code></pre>
+      <p style="margin-top:12px"><strong>Option B — Microsoft Store</strong></p>
+      <p>Search for <em>Python 3.12</em> in the Microsoft Store and click <strong>Get</strong>. Then verify in Command Prompt:</p>
+<pre><code class="language-bash">python --version</code></pre>
+      <div class="callout warn">
+        <span class="callout-icon">⚠️</span>
+        <div>On Windows use <code class="inline">python</code> (not <code class="inline">python3</code>) and replace <code class="inline">.venv/bin/</code> with <code class="inline">.venv\Scripts\</code> in every command in this guide.</div>
+      </div>
+    </div>
+
+    <div id="py-lin" class="tab-content" style="display:none">
+      <p style="margin-top:10px"><strong>Ubuntu / Debian</strong></p>
+<pre><code class="language-bash">sudo apt update
+sudo apt install python3.12 python3.12-venv python3-pip -y
+python3.12 --version</code></pre>
+      <p style="margin-top:12px"><strong>Fedora / RHEL</strong></p>
+<pre><code class="language-bash">sudo dnf install python3.12 -y
+python3.12 --version</code></pre>
+      <div class="callout info">
+        <span class="callout-icon">ℹ️</span>
+        <div>If your distro's default <code class="inline">python3</code> is older than 3.10, use <code class="inline">python3.12 -m venv .venv</code> in Step 2 of the setup guide instead of <code class="inline">python3 -m venv .venv</code>.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VS Code -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-circle" style="background:#0078D4;">&#60;/&#62;</div>
+      <div>
+        <div class="step-title">3 — Install VS Code (recommended editor)</div>
+        <div class="step-sub">VS Code has first-class Jupyter notebook support. JupyterLab in the browser also works — pick one.</div>
+      </div>
+    </div>
+
+    <ol>
+      <li>Download VS Code from <strong>code.visualstudio.com</strong> and run the installer for your platform.</li>
+      <li>Open VS Code, click the <strong>Extensions</strong> icon in the left sidebar (or press <kbd>Ctrl+Shift+X</kbd> / <kbd>⌘⇧X</kbd>), and install:
+        <ul>
+          <li><strong>Python</strong> (by Microsoft) — Python language support and virtual-env detection</li>
+          <li><strong>Jupyter</strong> (by Microsoft) — run <code class="inline">.ipynb</code> notebooks inside VS Code</li>
+        </ul>
+      </li>
+      <li>Open the repository folder: <strong>File → Open Folder</strong>, select the <code class="inline">epa141a/</code> folder.</li>
+      <li>Open any <code class="inline">.ipynb</code> file. VS Code will prompt you to select a kernel — choose <strong>EPA141A (JUSTICE)</strong> after completing Step 5 below.</li>
+    </ol>
+
+    <div class="callout ok">
+      <span class="callout-icon">✅</span>
+      <div>All eight assignments and six labs are tested in VS Code. The setup cell in each notebook detects the VS Code environment automatically via <code class="inline">__vsc_ipynb_file__</code>.</div>
+    </div>
+  </div>
+
+  <!-- Git -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-circle" style="background:#F05033;">⎇</div>
+      <div>
+        <div class="step-title">4 — Install Git</div>
+        <div class="step-sub">Needed only if you want to clone the repository. Not needed if you download a ZIP.</div>
+      </div>
+    </div>
+
+    <div class="platform-tabs">
+      <button class="active" onclick="showTab(this,'git-mac')">macOS</button>
+      <button onclick="showTab(this,'git-win')">Windows</button>
+      <button onclick="showTab(this,'git-lin')">Linux</button>
+    </div>
+
+    <div id="git-mac" class="tab-content active">
+<pre><code class="language-bash"># Option A: Homebrew
+brew install git
+
+# Option B: Xcode Command Line Tools (already includes git)
+xcode-select --install</code></pre>
+    </div>
+    <div id="git-win" class="tab-content" style="display:none">
+      <ol style="margin-top:10px">
+        <li>Download the installer from <strong>git-scm.com/download/win</strong>.</li>
+        <li>Run it, accepting all defaults. This installs <strong>Git Bash</strong>, which you can use instead of Command Prompt for the commands in this guide.</li>
+      </ol>
+    </div>
+    <div id="git-lin" class="tab-content" style="display:none">
+<pre><code class="language-bash"># Ubuntu / Debian
+sudo apt install git -y
+
+# Fedora
+sudo dnf install git -y</code></pre>
+    </div>
+
+    <p style="margin-top:12px">Verify: <code class="inline">git --version</code> should print something like <code class="inline">git version 2.x.x</code>.</p>
+  </div>
+
+
+</section>
+
+<!-- ── PREREQUISITES ── -->
+<section id="prerequisites">
+  <h2>Prerequisites</h2>
+  <p>You need the following software installed <em>before</em> starting. No Python packages are needed yet — the steps below install everything inside an isolated virtual environment.</p>
+
+  <div class="prereq-grid">
+    <div class="prereq-card">
+      <div class="prereq-label">Python</div>
+      <div class="prereq-val">3.10 – 3.14</div>
+      <div class="prereq-note">Check: <code class="inline">python3 --version</code></div>
+    </div>
+    <div class="prereq-card">
+      <div class="prereq-label">pip</div>
+      <div class="prereq-val">≥ 23</div>
+      <div class="prereq-note">Bundled with Python 3.10+</div>
+    </div>
+    <div class="prereq-card">
+      <div class="prereq-label">Git</div>
+      <div class="prereq-val">any recent</div>
+      <div class="prereq-note">Check: <code class="inline">git --version</code></div>
+    </div>
+    <div class="prereq-card">
+      <div class="prereq-label">Disk space</div>
+      <div class="prereq-val">≈ 2 GB</div>
+      <div class="prereq-note">Dependencies + FAIR climate data</div>
+    </div>
+  </div>
+
+  <div class="callout info">
+    <span class="callout-icon">ℹ️</span>
+    <div><strong>macOS users:</strong> install Python via <a href="https://brew.sh">Homebrew</a> (<code class="inline">brew install python@3.12</code>) or the official installer at <a href="https://python.org">python.org</a>. The system Python is too old.</div>
+  </div>
+  <div class="callout info">
+    <span class="callout-icon">ℹ️</span>
+    <div><strong>Windows users:</strong> use <code class="inline">python</code> instead of <code class="inline">python3</code>, and replace <code class="inline">.venv/bin/</code> with <code class="inline">.venv\Scripts\</code> in every command below.</div>
+  </div>
+</section>
+
+<!-- ── STEP 1 ── -->
+<section id="step1">
+  <h2>Step 1 — Get the Repository</h2>
+
+  <div class="step">
+    <div class="step-header">
+      <div class="step-circle">1</div>
+      <div>
+        <div class="step-title">Download or clone the course repository</div>
+        <div class="step-sub">This gives you the assignments, JUSTICE source code, and all configuration files.</div>
+      </div>
+    </div>
+
+    <div class="platform-tabs">
+      <button class="active" onclick="showTab(this,'s1-mac')">macOS</button>
+      <button onclick="showTab(this,'s1-win')">Windows</button>
+      <button onclick="showTab(this,'s1-lin')">Linux</button>
+    </div>
+
+    <div id="s1-mac" class="tab-content active">
+      <p style="margin-top:10px"><strong>Option A — Download as ZIP (no Git required)</strong></p>
+      <ol>
+        <li>Go to the course repository page on GitHub / BrightSpace.</li>
+        <li>Click <strong>Code → Download ZIP</strong>.</li>
+        <li>Unzip to a location <em>without spaces or special characters</em> in the path (e.g. <code class="inline">~/courses/epa141a</code>).</li>
+      </ol>
+      <p style="margin-top:12px"><strong>Option B — Git clone</strong></p>
+<pre><code class="language-bash">git clone https://github.com/&lt;org&gt;/epa141a.git
+cd epa141a</code></pre>
+    </div>
+
+    <div id="s1-win" class="tab-content" style="display:none">
+      <p style="margin-top:10px"><strong>Option A — Download as ZIP (no Git required)</strong></p>
+      <ol>
+        <li>Go to the course repository page on GitHub / BrightSpace.</li>
+        <li>Click <strong>Code → Download ZIP</strong>.</li>
+        <li>Unzip to a location <em>without spaces or special characters</em> in the path (e.g. <code class="inline">C:\courses\epa141a</code>).</li>
+      </ol>
+      <p style="margin-top:12px"><strong>Option B — Git clone</strong></p>
+<pre><code class="language-bash">git clone https://github.com/&lt;org&gt;/epa141a.git
+cd epa141a</code></pre>
+      <div class="callout info" style="margin-top:10px">
+        <span class="callout-icon">ℹ️</span>
+        <div>You can use <strong>Git Bash</strong> (installed with Git) or <strong>PowerShell</strong> to run these commands. Avoid paths with spaces.</div>
+      </div>
+    </div>
+
+    <div id="s1-lin" class="tab-content" style="display:none">
+      <p style="margin-top:10px"><strong>Option A — Download as ZIP (no Git required)</strong></p>
+      <ol>
+        <li>Go to the course repository page on GitHub / BrightSpace.</li>
+        <li>Click <strong>Code → Download ZIP</strong>.</li>
+        <li>Unzip to a location <em>without spaces or special characters</em> in the path (e.g. <code class="inline">~/courses/epa141a</code>).</li>
+      </ol>
+      <p style="margin-top:12px"><strong>Option B — Git clone</strong></p>
+<pre><code class="language-bash">git clone https://github.com/&lt;org&gt;/epa141a.git
+cd epa141a</code></pre>
+    </div>
+
+    <div class="callout warn">
+      <span class="callout-icon">⚠️</span>
+      <div>All subsequent commands must be run from the <strong>repository root</strong> — the folder that contains <code class="inline">JUSTICE-main/</code>, <code class="inline">assignments_ema/</code>, and <code class="inline">requirements.txt</code>.</div>
+    </div>
+
+    <h3>What's inside</h3>
+    <ul>
+      <li><code class="inline">JUSTICE-main/</code> — the JUSTICE climate–economy model source code</li>
+      <li><code class="inline">assignments_ema/</code> — student assignment notebooks (A1 – A8)</li>
+      <li><code class="inline">model_answers_ema/</code> — model answer notebooks</li>
+      <li><code class="inline">labs/</code> — lab notebooks (L1 – L6) using the Lake Problem</li>
+      <li><code class="inline">config/</code> — optimisation configuration files</li>
+      <li><code class="inline">requirements.txt</code> — package list</li>
+      <li><code class="inline">requirements-lock.txt</code> — exact pinned versions for reproducibility</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ── STEP 2 ── -->
+<section id="step2">
+  <h2>Step 2 — Create a Virtual Environment</h2>
+
+  <div class="step">
+    <div class="step-header">
+      <div class="step-circle">2</div>
+      <div>
+        <div class="step-title">Create <code>.venv</code> inside the repo root</div>
+        <div class="step-sub">A virtual environment keeps all course packages isolated from your system Python.</div>
+      </div>
+    </div>
+
+    <div class="platform-tabs">
+      <button class="active" onclick="showTab(this,'mac')">macOS / Linux</button>
+      <button onclick="showTab(this,'win')">Windows</button>
+    </div>
+
+    <div id="mac" class="tab-content active">
+<pre><code class="language-bash">python3 -m venv .venv</code></pre>
+    </div>
+    <div id="win" class="tab-content" style="display:none">
+<pre><code class="language-bash">python -m venv .venv</code></pre>
+    </div>
+
+    <div class="callout ok">
+      <span class="callout-icon">✅</span>
+      <div>You should now have a <code class="inline">.venv/</code> folder in the repo root. You never need to activate it manually — all commands below call the venv Python directly.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── STEP 3 ── -->
+<section id="step3">
+  <h2>Step 3 — Install Dependencies</h2>
+
+  <div class="step">
+    <div class="step-header">
+      <div class="step-circle">3</div>
+      <div>
+        <div class="step-title">Install all packages from the lock file</div>
+        <div class="step-sub">The lock file pins exact versions that are known to work together. This takes 3–8 minutes on a first run.</div>
+      </div>
+    </div>
+
+    <div class="platform-tabs">
+      <button class="active" onclick="showTab(this,'mac3')">macOS / Linux</button>
+      <button onclick="showTab(this,'win3')">Windows</button>
+    </div>
+    <div id="mac3" class="tab-content active">
+<pre><code class="language-bash">.venv/bin/pip install -r requirements-lock.txt</code></pre>
+    </div>
+    <div id="win3" class="tab-content" style="display:none">
+<pre><code class="language-bash">.venv\Scripts\pip install -r requirements-lock.txt</code></pre>
+    </div>
+
+    <div class="callout info">
+      <span class="callout-icon">ℹ️</span>
+      <div>
+        <strong>Key version pin:</strong> <code class="inline">fair == 2.1.3</code> — JUSTICE was developed and tested against this exact FAIR version. Do not upgrade it.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── STEP 4 ── -->
+<section id="step4">
+  <h2>Step 4 — Install JUSTICE</h2>
+
+  <div class="step">
+    <div class="step-header">
+      <div class="step-circle">4</div>
+      <div>
+        <div class="step-title">Install JUSTICE in editable mode</div>
+        <div class="step-sub">JUSTICE is included in the repo as source code. Installing it with <code>--no-deps</code> makes it importable without pulling in conflicting packages.</div>
+      </div>
+    </div>
+
+    <div class="platform-tabs">
+      <button class="active" onclick="showTab(this,'mac4')">macOS / Linux</button>
+      <button onclick="showTab(this,'win4')">Windows</button>
+    </div>
+    <div id="mac4" class="tab-content active">
+<pre><code class="language-bash">.venv/bin/pip install -e JUSTICE-main --no-deps</code></pre>
+    </div>
+    <div id="win4" class="tab-content" style="display:none">
+<pre><code class="language-bash">.venv\Scripts\pip install -e JUSTICE-main --no-deps</code></pre>
+    </div>
+
+    <p style="margin-top:12px">The <code class="inline">-e</code> flag installs in <em>editable</em> mode — any changes to the JUSTICE source are immediately reflected without reinstalling. <code class="inline">--no-deps</code> prevents JUSTICE from overwriting the carefully pinned versions from Step 3.</p>
+
+    <div class="callout info">
+      <span class="callout-icon">ℹ️</span>
+      <div>After installation the packages <code class="inline">justice</code>, <code class="inline">solvers</code>, and <code class="inline">analysis</code> are importable from any notebook running the <strong>EPA141A</strong> kernel.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── STEP 5 ── -->
+<section id="step5">
+  <h2>Step 5 — Register the Jupyter Kernel</h2>
+
+  <div class="step">
+    <div class="step-header">
+      <div class="step-circle">5</div>
+      <div>
+        <div class="step-title">Make the virtual environment available in JupyterLab</div>
+        <div class="step-sub">This registers a kernel named <em>EPA141A (JUSTICE)</em> that notebooks can select.</div>
+      </div>
+    </div>
+
+    <div class="platform-tabs">
+      <button class="active" onclick="showTab(this,'mac5')">macOS / Linux</button>
+      <button onclick="showTab(this,'win5')">Windows</button>
+    </div>
+    <div id="mac5" class="tab-content active">
+<pre><code class="language-bash">.venv/bin/python -m ipykernel install --user \
+    --name epa141a \
+    --display-name "EPA141A (JUSTICE)"</code></pre>
+    </div>
+    <div id="win5" class="tab-content" style="display:none">
+<pre><code class="language-bash">.venv\Scripts\python -m ipykernel install --user ^
+    --name epa141a ^
+    --display-name "EPA141A (JUSTICE)"</code></pre>
+    </div>
+
+    <p style="margin-top:12px">You only need to run this once. The kernel persists across JupyterLab sessions.</p>
+  </div>
+</section>
+
+<!-- ── STEP 6 ── -->
+<section id="step6">
+  <h2>Step 6 — Launch JupyterLab</h2>
+
+  <div class="step">
+    <div class="step-header">
+      <div class="step-circle">6</div>
+      <div>
+        <div class="step-title">Start the notebook server</div>
+        <div class="step-sub">Always launch from the repo root so relative paths resolve correctly.</div>
+      </div>
+    </div>
+
+    <div class="platform-tabs">
+      <button class="active" onclick="showTab(this,'mac6')">macOS / Linux</button>
+      <button onclick="showTab(this,'win6')">Windows</button>
+    </div>
+    <div id="mac6" class="tab-content active">
+<pre><code class="language-bash">.venv/bin/jupyter lab</code></pre>
+    </div>
+    <div id="win6" class="tab-content" style="display:none">
+<pre><code class="language-bash">.venv\Scripts\jupyter lab</code></pre>
+    </div>
+
+    <p style="margin-top:12px">JupyterLab opens in your browser. Navigate to <code class="inline">assignments_ema/</code> and open <strong>assignment_01_exploratory_modeling.ipynb</strong>. In the top-right kernel picker, select <strong>EPA141A (JUSTICE)</strong>.</p>
+
+    <div class="callout info">
+      <span class="callout-icon">💡</span>
+      <div><strong>VS Code users:</strong> open the repo folder in VS Code, open any <code class="inline">.ipynb</code> file, click the kernel picker in the top right, and choose <strong>EPA141A (JUSTICE)</strong>. All assignments support VS Code natively — the setup cell detects <code class="inline">__vsc_ipynb_file__</code> automatically.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── STEP 7 ── -->
+<section id="step7">
+  <h2>Step 7 — Verify the Installation</h2>
+
+  <div class="step">
+    <div class="step-header">
+      <div class="step-circle">7</div>
+      <div>
+        <div class="step-title">Run the verification cell in Assignment 1</div>
+        <div class="step-sub">This confirms that JUSTICE, EMA Workbench, and all dependencies are correctly installed.</div>
+      </div>
+    </div>
+
+    <p>Open <code class="inline">assignments_ema/assignment_01_exploratory_modeling.ipynb</code> and run the first code cell (Step 0 — Verify your installation). You should see output like:</p>
+
+<pre><code class="language-bash">  ✓  justice
+  ✓  numpy
+  ✓  pandas
+  ✓  matplotlib
+  ✓  ema_workbench
+  ✓  scipy
+  ✓  seaborn
+
+Python 3.12.x</code></pre>
+
+    <div class="verify-box">
+      <h4>✅ Success looks like</h4>
+      <ul>
+        <li>Every package shows <strong>✓</strong> — no ✗</li>
+        <li>No <code class="inline">ModuleNotFoundError</code> for <code class="inline">justice</code>, <code class="inline">ema_workbench</code>, or <code class="inline">fair</code></li>
+        <li>No red error tracebacks in subsequent cells</li>
+      </ul>
+    </div>
+
+    <div class="callout warn">
+      <span class="callout-icon">⚠️</span>
+      <div>If you see <strong>RuntimeWarning: invalid value encountered in log</strong> from the FAIR climate model — this is harmless. FAIR catches it internally and the results are still valid.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TROUBLESHOOTING ── -->
+<section id="troubleshooting">
+  <h2>Troubleshooting</h2>
+
+  <h3>ModuleNotFoundError: No module named 'justice'</h3>
+  <p>JUSTICE was not installed, or you are using the wrong kernel. Re-run Step 4 and confirm the <strong>EPA141A (JUSTICE)</strong> kernel is selected in JupyterLab.</p>
+
+  <h3>Kernel not found / kernel keeps dying</h3>
+  <p>Re-run Step 5 to re-register the kernel. If the kernel dies immediately, check available RAM — JUSTICE loads FAIR climate data on startup and requires at least 2 GB free.</p>
+
+  <h3>ModuleNotFoundError: No module named 'ema_workbench'</h3>
+  <p>You are running the wrong Python. Confirm with:</p>
+  <pre><code class="language-bash">.venv/bin/python -c "import ema_workbench; print(ema_workbench.__version__)"</code></pre>
+  <p>Expected output: <code class="inline">3.0.x</code>. If the command fails, re-run Step 3.</p>
+
+  <h3>FileNotFoundError for JUSTICE data files</h3>
+  <p>JUSTICE must be run from the <code class="inline">JUSTICE-main/</code> directory — it resolves data paths relatively. The setup cell in every assignment handles this with <code class="inline">os.chdir(_JUSTICE_ROOT)</code>. Make sure you run the setup cell before any other cell.</p>
+
+  <h3>RecursionError in perform_experiments (Python 3.14 + tqdm)</h3>
+  <p>A known incompatibility between Python 3.14 and tqdm ≥ 4.67 in Jupyter notebooks. The assignment notebooks include a one-line fix (<code class="inline">tqdm.tqdm = tqdm.std.tqdm</code>) in the experiments cell. Make sure you have the latest version of the notebooks from the repository and restart the kernel before re-running.</p>
+
+  <h3>reference_set_utilitarian.csv not found (A7, A8)</h3>
+  <p>Run Assignment 6 first and execute all cells in order. The file is saved to <code class="inline">model_answers_ema/results/</code>.</p>
+
+  <h3>RuntimeWarning from FAIR (invalid value in log)</h3>
+  <p>Harmless — see <a href="#step7">Step 7</a>. Ignore it.</p>
+
+  <h3>Slow first run in A8</h3>
+  <p>A8 runs 28 policies × 50 FAIR scenarios sequentially in the notebook (≈ 20–40 min, one time only). Results are cached to <code class="inline">results/reeval_utilitarian_28p_50s.npy</code> and loaded instantly on subsequent runs. To run faster with multiprocessing, use the companion script from a terminal:</p>
+  <pre><code class="language-bash">.venv/bin/python model_answers_ema/run_reeval.py --n_scenarios 50</code></pre>
+
+  <h3>Platform-specific: Windows path separators</h3>
+  <p>Replace all <code class="inline">.venv/bin/</code> prefixes with <code class="inline">.venv\Scripts\</code> on Windows. All other commands are identical.</p>
+</section>
+
+</main>
+</div>
+
+<footer>
+  EPA141A Model-Based Decision Making · Delft University of Technology · Jazmin Zatarain Salazar
+</footer>
+
+<script>
+  function showTab(btn, id) {
+    const step = btn.closest('.step');
+    step.querySelectorAll('.platform-tabs button').forEach(b => b.classList.remove('active'));
+    step.querySelectorAll('.tab-content').forEach(t => {
+      t.classList.remove('active');
+      t.style.display = 'none';
+    });
+    btn.classList.add('active');
+    const target = step.querySelector('#' + id);
+    target.classList.add('active');
+    target.style.display = 'block';
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.tab-content').forEach(t => {
+      t.style.display = t.classList.contains('active') ? 'block' : 'none';
+    });
+    hljs.highlightAll();
+  });
+</script>
+
+</body>
+</html>
