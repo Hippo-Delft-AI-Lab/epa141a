@@ -1,0 +1,522 @@
+/* ============================================================
+   EPA141A — Custom theme  |  TU Delft brand palette
+   ============================================================ */
+
+/* ── Brand tokens ── */
+:root {
+  --tud-blue:       #00A6D6;
+  --tud-dark:       #003D6C;
+  --tud-mid:        #0077B3;
+  --tud-light:      #D6F0FA;
+  --tud-orange:     #E87722;
+  --tud-green:      #12A64E;
+  --tud-red:        #C8262D;
+
+  /* Override pydata-sphinx-theme colour tokens */
+  --pst-color-primary:            #00A6D6;
+  --pst-color-primary-highlight:  #0077B3;
+  --pst-color-primary-text:       #ffffff;
+  --pst-color-primary-bg:         #D6F0FA;
+
+  --pst-color-secondary:          #003D6C;
+  --pst-color-secondary-highlight:#0077B3;
+
+  --pst-color-link:               #0077B3;
+  --pst-color-link-hover:         #003D6C;
+
+  --pst-color-accent:             #E87722;
+  --pst-color-accent-bg:          #FDF0E4;
+
+  --pst-color-success:            #12A64E;
+  --pst-color-success-bg:         #E5F7ED;
+
+  --pst-color-info:               #00A6D6;
+  --pst-color-info-bg:            #D6F0FA;
+
+  --pst-color-warning:            #E87722;
+  --pst-color-warning-bg:         #FDF0E4;
+
+  --pst-color-danger:             #C8262D;
+  --pst-color-danger-bg:          #FAE5E6;
+
+  --pst-color-background:         #F8F9FB;
+  --pst-color-surface:            #FFFFFF;
+  --pst-color-border:             #DEE3EA;
+
+  --pst-color-table-heading-bg:   #003D6C;
+  --pst-color-table-row-zebra-high-bg: #EBF7FC;
+
+  --pst-color-inline-code:        #003D6C;
+
+  /* Typography */
+  --pst-font-family-base:        'Segoe UI', system-ui, -apple-system, sans-serif;
+  --pst-font-family-monospace:   'Fira Code', 'Cascadia Code', Consolas, monospace;
+  --pst-font-size-base:          15px;
+}
+
+/* ============================================================
+   NAVBAR (top bar)
+   ============================================================ */
+.navbar {
+  background: linear-gradient(135deg, var(--tud-dark) 0%, var(--tud-mid) 70%, var(--tud-blue) 100%) !important;
+  border-bottom: 3px solid var(--tud-orange) !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+}
+
+.navbar .navbar-brand,
+.navbar .navbar-brand:hover,
+.navbar a.nav-link,
+.navbar a.nav-link:hover,
+.navbar-nav .nav-item a {
+  color: #ffffff !important;
+}
+
+.navbar .navbar-brand {
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.3px;
+}
+
+/* Search box in navbar */
+.navbar form input[type="search"] {
+  border-radius: 20px;
+  border: none;
+  padding: 4px 14px;
+  font-size: 13px;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+}
+.navbar form input[type="search"]::placeholder { color: rgba(255,255,255,0.6); }
+.navbar form input[type="search"]:focus {
+  background: rgba(255,255,255,0.25);
+  outline: none;
+}
+
+/* ============================================================
+   LEFT SIDEBAR (primary navigation)
+   ============================================================ */
+.bd-sidebar-primary {
+  background: #ffffff !important;
+  border-right: 1px solid var(--pst-color-border) !important;
+}
+
+/* Section labels */
+.bd-sidenav caption,
+.bd-sidenav .caption-text {
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 1.2px !important;
+  text-transform: uppercase !important;
+  color: #9AA0B0 !important;
+  padding: 18px 0 4px !important;
+}
+
+/* Nav links */
+.bd-sidebar-primary .nav-link {
+  border-radius: 6px;
+  margin: 1px 6px;
+  padding: 5px 10px;
+  font-size: 13.5px;
+  color: #2C3E50 !important;
+  transition: background 0.15s, color 0.15s;
+}
+
+.bd-sidebar-primary .nav-link:hover {
+  background: var(--tud-light) !important;
+  color: var(--tud-dark) !important;
+}
+
+.bd-sidebar-primary .nav-link.active,
+.bd-sidebar-primary .current > .nav-link {
+  background: var(--tud-light) !important;
+  color: var(--tud-dark) !important;
+  font-weight: 600;
+  border-left: 3px solid var(--tud-blue);
+  padding-left: 7px;
+}
+
+/* ============================================================
+   PAGE CONTENT
+   ============================================================ */
+.bd-article-container {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 2rem 2.5rem !important;
+  margin: 1.5rem 1rem 1rem !important;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+}
+
+/* Headings */
+h1 {
+  color: var(--tud-dark);
+  font-weight: 700;
+  font-size: 1.9rem;
+  border-bottom: 3px solid var(--tud-blue);
+  padding-bottom: 0.4rem;
+  margin-bottom: 1.2rem;
+}
+
+h2 {
+  color: var(--tud-dark);
+  font-weight: 600;
+  font-size: 1.35rem;
+  border-bottom: 1px solid var(--pst-color-border);
+  padding-bottom: 0.25rem;
+  margin-top: 2rem;
+}
+
+h3 {
+  color: var(--tud-mid);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-top: 1.5rem;
+}
+
+h4 {
+  color: #4A5568;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* Links */
+a {
+  color: var(--tud-mid);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--tud-dark);
+  text-decoration: underline;
+}
+
+/* ============================================================
+   TABLES
+   ============================================================ */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 13.5px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  margin: 1.2rem 0;
+}
+
+thead tr {
+  background: var(--tud-dark) !important;
+  color: #ffffff !important;
+}
+
+thead th {
+  color: #ffffff !important;
+  font-weight: 600;
+  padding: 10px 14px;
+  letter-spacing: 0.3px;
+  border: none !important;
+}
+
+tbody tr:nth-child(even) {
+  background: #EBF7FC;
+}
+
+tbody tr:nth-child(odd) {
+  background: #ffffff;
+}
+
+tbody tr:hover {
+  background: #C8E9F5 !important;
+}
+
+tbody td {
+  padding: 8px 14px;
+  border-bottom: 1px solid #E8EDF2;
+  vertical-align: top;
+}
+
+/* ============================================================
+   CODE BLOCKS
+   ============================================================ */
+div.highlight {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  margin: 1rem 0;
+}
+
+div.highlight pre {
+  background: #1E2433 !important;
+  color: #CDD6F4 !important;
+  padding: 1.2rem 1.4rem;
+  font-size: 13px;
+  line-height: 1.65;
+  border-radius: 8px;
+}
+
+/* Inline code */
+code.literal, code {
+  background: #EBF7FC;
+  color: var(--tud-dark);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.88em;
+  font-family: var(--pst-font-family-monospace);
+}
+
+/* Don't style code inside pre */
+pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* ============================================================
+   ADMONITIONS
+   ============================================================ */
+.admonition {
+  border: none !important;
+  border-left: 4px solid !important;
+  border-radius: 6px !important;
+  padding: 0.9rem 1.1rem !important;
+  margin: 1.2rem 0 !important;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.admonition.note, .admonition .note {
+  background: #EBF7FC !important;
+  border-color: var(--tud-blue) !important;
+}
+
+.admonition.tip, .admonition.seealso {
+  background: #E5F7ED !important;
+  border-color: var(--tud-green) !important;
+}
+
+.admonition.warning {
+  background: #FDF0E4 !important;
+  border-color: var(--tud-orange) !important;
+}
+
+.admonition.danger, .admonition.error {
+  background: #FAE5E6 !important;
+  border-color: var(--tud-red) !important;
+}
+
+.admonition.important {
+  background: #EEE8FA !important;
+  border-color: #6B46C1 !important;
+}
+
+.admonition-title {
+  font-weight: 700 !important;
+  font-size: 0.85rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  margin-bottom: 0.4rem !important;
+}
+
+.admonition.note .admonition-title    { color: var(--tud-mid) !important; }
+.admonition.tip .admonition-title,
+.admonition.seealso .admonition-title { color: var(--tud-green) !important; }
+.admonition.warning .admonition-title { color: var(--tud-orange) !important; }
+.admonition.danger .admonition-title  { color: var(--tud-red) !important; }
+
+/* ============================================================
+   SPHINX-DESIGN CARDS
+   ============================================================ */
+.sd-card {
+  border: 1px solid var(--pst-color-border) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07) !important;
+  transition: box-shadow 0.2s, transform 0.2s;
+  overflow: hidden;
+}
+
+.sd-card:hover {
+  box-shadow: 0 6px 20px rgba(0,61,108,0.14) !important;
+  transform: translateY(-2px);
+}
+
+.sd-card-header {
+  background: var(--tud-dark) !important;
+  color: #ffffff !important;
+  font-weight: 600;
+  padding: 0.7rem 1rem;
+  font-size: 0.95rem;
+}
+
+.sd-card-body {
+  padding: 1rem 1.1rem;
+}
+
+.sd-card-footer {
+  background: #F0F4F8 !important;
+  padding: 0.6rem 1rem;
+  font-size: 0.85rem;
+}
+
+/* Grid cards with :link: */
+.sd-card.sd-card-hover:hover {
+  border-color: var(--tud-blue) !important;
+}
+
+/* ============================================================
+   SPHINX-DESIGN TABS
+   ============================================================ */
+.sd-tab-set > .sd-tab-labels {
+  border-bottom: 2px solid var(--pst-color-border);
+  gap: 4px;
+}
+
+.sd-tab-label {
+  background: #F0F4F8 !important;
+  border: 1px solid var(--pst-color-border) !important;
+  border-bottom: none !important;
+  border-radius: 6px 6px 0 0 !important;
+  color: #4A5568 !important;
+  font-size: 13.5px !important;
+  font-weight: 500 !important;
+  padding: 7px 16px !important;
+  transition: background 0.15s, color 0.15s;
+}
+
+.sd-tab-label:hover {
+  background: var(--tud-light) !important;
+  color: var(--tud-dark) !important;
+}
+
+input.sd-tab-set-input:checked + .sd-tab-label {
+  background: var(--tud-dark) !important;
+  color: #ffffff !important;
+  border-color: var(--tud-dark) !important;
+  font-weight: 600 !important;
+}
+
+.sd-tab-content {
+  border: 1px solid var(--pst-color-border);
+  border-top: none;
+  border-radius: 0 6px 6px 6px;
+  padding: 1.4rem 1.6rem;
+  background: #ffffff;
+}
+
+/* ============================================================
+   SPHINX-DESIGN GRID
+   ============================================================ */
+.sd-col .sd-card {
+  height: 100%;
+}
+
+/* ============================================================
+   RIGHT SIDEBAR (in-page TOC)
+   ============================================================ */
+.bd-sidebar-secondary {
+  font-size: 13px;
+}
+
+.bd-sidebar-secondary .nav-link {
+  color: #4A5568 !important;
+  padding: 3px 8px;
+  border-left: 2px solid transparent;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.bd-sidebar-secondary .nav-link:hover,
+.bd-sidebar-secondary .nav-link.active {
+  color: var(--tud-mid) !important;
+  border-left-color: var(--tud-blue);
+  background: transparent !important;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer.bd-footer {
+  background: var(--tud-dark) !important;
+  color: rgba(255,255,255,0.75) !important;
+  padding: 1.2rem 2rem;
+  font-size: 12.5px;
+  border-top: 3px solid var(--tud-orange);
+}
+
+footer.bd-footer a {
+  color: var(--tud-blue) !important;
+}
+
+footer.bd-footer a:hover {
+  color: #ffffff !important;
+}
+
+/* ============================================================
+   PREV / NEXT NAVIGATION
+   ============================================================ */
+.prev-next-area {
+  border-top: 1px solid var(--pst-color-border);
+  padding-top: 1.2rem;
+  margin-top: 2rem;
+}
+
+.prev-next-area a {
+  background: #F0F4F8;
+  border: 1px solid var(--pst-color-border);
+  border-radius: 8px;
+  padding: 10px 16px;
+  color: var(--tud-dark) !important;
+  font-weight: 500;
+  transition: background 0.15s, border-color 0.15s;
+  text-decoration: none !important;
+}
+
+.prev-next-area a:hover {
+  background: var(--tud-light);
+  border-color: var(--tud-blue);
+}
+
+/* ============================================================
+   MISC
+   ============================================================ */
+
+/* Horizontal rule */
+hr {
+  border: none;
+  border-top: 1px solid var(--pst-color-border);
+  margin: 1.8rem 0;
+}
+
+/* Blockquote */
+blockquote {
+  border-left: 4px solid var(--tud-blue);
+  background: #EBF7FC;
+  padding: 0.6rem 1rem;
+  border-radius: 0 6px 6px 0;
+  margin: 1rem 0;
+  color: var(--tud-dark);
+  font-style: italic;
+}
+
+/* Figures */
+figure {
+  border: 1px solid var(--pst-color-border);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 1.5rem 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+figcaption {
+  background: #F0F4F8;
+  padding: 0.6rem 1rem;
+  font-size: 13px;
+  color: #4A5568;
+  border-top: 1px solid var(--pst-color-border);
+}
+
+/* Article page background */
+article.bd-article {
+  padding: 0;
+}
+
+/* Scrollbar (webkit) */
+::-webkit-scrollbar { width: 7px; height: 7px; }
+::-webkit-scrollbar-track { background: #F0F4F8; }
+::-webkit-scrollbar-thumb { background: #B0BEC5; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--tud-mid); }

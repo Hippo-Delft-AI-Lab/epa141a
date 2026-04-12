@@ -1,0 +1,845 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>🚀 Start Here &#8212; EPA141A — Model-Based Decision Making</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'start-here';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Schedule" href="schedule.html" />
+    <link rel="prev" title="EPA141A — Model-Based Decision Making" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">EPA141A</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">🚀 Start Here</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schedule.html">Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lectures.html">Lectures</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="installation/index.html">🐍 Software Installation</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation/graphical.html">Graphical Installation (Anaconda Navigator)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation/cli.html">Command-Line Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation/vscode.html">VS Code Setup</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="labs/index.html">🔬 Labs</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="labs/lab_01.html">Lab 1 — Exploratory Modelling with the Lake Problem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs/lab_02.html">Lab 2 — Global Sensitivity Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs/lab_03.html">Lab 3 — Scenario Discovery: PRIM and Dimensional Stacking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs/lab_04.html">Lab 4 — MOEA Setup and Optimisation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs/lab_05.html">Lab 5 — Pareto Analysis, Visualisation, and Convergence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs/lab_06.html">Lab 6 — Multi-Objective Robust Decision Making (MORDM)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="assignments/index.html">📝 Assignments</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="assignments/assignment_01.html">Assignment 1 — Exploratory Modeling with JUSTICE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="assignments/assignment_02.html">Assignment 2 — Sensitivity Analysis: Which Inputs Matter?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="assignments/assignment_03.html">Assignment 3 — Scenario Discovery: When Do Policies Fail?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="assignments/assignment_04.html">Assignment 4 — Problem Formulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="assignments/assignment_05.html">Assignment 5 — Many-Objective Optimisation (Local Run)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="assignments/assignment_06.html">Assignment 6 — MOEA Convergence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="assignments/assignment_07.html">Assignment 7 — Pareto Visualisation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="assignments/assignment_08.html">Assignment 8 — Robustness Analysis</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="debate/index.html">Debate Instructions</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="debate/stages.html">Debate Stages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debate/actors.html">Actor Constellation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="project/index.html">🎓 Final Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">📚 Resources</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Hippo-Delft-AI-Lab/epa141a" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Hippo-Delft-AI-Lab/epa141a/issues/new?title=Issue%20on%20page%20%2Fstart-here.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/start-here.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>🚀 Start Here</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-repositories">Course repositories</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-everything-fits-together">How everything fits together</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-install-two-tools">Step 1 — Install two tools</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-get-the-course-files">Step 2 — Get the course files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-create-the-python-environment">Step 3 — Create the Python environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-install-justice-and-register-the-kernel">Step 4 — Install JUSTICE and register the kernel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-open-your-first-notebook">Step 5 — Open your first notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#you-are-set-up-what-next">You are set up. What next?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-is-not-recognised"><code class="docutils literal notranslate"><span class="pre">conda</span></code> is not recognised</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git-is-not-recognised"><code class="docutils literal notranslate"><span class="pre">git</span></code> is not recognised</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modulenotfounderror-no-module-named-justice"><code class="docutils literal notranslate"><span class="pre">ModuleNotFoundError:</span> <span class="pre">No</span> <span class="pre">module</span> <span class="pre">named</span> <span class="pre">'justice'</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kernel-epa141a-justice-not-visible-in-vs-code">Kernel <code class="docutils literal notranslate"><span class="pre">EPA141A</span> <span class="pre">(JUSTICE)</span></code> not visible in VS Code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#next-to-a-package-in-exercise-0"><code class="docutils literal notranslate"><span class="pre">✗</span></code> next to a package in Exercise 0</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#still-stuck">Still stuck?</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="start-here">
+<h1>🚀 Start Here<a class="headerlink" href="#start-here" title="Permalink to this heading">#</a></h1>
+<p>This page gets you from zero to running your first notebook in five steps. Follow them in order — each step takes only a few minutes.</p>
+<div class="tip admonition">
+<p class="admonition-title">One recommended path</p>
+<p>This guide uses the terminal for reliability and VS Code as your editor. If you prefer a fully graphical approach, see the <a class="reference internal" href="installation/graphical.html"><span class="doc std std-doc">Graphical Installation</span></a> guide instead.</p>
+</div>
+<hr class="docutils" />
+<section id="course-repositories">
+<h2>Course repositories<a class="headerlink" href="#course-repositories" title="Permalink to this heading">#</a></h2>
+<p>Everything you need is in two public repositories on GitHub:</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-2 sd-row-cols-lg-2 sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+📦 epa141a</div>
+<p class="sd-card-text">Assignment notebooks, lab notebooks, <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code>, configuration files.</p>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><a class="reference external" href="https://github.com/Hippo-Delft-AI-Lab/epa141a">→ github.com/Hippo-Delft-AI-Lab/epa141a</a></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://github.com/Hippo-Delft-AI-Lab/epa141a"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+🌍 JUSTICE</div>
+<p class="sd-card-text">The climate Integrated Assessment Model used in all assignments and labs.</p>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><a class="reference external" href="https://github.com/Hippo-Delft-AI-Lab/JUSTICE">→ github.com/Hippo-Delft-AI-Lab/JUSTICE</a></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://github.com/Hippo-Delft-AI-Lab/JUSTICE"></a></div>
+</div>
+</div>
+</div>
+<p>Step 2 below shows you how to download both onto your laptop.</p>
+</section>
+<hr class="docutils" />
+<section id="how-everything-fits-together">
+<h2>How everything fits together<a class="headerlink" href="#how-everything-fits-together" title="Permalink to this heading">#</a></h2>
+<p>Before installing anything, here is the big picture:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>GitHub (cloud)                  Your laptop
+──────────────                  ────────────────────────────────
+epa141a repo        clone  →    epa141a/
+JUSTICE repo        clone  →    epa141a/JUSTICE-main/
+
+                                conda creates:
+environment.yml     ──────→     epa141a environment
+                                (Python + all packages)
+
+                                VS Code opens:
+epa141a/            ──────→     .ipynb notebooks
+                                runs in epa141a environment
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="step-1-install-two-tools">
+<h2>Step 1 — Install two tools<a class="headerlink" href="#step-1-install-two-tools" title="Permalink to this heading">#</a></h2>
+<p>You need <strong>Miniconda</strong> (manages Python and packages) and <strong>VS Code</strong> (your editor).</p>
+<p><strong>Install Miniconda:</strong></p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+macOS — Apple Silicon (M1/M2/M3/M4)</label><div class="sd-tab-content docutils">
+<ol class="arabic simple">
+<li><p>Download: <a class="reference external" href="https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.pkg">Miniconda macOS Apple Silicon</a></p></li>
+<li><p>Double-click the <code class="docutils literal notranslate"><span class="pre">.pkg</span></code> file and follow the installer.</p></li>
+<li><p>Open a new terminal and verify:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>--version
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+macOS — Intel</label><div class="sd-tab-content docutils">
+<ol class="arabic simple">
+<li><p>Download: <a class="reference external" href="https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.pkg">Miniconda macOS Intel</a></p></li>
+<li><p>Double-click the <code class="docutils literal notranslate"><span class="pre">.pkg</span></code> file and follow the installer.</p></li>
+<li><p>Open a new terminal and verify:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>--version
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Windows</label><div class="sd-tab-content docutils">
+<ol class="arabic simple">
+<li><p>Download: <a class="reference external" href="https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe">Miniconda Windows 64-bit</a></p></li>
+<li><p>Run the <code class="docutils literal notranslate"><span class="pre">.exe</span></code>. Choose <strong>Just Me</strong> and keep the default install path.</p></li>
+<li><p>Open <strong>Anaconda Prompt</strong> from the Start Menu (use this instead of the regular terminal for all conda commands).</p></li>
+</ol>
+</div>
+</div>
+<p><strong>Install VS Code:</strong></p>
+<ol class="arabic simple">
+<li><p>Go to <a class="reference external" href="https://code.visualstudio.com">code.visualstudio.com</a> and download for your OS.</p></li>
+<li><p>Run the installer. On Windows, tick <strong>Add to PATH</strong> when prompted.</p></li>
+<li><p>Open VS Code, click the <strong>Extensions</strong> icon (left sidebar), and install:</p>
+<ul class="simple">
+<li><p><strong>Python</strong> (by Microsoft)</p></li>
+<li><p><strong>Jupyter</strong> (by Microsoft)</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="step-2-get-the-course-files">
+<h2>Step 2 — Get the course files<a class="headerlink" href="#step-2-get-the-course-files" title="Permalink to this heading">#</a></h2>
+<p>All course files live in two repositories on GitHub. Open a terminal (macOS/Linux) or Anaconda Prompt (Windows) and run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. Clone the course repository</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Hippo-Delft-AI-Lab/epa141a.git
+
+<span class="c1"># 2. Move into it</span>
+<span class="nb">cd</span><span class="w"> </span>epa141a
+
+<span class="c1"># 3. Clone JUSTICE inside it — the folder name must be JUSTICE-main</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Hippo-Delft-AI-Lab/JUSTICE.git<span class="w"> </span>JUSTICE-main
+</pre></div>
+</div>
+<p>After this your folder structure should look like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>epa141a/
+├── JUSTICE-main/       ← climate model
+├── assignments_ema/    ← your assignment notebooks
+├── labs/               ← lab notebooks
+└── environment.yml     ← package list
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">JUSTICE-main/</span></code> folder must have that exact name. The notebooks and install command in Step 3 both depend on it.</p>
+</div>
+</section>
+<hr class="docutils" />
+<section id="step-3-create-the-python-environment">
+<h2>Step 3 — Create the Python environment<a class="headerlink" href="#step-3-create-the-python-environment" title="Permalink to this heading">#</a></h2>
+<p>Still in the <code class="docutils literal notranslate"><span class="pre">epa141a/</span></code> folder, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>environment.yml
+</pre></div>
+</div>
+<p>This reads <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> and installs Python 3.12 plus all course packages. <strong>Allow 15–30 minutes</strong> — the packages are large.</p>
+<p>When it finishes you should see:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">done</span>
+<span class="c1"># To activate this environment, use:</span>
+<span class="c1">#     $ conda activate epa141a</span>
+</pre></div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">If the install fails with a solve error</p>
+<p>Try the faster libmamba solver:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>-n<span class="w"> </span>base<span class="w"> </span>conda-libmamba-solver
+conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>environment.yml<span class="w"> </span>--solver<span class="o">=</span>libmamba
+<span class="se">\`\`\`</span>
+</pre></div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="step-4-install-justice-and-register-the-kernel">
+<h2>Step 4 — Install JUSTICE and register the kernel<a class="headerlink" href="#step-4-install-justice-and-register-the-kernel" title="Permalink to this heading">#</a></h2>
+<p>Activate the environment, then run two commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Activate the environment</span>
+conda<span class="w"> </span>activate<span class="w"> </span>epa141a
+
+<span class="c1"># Install JUSTICE so notebooks can import it</span>
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>JUSTICE-main<span class="w"> </span>--no-deps
+
+<span class="c1"># Register the environment as a Jupyter kernel</span>
+python<span class="w"> </span>-m<span class="w"> </span>ipykernel<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>--name<span class="w"> </span>epa141a<span class="w"> </span>--display-name<span class="w"> </span><span class="s2">&quot;EPA141A (JUSTICE)&quot;</span>
+</pre></div>
+</div>
+<p>Verify JUSTICE is working:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import justice; print(&#39;JUSTICE OK&#39;)&quot;</span>
+<span class="c1"># expected output: JUSTICE OK</span>
+</pre></div>
+</div>
+<p>You only need to do Steps 3 and 4 once. From here on, you just open VS Code.</p>
+</section>
+<hr class="docutils" />
+<section id="step-5-open-your-first-notebook">
+<h2>Step 5 — Open your first notebook<a class="headerlink" href="#step-5-open-your-first-notebook" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Open VS Code.</p></li>
+<li><p>Go to <strong>File → Open Folder…</strong> and select the <code class="docutils literal notranslate"><span class="pre">epa141a/</span></code> folder.</p></li>
+<li><p>In the Explorer panel, open <code class="docutils literal notranslate"><span class="pre">assignments_ema/assignment_01_exploratory_modeling.ipynb</span></code>.</p></li>
+<li><p>In the <strong>top-right corner</strong> of the notebook, click the kernel picker and select <strong><code class="docutils literal notranslate"><span class="pre">epa141a</span></code></strong> (or <code class="docutils literal notranslate"><span class="pre">EPA141A</span> <span class="pre">(JUSTICE)</span></code>).</p></li>
+<li><p>Run the first cell (<strong>Exercise 0</strong>) by pressing <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">Enter</span></code>.</p></li>
+</ol>
+<p>You should see:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>✓  justice
+✓  numpy
+✓  pandas
+✓  matplotlib
+✓  ema_workbench
+✓  scipy
+✓  seaborn
+
+Python 3.12.x
+</pre></div>
+</div>
+<p>Every item should show <code class="docutils literal notranslate"><span class="pre">✓</span></code>. If anything shows <code class="docutils literal notranslate"><span class="pre">✗</span></code>, see the <span class="xref myst">Troubleshooting</span> section below.</p>
+</section>
+<hr class="docutils" />
+<section id="you-are-set-up-what-next">
+<h2>You are set up. What next?<a class="headerlink" href="#you-are-set-up-what-next" title="Permalink to this heading">#</a></h2>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-3 sd-row-cols-lg-3 sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+📅 Check the schedule</div>
+<p class="sd-card-text">See what’s due this week.</p>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><a class="reference internal" href="schedule.html"><span class="doc std std-doc">→ Schedule</span></a></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+🔬 Start Lab 1</div>
+<p class="sd-card-text">Warm up with the Lake Problem before Assignment 1.</p>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><a class="reference internal" href="labs/lab_01.html"><span class="doc std std-doc">→ Lab 1</span></a></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+📓 Open Assignment 1</div>
+<p class="sd-card-text">Begin the first exploratory modelling assignment.</p>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><a class="reference internal" href="assignments/assignment_01.html"><span class="doc std std-doc">→ Assignment 1</span></a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this heading">#</a></h2>
+<section id="conda-is-not-recognised">
+<h3><code class="docutils literal notranslate"><span class="pre">conda</span></code> is not recognised<a class="headerlink" href="#conda-is-not-recognised" title="Permalink to this heading">#</a></h3>
+<p>Close the terminal, open a new one, and try again. On macOS, make sure you opened a <strong>new</strong> terminal window after installing Miniconda. On Windows, use <strong>Anaconda Prompt</strong>, not the regular terminal.</p>
+</section>
+<section id="git-is-not-recognised">
+<h3><code class="docutils literal notranslate"><span class="pre">git</span></code> is not recognised<a class="headerlink" href="#git-is-not-recognised" title="Permalink to this heading">#</a></h3>
+<p>Git may not be installed. Install it from <a class="reference external" href="https://git-scm.com">git-scm.com</a> (Windows/Linux) or run <code class="docutils literal notranslate"><span class="pre">xcode-select</span> <span class="pre">--install</span></code> in a terminal (macOS).</p>
+</section>
+<section id="modulenotfounderror-no-module-named-justice">
+<h3><code class="docutils literal notranslate"><span class="pre">ModuleNotFoundError:</span> <span class="pre">No</span> <span class="pre">module</span> <span class="pre">named</span> <span class="pre">'justice'</span></code><a class="headerlink" href="#modulenotfounderror-no-module-named-justice" title="Permalink to this heading">#</a></h3>
+<p>Check that <code class="docutils literal notranslate"><span class="pre">JUSTICE-main/</span></code> exists inside <code class="docutils literal notranslate"><span class="pre">epa141a/</span></code>, then re-run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>epa141a
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>JUSTICE-main<span class="w"> </span>--no-deps
+</pre></div>
+</div>
+</section>
+<section id="kernel-epa141a-justice-not-visible-in-vs-code">
+<h3>Kernel <code class="docutils literal notranslate"><span class="pre">EPA141A</span> <span class="pre">(JUSTICE)</span></code> not visible in VS Code<a class="headerlink" href="#kernel-epa141a-justice-not-visible-in-vs-code" title="Permalink to this heading">#</a></h3>
+<p>Re-run the <code class="docutils literal notranslate"><span class="pre">ipykernel</span> <span class="pre">install</span></code> command from Step 4, then reload VS Code (<code class="docutils literal notranslate"><span class="pre">Ctrl/⌘</span> <span class="pre">Shift</span> <span class="pre">P</span></code> → <strong>Developer: Reload Window</strong>).</p>
+</section>
+<section id="next-to-a-package-in-exercise-0">
+<h3><code class="docutils literal notranslate"><span class="pre">✗</span></code> next to a package in Exercise 0<a class="headerlink" href="#next-to-a-package-in-exercise-0" title="Permalink to this heading">#</a></h3>
+<p>You are likely running the wrong kernel. Click the kernel picker in the top-right and make sure it shows <code class="docutils literal notranslate"><span class="pre">epa141a</span></code> or <code class="docutils literal notranslate"><span class="pre">EPA141A</span> <span class="pre">(JUSTICE)</span></code> — not <code class="docutils literal notranslate"><span class="pre">base</span></code> or any other environment.</p>
+</section>
+<section id="still-stuck">
+<h3>Still stuck?<a class="headerlink" href="#still-stuck" title="Permalink to this heading">#</a></h3>
+<p>Post on the <strong>Brightspace discussion board</strong> with your OS, the full error message (copy-paste), and the output of <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">list</span></code> in the <code class="docutils literal notranslate"><span class="pre">epa141a</span></code> environment.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">EPA141A — Model-Based Decision Making</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="schedule.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Schedule</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-repositories">Course repositories</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-everything-fits-together">How everything fits together</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-install-two-tools">Step 1 — Install two tools</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-get-the-course-files">Step 2 — Get the course files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-create-the-python-environment">Step 3 — Create the Python environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-install-justice-and-register-the-kernel">Step 4 — Install JUSTICE and register the kernel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-open-your-first-notebook">Step 5 — Open your first notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#you-are-set-up-what-next">You are set up. What next?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-is-not-recognised"><code class="docutils literal notranslate"><span class="pre">conda</span></code> is not recognised</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git-is-not-recognised"><code class="docutils literal notranslate"><span class="pre">git</span></code> is not recognised</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modulenotfounderror-no-module-named-justice"><code class="docutils literal notranslate"><span class="pre">ModuleNotFoundError:</span> <span class="pre">No</span> <span class="pre">module</span> <span class="pre">named</span> <span class="pre">'justice'</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kernel-epa141a-justice-not-visible-in-vs-code">Kernel <code class="docutils literal notranslate"><span class="pre">EPA141A</span> <span class="pre">(JUSTICE)</span></code> not visible in VS Code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#next-to-a-package-in-exercise-0"><code class="docutils literal notranslate"><span class="pre">✗</span></code> next to a package in Exercise 0</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#still-stuck">Still stuck?</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jazmin Zatarain Salazar · TU Delft
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

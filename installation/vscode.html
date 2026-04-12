@@ -1,0 +1,940 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>VS Code Setup &#8212; EPA141A — Model-Based Decision Making</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'installation/vscode';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="🔬 Labs" href="../labs/index.html" />
+    <link rel="prev" title="Command-Line Installation" href="cli.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">EPA141A</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../start-here.html">🚀 Start Here</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../schedule.html">Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lectures.html">Lectures</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">🐍 Software Installation</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="graphical.html">Graphical Installation (Anaconda Navigator)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html">Command-Line Installation</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">VS Code Setup</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../labs/index.html">🔬 Labs</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../labs/lab_01.html">Lab 1 — Exploratory Modelling with the Lake Problem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../labs/lab_02.html">Lab 2 — Global Sensitivity Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../labs/lab_03.html">Lab 3 — Scenario Discovery: PRIM and Dimensional Stacking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../labs/lab_04.html">Lab 4 — MOEA Setup and Optimisation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../labs/lab_05.html">Lab 5 — Pareto Analysis, Visualisation, and Convergence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../labs/lab_06.html">Lab 6 — Multi-Objective Robust Decision Making (MORDM)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../assignments/index.html">📝 Assignments</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../assignments/assignment_01.html">Assignment 1 — Exploratory Modeling with JUSTICE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../assignments/assignment_02.html">Assignment 2 — Sensitivity Analysis: Which Inputs Matter?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../assignments/assignment_03.html">Assignment 3 — Scenario Discovery: When Do Policies Fail?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../assignments/assignment_04.html">Assignment 4 — Problem Formulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../assignments/assignment_05.html">Assignment 5 — Many-Objective Optimisation (Local Run)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../assignments/assignment_06.html">Assignment 6 — MOEA Convergence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../assignments/assignment_07.html">Assignment 7 — Pareto Visualisation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../assignments/assignment_08.html">Assignment 8 — Robustness Analysis</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../debate/index.html">Debate Instructions</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../debate/stages.html">Debate Stages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../debate/actors.html">Actor Constellation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/index.html">🎓 Final Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources.html">📚 Resources</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Hippo-Delft-AI-Lab/epa141a" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Hippo-Delft-AI-Lab/epa141a/issues/new?title=Issue%20on%20page%20%2Finstallation/vscode.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/installation/vscode.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>VS Code Setup</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-install-vs-code">Step 1 — Install VS Code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-install-the-python-and-jupyter-extensions">Step 2 — Install the Python and Jupyter extensions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-open-the-course-repository">Step 3 — Open the course repository</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-select-the-conda-environment-as-your-python-interpreter">Step 4 — Select the conda environment as your Python interpreter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-open-a-notebook-and-select-the-kernel">Step 5 — Open a notebook and select the kernel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-run-the-verification-cell">Step 6 — Run the verification cell</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-daily-workflow">Your daily workflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-jupyter-notebooks">Working with Jupyter notebooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-updates-from-the-course-repository">Getting updates from the course repository</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#long-running-cells">Long-running cells</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-vs-code-shortcuts-for-notebooks">Useful VS Code shortcuts for notebooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#epa141a-environment-not-listed-in-the-interpreter-picker"><code class="docutils literal notranslate"><span class="pre">epa141a</span></code> environment not listed in the interpreter picker</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kernel-picker-shows-no-conda-environments">Kernel picker shows no conda environments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modulenotfounderror-no-module-named-justice"><code class="docutils literal notranslate"><span class="pre">ModuleNotFoundError:</span> <span class="pre">No</span> <span class="pre">module</span> <span class="pre">named</span> <span class="pre">'justice'</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filenotfounderror-for-justice-data-files"><code class="docutils literal notranslate"><span class="pre">FileNotFoundError</span></code> for JUSTICE data files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#still-stuck">Still stuck?</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="vs-code-setup">
+<h1>VS Code Setup<a class="headerlink" href="#vs-code-setup" title="Permalink to this heading">#</a></h1>
+<p>This guide sets up <strong>Visual Studio Code</strong> as your editor for the course. VS Code supports Jupyter notebooks natively and integrates well with conda environments — no browser required.</p>
+<div class="tip admonition">
+<p class="admonition-title">Already installed conda?</p>
+<p>This guide assumes you have already created the <code class="docutils literal notranslate"><span class="pre">epa141a</span></code> conda environment. If not, complete the <a class="reference internal" href="graphical.html"><span class="doc std std-doc">Graphical</span></a> or <a class="reference internal" href="cli.html"><span class="doc std std-doc">Command-Line</span></a> installation first, then return here.</p>
+</div>
+<hr class="docutils" />
+<section id="step-1-install-vs-code">
+<h2>Step 1 — Install VS Code<a class="headerlink" href="#step-1-install-vs-code" title="Permalink to this heading">#</a></h2>
+<p>Go to <a class="reference external" href="https://code.visualstudio.com">code.visualstudio.com</a> and download the installer for your operating system.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+macOS</label><div class="sd-tab-content docutils">
+<ol class="arabic simple">
+<li><p>Download the <code class="docutils literal notranslate"><span class="pre">.zip</span></code> file and extract it.</p></li>
+<li><p>Drag <strong>Visual Studio Code.app</strong> to your <strong>Applications</strong> folder.</p></li>
+<li><p>Open VS Code from Launchpad or Spotlight (<code class="docutils literal notranslate"><span class="pre">⌘</span> <span class="pre">Space</span></code> → type <code class="docutils literal notranslate"><span class="pre">code</span></code>).</p></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To open VS Code from the terminal, open the Command Palette (<code class="docutils literal notranslate"><span class="pre">⌘</span> <span class="pre">Shift</span> <span class="pre">P</span></code>) → type <code class="docutils literal notranslate"><span class="pre">Shell</span> <span class="pre">Command:</span> <span class="pre">Install</span> <span class="pre">'code'</span> <span class="pre">command</span> <span class="pre">in</span> <span class="pre">PATH</span></code> → press Enter. You can then type <code class="docutils literal notranslate"><span class="pre">code</span> <span class="pre">.</span></code> in any folder to open it in VS Code.</p>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Windows</label><div class="sd-tab-content docutils">
+<ol class="arabic simple">
+<li><p>Run the downloaded <code class="docutils literal notranslate"><span class="pre">.exe</span></code> installer.</p></li>
+<li><p>On the <strong>Select Additional Tasks</strong> screen, tick:</p>
+<ul class="simple">
+<li><p><strong>Add “Open with Code” action to Windows Explorer file context menu</strong></p></li>
+<li><p><strong>Add to PATH</strong></p></li>
+</ul>
+</li>
+<li><p>Finish the installation and launch VS Code from the Start Menu.</p></li>
+</ol>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Linux</label><div class="sd-tab-content docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Debian / Ubuntu</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>./&lt;downloaded-file&gt;.deb
+
+<span class="c1"># Or via snap</span>
+sudo<span class="w"> </span>snap<span class="w"> </span>install<span class="w"> </span>--classic<span class="w"> </span>code
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="step-2-install-the-python-and-jupyter-extensions">
+<h2>Step 2 — Install the Python and Jupyter extensions<a class="headerlink" href="#step-2-install-the-python-and-jupyter-extensions" title="Permalink to this heading">#</a></h2>
+<p>VS Code needs two extensions to work with conda environments and Jupyter notebooks.</p>
+<ol class="arabic simple">
+<li><p>Click the <strong>Extensions</strong> icon in the left sidebar (or press <code class="docutils literal notranslate"><span class="pre">Ctrl/⌘</span> <span class="pre">Shift</span> <span class="pre">X</span></code>).</p></li>
+<li><p>Search for and install each of the following:</p></li>
+</ol>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Extension</p></th>
+<th class="head"><p>Publisher</p></th>
+<th class="head"><p>What it does</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Python</strong></p></td>
+<td><p>Microsoft</p></td>
+<td><p>Conda/virtual environment support, linting, IntelliSense</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Jupyter</strong></p></td>
+<td><p>Microsoft</p></td>
+<td><p>Run <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> notebooks natively in VS Code</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Installing the <strong>Jupyter</strong> extension also installs <strong>Jupyter Keymap</strong> and <strong>Jupyter Notebook Renderers</strong> automatically.</p>
+</div>
+</section>
+<hr class="docutils" />
+<section id="step-3-open-the-course-repository">
+<h2>Step 3 — Open the course repository<a class="headerlink" href="#step-3-open-the-course-repository" title="Permalink to this heading">#</a></h2>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+From the terminal</label><div class="sd-tab-content docutils">
+<p>Navigate to the <code class="docutils literal notranslate"><span class="pre">epa141a/</span></code> folder and open VS Code:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>path/to/epa141a
+code<span class="w"> </span>.
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
+From VS Code</label><div class="sd-tab-content docutils">
+<ol class="arabic simple">
+<li><p>Go to <strong>File → Open Folder…</strong></p></li>
+<li><p>Navigate to and select the <code class="docutils literal notranslate"><span class="pre">epa141a/</span></code> folder (the one containing <code class="docutils literal notranslate"><span class="pre">assignments_ema/</span></code> and <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code>).</p></li>
+<li><p>Click <strong>Open</strong>.</p></li>
+</ol>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Always open the <strong><code class="docutils literal notranslate"><span class="pre">epa141a/</span></code> root folder</strong>, not a subfolder. Relative paths to <code class="docutils literal notranslate"><span class="pre">JUSTICE-main/</span></code> in the notebooks will break if VS Code is opened from the wrong directory.</p>
+</div>
+</section>
+<hr class="docutils" />
+<section id="step-4-select-the-conda-environment-as-your-python-interpreter">
+<h2>Step 4 — Select the conda environment as your Python interpreter<a class="headerlink" href="#step-4-select-the-conda-environment-as-your-python-interpreter" title="Permalink to this heading">#</a></h2>
+<p>Tell VS Code to use the <code class="docutils literal notranslate"><span class="pre">epa141a</span></code> conda environment:</p>
+<ol class="arabic simple">
+<li><p>Open the Command Palette (<code class="docutils literal notranslate"><span class="pre">Ctrl/⌘</span> <span class="pre">Shift</span> <span class="pre">P</span></code>).</p></li>
+<li><p>Type <strong>Python: Select Interpreter</strong> and press Enter.</p></li>
+<li><p>From the list, select the entry that shows <strong><code class="docutils literal notranslate"><span class="pre">epa141a</span></code></strong> — it will look like:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Python</span> <span class="mf">3.12</span><span class="o">.</span><span class="n">x</span> <span class="p">(</span><span class="s1">&#39;epa141a&#39;</span><span class="p">:</span> <span class="n">conda</span><span class="p">)</span>
+<span class="o">~/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">epa141a</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">python</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">epa141a</span></code> does not appear in the list, click <strong>Enter interpreter path…</strong> and paste the full path:</p>
+<ul class="simple">
+<li><p><strong>macOS/Linux</strong>: <code class="docutils literal notranslate"><span class="pre">~/miniconda3/envs/epa141a/bin/python</span></code></p></li>
+<li><p><strong>Windows</strong>: <code class="docutils literal notranslate"><span class="pre">C:\Users\&lt;you&gt;\miniconda3\envs\epa141a\python.exe</span></code></p></li>
+</ul>
+</div>
+</section>
+<hr class="docutils" />
+<section id="step-5-open-a-notebook-and-select-the-kernel">
+<h2>Step 5 — Open a notebook and select the kernel<a class="headerlink" href="#step-5-open-a-notebook-and-select-the-kernel" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>In the <strong>Explorer</strong> panel (left sidebar), navigate to <code class="docutils literal notranslate"><span class="pre">assignments_ema/</span></code> and open <code class="docutils literal notranslate"><span class="pre">assignment_01_exploratory_modeling.ipynb</span></code>.</p></li>
+<li><p>VS Code will open the notebook in its built-in editor.</p></li>
+<li><p>In the <strong>top-right corner</strong>, click the kernel picker (it may show <strong>Select Kernel</strong> or a Python version).</p></li>
+<li><p>Choose <strong>Python Environments…</strong> → select <strong><code class="docutils literal notranslate"><span class="pre">epa141a</span></code></strong>.</p></li>
+</ol>
+<p>The kernel picker should now show <strong><code class="docutils literal notranslate"><span class="pre">EPA141A</span> <span class="pre">(JUSTICE)</span></code></strong> or <strong><code class="docutils literal notranslate"><span class="pre">epa141a</span> <span class="pre">(Python</span> <span class="pre">3.12.x)</span></code></strong>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Always confirm the kernel in the top-right before running any cells. Running with the wrong kernel (e.g. base Python) will cause <code class="docutils literal notranslate"><span class="pre">ModuleNotFoundError</span></code> for <code class="docutils literal notranslate"><span class="pre">justice</span></code>, <code class="docutils literal notranslate"><span class="pre">ema_workbench</span></code>, and other course packages.</p>
+</div>
+</section>
+<hr class="docutils" />
+<section id="step-6-run-the-verification-cell">
+<h2>Step 6 — Run the verification cell<a class="headerlink" href="#step-6-run-the-verification-cell" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">assignments_ema/assignment_01_exploratory_modeling.ipynb</span></code>.</p></li>
+<li><p>Run <strong>Exercise 0</strong> (the first code cell) by clicking <strong>▶</strong> or pressing <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">Enter</span></code>.</p></li>
+<li><p>You should see:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>✓  justice
+✓  numpy
+✓  pandas
+✓  matplotlib
+✓  ema_workbench
+✓  scipy
+✓  seaborn
+
+Python 3.12.x
+</pre></div>
+</div>
+<p>All packages should show <code class="docutils literal notranslate"><span class="pre">✓</span></code>. A <code class="docutils literal notranslate"><span class="pre">RuntimeWarning:</span> <span class="pre">invalid</span> <span class="pre">value</span> <span class="pre">encountered</span> <span class="pre">in</span> <span class="pre">log</span></code> from FaIR is harmless.</p>
+</section>
+<hr class="docutils" />
+<section id="your-daily-workflow">
+<h2>Your daily workflow<a class="headerlink" href="#your-daily-workflow" title="Permalink to this heading">#</a></h2>
+<p>Once the environment is installed, this is what you do every time you sit down to work:</p>
+<ol class="arabic simple">
+<li><p><strong>Open VS Code</strong> and open the <code class="docutils literal notranslate"><span class="pre">epa141a/</span></code> folder (<strong>File → Open Folder…</strong>).</p></li>
+<li><p><strong>Navigate</strong> to <code class="docutils literal notranslate"><span class="pre">assignments_ema/</span></code> or <code class="docutils literal notranslate"><span class="pre">labs/</span></code> in the Explorer panel and open a notebook.</p></li>
+<li><p><strong>Confirm the kernel</strong> in the top-right corner shows <code class="docutils literal notranslate"><span class="pre">epa141a</span></code> — change it if not.</p></li>
+<li><p><strong>Run the setup cell first</strong> — every notebook starts with a setup cell that sets the working directory and imports packages. Always run it before any other cell.</p></li>
+<li><p><strong>Run cells in order</strong>, top to bottom. Skipping cells or running them out of order is the most common source of errors.</p></li>
+<li><p><strong>Save regularly</strong> (<code class="docutils literal notranslate"><span class="pre">Ctrl/⌘</span> <span class="pre">S</span></code>). VS Code auto-saves, but saving also checkpoints your notebook output.</p></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you close and reopen a notebook, the kernel loses all its state — variables, imports, and results are gone. Always re-run from the top (or use <strong>Run All</strong>) before continuing.</p>
+</div>
+</section>
+<hr class="docutils" />
+<section id="working-with-jupyter-notebooks">
+<h2>Working with Jupyter notebooks<a class="headerlink" href="#working-with-jupyter-notebooks" title="Permalink to this heading">#</a></h2>
+<p>A Jupyter notebook (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) is made of <strong>cells</strong>. There are two types:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Cell type</p></th>
+<th class="head"><p>What it contains</p></th>
+<th class="head"><p>How to run</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Code</strong></p></td>
+<td><p>Python code</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">Enter</span></code> or click ▶</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Markdown</strong></p></td>
+<td><p>Explanatory text, instructions</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">Enter</span></code> to render</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Understanding the cell status indicator:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code> — not yet run</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[*]</span></code> — currently running (be patient)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[4]</span></code> — ran successfully (number = order it was run)</p></li>
+<li><p>Red border or traceback below — an error occurred</p></li>
+</ul>
+<p><strong>The kernel</strong> is the Python engine running behind your notebook. Think of it as the “brain” that remembers everything you have run so far. If the kernel crashes or you restart it, all variables are cleared.</p>
+<p><strong>When to restart the kernel:</strong></p>
+<ul class="simple">
+<li><p>A cell is stuck on <code class="docutils literal notranslate"><span class="pre">[*]</span></code> for much longer than expected and does not respond to interruption</p></li>
+<li><p>You are getting unexpected errors and want a clean slate</p></li>
+<li><p>You want to verify your notebook runs correctly from top to bottom</p></li>
+</ul>
+<p>To restart: click the <strong>⟳ Restart</strong> button in the notebook toolbar, or press <code class="docutils literal notranslate"><span class="pre">Ctrl/⌘</span> <span class="pre">Shift</span> <span class="pre">P</span></code> → <strong>Notebook: Restart Kernel</strong>. Then re-run all cells from the top.</p>
+</section>
+<hr class="docutils" />
+<section id="getting-updates-from-the-course-repository">
+<h2>Getting updates from the course repository<a class="headerlink" href="#getting-updates-from-the-course-repository" title="Permalink to this heading">#</a></h2>
+<p>If the course team pushes corrections or new files to the repository after you have cloned it, you can pull the updates without re-downloading everything.</p>
+<p>Open a terminal in the <code class="docutils literal notranslate"><span class="pre">epa141a/</span></code> root folder (<code class="docutils literal notranslate"><span class="pre">Ctrl/⌘</span> <span class="pre">`</span></code> in VS Code) and run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>pull
+</pre></div>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">If you downloaded a ZIP instead of cloning</p>
+<p>ZIP downloads do not track the remote repository — you cannot <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>. You will need to download a new ZIP and manually copy any changed files. We recommend cloning with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code> to avoid this.</p>
+</div>
+<p>If <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> reports a conflict (you edited a file that was also updated on the server), post on the Brightspace discussion board before doing anything — do not force-overwrite your work.</p>
+</section>
+<hr class="docutils" />
+<section id="long-running-cells">
+<h2>Long-running cells<a class="headerlink" href="#long-running-cells" title="Permalink to this heading">#</a></h2>
+<p>Some assignments involve computationally intensive simulations. Knowing what to expect will save you a lot of anxiety.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Assignment</p></th>
+<th class="head"><p>What runs</p></th>
+<th class="head"><p>Typical duration</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>A1 – A3</p></td>
+<td><p>Sampling, sensitivity analysis</p></td>
+<td><p>seconds to a few minutes</p></td>
+</tr>
+<tr class="row-odd"><td><p>A4</p></td>
+<td><p>Problem formulation only</p></td>
+<td><p>seconds</p></td>
+</tr>
+<tr class="row-even"><td><p>A5</p></td>
+<td><p>MOEA optimisation (local, 5 000 NFE)</p></td>
+<td><p>5–15 minutes</p></td>
+</tr>
+<tr class="row-odd"><td><p>A5</p></td>
+<td><p>MOEA optimisation (local, 100 000 NFE)</p></td>
+<td><p>30–60 minutes</p></td>
+</tr>
+<tr class="row-even"><td><p>A6</p></td>
+<td><p>Multi-seed MOEA convergence</p></td>
+<td><p>20–40 minutes per seed</p></td>
+</tr>
+<tr class="row-odd"><td><p>A7</p></td>
+<td><p>Pareto visualisation</p></td>
+<td><p>seconds to minutes</p></td>
+</tr>
+<tr class="row-even"><td><p>A8</p></td>
+<td><p>Re-evaluation across 50 scenarios</p></td>
+<td><p>20–40 minutes (runs once, then cached)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>What to do while a cell is running:</strong></p>
+<ul class="simple">
+<li><p>Leave <code class="docutils literal notranslate"><span class="pre">[*]</span></code> alone — it is working.</p></li>
+<li><p>Do not close VS Code or put your laptop to sleep.</p></li>
+<li><p>You can read, work on markdown cells, or review earlier results — just do not run other code cells in the same notebook.</p></li>
+</ul>
+<p><strong>How to safely interrupt a long-running cell:</strong></p>
+<p>Click the <strong>⬛ Stop</strong> button in the notebook toolbar, or press <code class="docutils literal notranslate"><span class="pre">I</span></code> twice in command mode. The cell will stop and show an error — this is expected. You can then restart and re-run from that point.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The most computationally expensive runs (A5 100k NFE, A6 multi-seed) are designed to be started and left running. Plan to run them when you do not need your computer for an hour.</p>
+</div>
+</section>
+<hr class="docutils" />
+<section id="useful-vs-code-shortcuts-for-notebooks">
+<h2>Useful VS Code shortcuts for notebooks<a class="headerlink" href="#useful-vs-code-shortcuts-for-notebooks" title="Permalink to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Shortcut</p></th>
+<th class="head"><p>Action</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">Enter</span></code></p></td>
+<td><p>Run current cell and move to next</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Ctrl/⌘</span> <span class="pre">Enter</span></code></p></td>
+<td><p>Run current cell and stay</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">A</span></code></p></td>
+<td><p>Insert cell above (in command mode)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">B</span></code></p></td>
+<td><p>Insert cell below (in command mode)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">DD</span></code></p></td>
+<td><p>Delete current cell (in command mode)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Esc</span></code></p></td>
+<td><p>Enter command mode</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Enter</span></code></p></td>
+<td><p>Enter edit mode</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Ctrl/⌘</span> <span class="pre">Shift</span> <span class="pre">P</span></code></p></td>
+<td><p>Open Command Palette</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Press <code class="docutils literal notranslate"><span class="pre">Esc</span></code> to enter <strong>command mode</strong> (blue cell border) before using single-key shortcuts like <code class="docutils literal notranslate"><span class="pre">A</span></code>, <code class="docutils literal notranslate"><span class="pre">B</span></code>, or <code class="docutils literal notranslate"><span class="pre">DD</span></code>.</p>
+</div>
+</section>
+<hr class="docutils" />
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this heading">#</a></h2>
+<section id="epa141a-environment-not-listed-in-the-interpreter-picker">
+<h3><code class="docutils literal notranslate"><span class="pre">epa141a</span></code> environment not listed in the interpreter picker<a class="headerlink" href="#epa141a-environment-not-listed-in-the-interpreter-picker" title="Permalink to this heading">#</a></h3>
+<p>Make sure the conda environment was created successfully:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>env<span class="w"> </span>list
+</pre></div>
+</div>
+<p>You should see <code class="docutils literal notranslate"><span class="pre">epa141a</span></code> in the list. If not, re-run the <a class="reference internal" href="graphical.html"><span class="doc std std-doc">Graphical</span></a> or <a class="reference internal" href="cli.html"><span class="doc std std-doc">CLI</span></a> installation guide.</p>
+</section>
+<section id="kernel-picker-shows-no-conda-environments">
+<h3>Kernel picker shows no conda environments<a class="headerlink" href="#kernel-picker-shows-no-conda-environments" title="Permalink to this heading">#</a></h3>
+<p>Reload VS Code (<code class="docutils literal notranslate"><span class="pre">Ctrl/⌘</span> <span class="pre">Shift</span> <span class="pre">P</span></code> → <strong>Developer: Reload Window</strong>). VS Code sometimes needs a restart after a new conda environment is created.</p>
+</section>
+<section id="modulenotfounderror-no-module-named-justice">
+<h3><code class="docutils literal notranslate"><span class="pre">ModuleNotFoundError:</span> <span class="pre">No</span> <span class="pre">module</span> <span class="pre">named</span> <span class="pre">'justice'</span></code><a class="headerlink" href="#modulenotfounderror-no-module-named-justice" title="Permalink to this heading">#</a></h3>
+<p>Check that <code class="docutils literal notranslate"><span class="pre">JUSTICE-main/</span></code> exists inside the <code class="docutils literal notranslate"><span class="pre">epa141a/</span></code> folder, then re-run the editable install step from the terminal inside VS Code (<code class="docutils literal notranslate"><span class="pre">Ctrl/⌘</span> <span class="pre">\</span></code>`):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>epa141a
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>JUSTICE-main<span class="w"> </span>--no-deps
+</pre></div>
+</div>
+</section>
+<section id="filenotfounderror-for-justice-data-files">
+<h3><code class="docutils literal notranslate"><span class="pre">FileNotFoundError</span></code> for JUSTICE data files<a class="headerlink" href="#filenotfounderror-for-justice-data-files" title="Permalink to this heading">#</a></h3>
+<p>Always run the <strong>setup cell</strong> (first cell of every notebook) before any other cell. It calls <code class="docutils literal notranslate"><span class="pre">os.chdir()</span></code> to set the working directory to <code class="docutils literal notranslate"><span class="pre">JUSTICE-main/</span></code>.</p>
+</section>
+<section id="still-stuck">
+<h3>Still stuck?<a class="headerlink" href="#still-stuck" title="Permalink to this heading">#</a></h3>
+<p>Post on the <strong>Brightspace discussion board</strong> with:</p>
+<ol class="arabic simple">
+<li><p>Your OS and version.</p></li>
+<li><p>Full error message (copy-paste, not a screenshot).</p></li>
+<li><p>Output of <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">list</span></code> in the <code class="docutils literal notranslate"><span class="pre">epa141a</span></code> environment.</p></li>
+</ol>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./installation"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="cli.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Command-Line Installation</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../labs/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">🔬 Labs</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-install-vs-code">Step 1 — Install VS Code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-install-the-python-and-jupyter-extensions">Step 2 — Install the Python and Jupyter extensions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-open-the-course-repository">Step 3 — Open the course repository</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-select-the-conda-environment-as-your-python-interpreter">Step 4 — Select the conda environment as your Python interpreter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-open-a-notebook-and-select-the-kernel">Step 5 — Open a notebook and select the kernel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-run-the-verification-cell">Step 6 — Run the verification cell</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-daily-workflow">Your daily workflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-jupyter-notebooks">Working with Jupyter notebooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-updates-from-the-course-repository">Getting updates from the course repository</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#long-running-cells">Long-running cells</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-vs-code-shortcuts-for-notebooks">Useful VS Code shortcuts for notebooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#epa141a-environment-not-listed-in-the-interpreter-picker"><code class="docutils literal notranslate"><span class="pre">epa141a</span></code> environment not listed in the interpreter picker</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kernel-picker-shows-no-conda-environments">Kernel picker shows no conda environments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modulenotfounderror-no-module-named-justice"><code class="docutils literal notranslate"><span class="pre">ModuleNotFoundError:</span> <span class="pre">No</span> <span class="pre">module</span> <span class="pre">named</span> <span class="pre">'justice'</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filenotfounderror-for-justice-data-files"><code class="docutils literal notranslate"><span class="pre">FileNotFoundError</span></code> for JUSTICE data files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#still-stuck">Still stuck?</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jazmin Zatarain Salazar · TU Delft
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

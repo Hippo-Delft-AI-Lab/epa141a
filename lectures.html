@@ -1,0 +1,801 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Lectures &#8212; EPA141A — Model-Based Decision Making</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lectures';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="🐍 Software Installation" href="installation/index.html" />
+    <link rel="prev" title="Schedule" href="schedule.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">EPA141A</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="start-here.html">🚀 Start Here</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schedule.html">Schedule</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lectures</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="installation/index.html">🐍 Software Installation</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation/graphical.html">Graphical Installation (Anaconda Navigator)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation/cli.html">Command-Line Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation/vscode.html">VS Code Setup</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="labs/index.html">🔬 Labs</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="labs/lab_01.html">Lab 1 — Exploratory Modelling with the Lake Problem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs/lab_02.html">Lab 2 — Global Sensitivity Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs/lab_03.html">Lab 3 — Scenario Discovery: PRIM and Dimensional Stacking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs/lab_04.html">Lab 4 — MOEA Setup and Optimisation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs/lab_05.html">Lab 5 — Pareto Analysis, Visualisation, and Convergence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs/lab_06.html">Lab 6 — Multi-Objective Robust Decision Making (MORDM)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="assignments/index.html">📝 Assignments</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="assignments/assignment_01.html">Assignment 1 — Exploratory Modeling with JUSTICE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="assignments/assignment_02.html">Assignment 2 — Sensitivity Analysis: Which Inputs Matter?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="assignments/assignment_03.html">Assignment 3 — Scenario Discovery: When Do Policies Fail?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="assignments/assignment_04.html">Assignment 4 — Problem Formulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="assignments/assignment_05.html">Assignment 5 — Many-Objective Optimisation (Local Run)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="assignments/assignment_06.html">Assignment 6 — MOEA Convergence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="assignments/assignment_07.html">Assignment 7 — Pareto Visualisation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="assignments/assignment_08.html">Assignment 8 — Robustness Analysis</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="debate/index.html">Debate Instructions</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="debate/stages.html">Debate Stages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debate/actors.html">Actor Constellation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="project/index.html">🎓 Final Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">📚 Resources</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Hippo-Delft-AI-Lab/epa141a" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Hippo-Delft-AI-Lab/epa141a/issues/new?title=Issue%20on%20page%20%2Flectures.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/lectures.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lectures</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lectures">
+<h1>Lectures<a class="headerlink" href="#lectures" title="Permalink to this heading">#</a></h1>
+<p>EPA141A has <strong>13 lectures</strong> across 8 weeks. Lectures run Monday &amp; Wednesday <strong>13:15–15:00</strong>, followed by lab sessions <strong>15:00–17:00</strong>.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Week 1</label><div class="sd-tab-content docutils">
+<p><strong>20 &amp; 22 April 2026</strong></p>
+<hr class="docutils" />
+<p class="rubric">Lecture 1 — Introduction</p>
+<p><em>Mon 20 Apr · Jazmin</em></p>
+<p>After a short introduction to the overall course, we discuss the role of science-based models and knowledge in real-world decision-making. We discuss how assumptions behind models and the policy-relevant information gained with them may be ignored or questioned — and why a good report doesn’t necessarily have any impact on decision-making. Decisions are made in a complex policy battle wherein some actors participate and others do not, wherein some win and others lose. Actors have incentives to behave strategically and use any power source when felt applicable, in which science-based models may be nothing more than a resource.</p>
+<p>This lecture also gives an overview of the assignments, final project, and debate exercise.</p>
+<p><strong>Required reading</strong></p>
+<ul class="simple">
+<li><p>Sarewitz, D. (2004). How science makes environmental controversies worse. <em>Environmental Science &amp; Policy</em>, 7, 385–403. <a class="reference external" href="https://doi.org/10.1016/j.envsci.2004.06.001">→</a></p></li>
+<li><p>Stirling, A. (2010). Keep it complex. <em>Nature</em>, 468, 1029–1031. <a class="reference external" href="https://doi.org/10.1038/4681029a">→</a></p></li>
+<li><p>Turner, S. (2005). Expertise and political responsibility: The Columbia Shuttle catastrophe. In Maasen &amp; Weingart (Eds.), <em>Democratization of Expertise?</em> Springer. <a class="reference external" href="https://doi.org/10.1007/1-4020-3754-6_6">→</a></p></li>
+<li><p>Van Enst, W., Driessen, P., &amp; Runhaar, H. (2014). Towards Productive Science-Policy Interfaces. <em>Journal of Environmental Assessment Policy and Management</em>, 16(1). <a class="reference external" href="https://doi.org/10.1142/s1464333214500070">→</a></p></li>
+</ul>
+<p><strong>Further reading</strong></p>
+<ul class="simple">
+<li><p>Tversky, A. &amp; Kahneman, D. (1985). The framing of decisions and the psychology of choice. <a class="reference external" href="https://doi.org/10.1007/978-1-4613-2391-4_2">→</a></p></li>
+<li><p>Rittel, H. W. J., &amp; Webber, M. W. (1973). Dilemmas in a General Theory of Planning. <em>Policy Sciences</em>, 4(2), 155–169. <a class="reference external" href="https://doi.org/10.1007/bf01405730">→</a></p></li>
+<li><p>Ackoff, R. A. (1979). The Future of Operational Research is Past. <em>Journal of the Operational Research Society</em>, 30(2), 93–104. <a class="reference external" href="https://doi.org/10.1057/jors.1979.22">→</a></p></li>
+<li><p>Rayner, S. &amp; Sarewitz, D. (2021). Policy making in the post-truth world. <em>Breakthrough Journal</em>, 13. <a class="reference external" href="https://thebreakthrough.org/journal/no-13-winter-2021/policy-making-in-the-post-truth-world">→</a></p></li>
+</ul>
+<hr class="docutils" />
+<p class="rubric">Lecture 2 — Supporting decision-making under deep uncertainty</p>
+<p><em>Wed 22 Apr · Jan</em></p>
+<p>This lecture introduces exploratory modelling and its use for supporting decision-making under deep uncertainty (Robust Decision Making). A general taxonomy is presented, and we discuss how this taxonomy maps to the EMA Workbench.</p>
+<p><strong>Required reading</strong></p>
+<ul class="simple">
+<li><p>Walker, W.E., Marchau, V.A.W.J., Kwakkel, J.H. (2013). Uncertainty in the framework of Policy Analysis. In Thissen &amp; Walker (Eds.), <em>Public Policy Analysis: New Developments</em>. Springer. <a class="reference external" href="https://doi.org/10.1007/978-1-4614-4602-6_9">→</a></p></li>
+<li><p>Kwakkel, J.H. &amp; Haasnoot, M. (2019). Supporting decision making under deep uncertainty: a synthesis of approaches and techniques. In <em>Decision Making Under Deep Uncertainty</em>. Springer. <a class="reference external" href="https://doi.org/10.1007/978-3-030-05252-2_15">→</a></p></li>
+<li><p>Bankes, S. C. (1993). Exploratory Modeling for Policy Analysis. <em>Operations Research</em>, 41(3), 435–449. <a class="reference external" href="https://doi.org/10.1287/opre.41.3.435">→</a></p></li>
+<li><p>Moallemi, E., Kwakkel, J.H., de Haan, F. &amp; Bryan, B.A. (2020). Exploratory modeling for analyzing coupled human-natural systems under uncertainty. <em>Global Environmental Change</em>, 65. <a class="reference external" href="https://doi.org/10.1016/j.gloenvcha.2020.102186">→</a></p></li>
+</ul>
+<p><strong>Further reading</strong></p>
+<ul class="simple">
+<li><p>Bankes, S. C. (2002). Tools and Techniques for Developing Policies for Complex and Uncertain Systems. <em>PNAS</em>, 99(3), 7263–7266. <a class="reference external" href="https://doi.org/10.1073/pnas.092081399">→</a></p></li>
+<li><p>Lempert, R. J. (2002). A New Decision Sciences for Complex Systems. <em>PNAS</em>, 99(3), 7309–7313. <a class="reference external" href="https://doi.org/10.1073/pnas.082081699">→</a></p></li>
+<li><p>Maier, H. R. et al. (2016). An uncertain future, deep uncertainty, scenarios, robustness and adaptation. <em>Environmental Modelling &amp; Software</em>, 81, 154–164. <a class="reference external" href="https://doi.org/10.1016/j.envsoft.2016.03.014">→</a></p></li>
+</ul>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Week 2</label><div class="sd-tab-content docutils">
+<p><strong>29 April 2026</strong></p>
+<hr class="docutils" />
+<p class="rubric">Lecture 3 — Open exploration: global sensitivity analysis</p>
+<p><em>Wed 29 Apr · Jan</em></p>
+<p>A key phase in robust decision making is understanding when and how various sources of uncertainty negatively affect the performance of a candidate strategy. There are two broad families of techniques for this so-called vulnerability analysis. This lecture focuses on <strong>global sensitivity analysis</strong>.</p>
+<p><strong>Required reading</strong></p>
+<ul class="simple">
+<li><p>Razavi, S. et al. (2021). The future of sensitivity analysis: An essential discipline for systems modeling and policy support. <em>Environmental Modelling &amp; Software</em>, 137, 104954. <a class="reference external" href="https://doi.org/10.1016/j.envsoft.2020.104954">→</a></p></li>
+<li><p>Saltelli, A. et al. (2019). Why so many published sensitivity analyses are false: A systematic review. <em>Environmental Modelling &amp; Software</em>, 114, 29–39. <a class="reference external" href="https://doi.org/10.1016/j.envsoft.2019.01.012">→</a></p></li>
+<li><p>Jaxa-Rozen, M., &amp; Kwakkel, J. H. (2018). Tree-based ensemble methods for sensitivity analysis of environmental models. <em>Environmental Modelling &amp; Software</em>, 107, 245–266. <a class="reference external" href="https://doi.org/10.1016/j.envsoft.2018.06.011">→</a></p></li>
+</ul>
+<p><strong>Further reading</strong></p>
+<ul class="simple">
+<li><p>Cariboni, J. et al. (2007). The role of sensitivity analysis in ecological modelling. <em>Ecological Modeling</em>, 203, 167–182. <a class="reference external" href="https://doi.org/10.1016/j.ecolmodel.2005.10.045">→</a></p></li>
+<li><p>Saltelli, A., &amp; Annoni, P. (2010). How to avoid a perfunctory sensitivity analysis. <em>Environmental Modelling &amp; Software</em>, 1508–1517. <a class="reference external" href="https://doi.org/10.1016/j.envsoft.2010.04.012">→</a></p></li>
+<li><p>Pianosi, F. et al. (2016). Sensitivity analysis of environmental models: A systematic review. <em>Environmental Modelling &amp; Software</em>, 79, 214–232. <a class="reference external" href="https://doi.org/10.1016/j.envsoft.2016.02.008">→</a></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Deadline: Assignments 1–3 due Friday 4 May, 17:00</strong></p>
+</div>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Week 3</label><div class="sd-tab-content docutils">
+<p><strong>4 &amp; 6 May 2026</strong></p>
+<hr class="docutils" />
+<p class="rubric">Lecture 4 — Open exploration: scenario discovery</p>
+<p><em>Mon 4 May · Patrick</em></p>
+<p>A key process in model-based decision support: understanding the conditions under which a model will generate a certain type of outcome — variously referred to as “subspace partitioning”, “rule induction”, or “scenario discovery”. The goal is to identify regions of the model’s input parameter space which generate a certain class of model outputs.</p>
+<p><strong>Required reading</strong></p>
+<ul class="simple">
+<li><p>Bryant, B. P., &amp; Lempert, R. J. (2010). Thinking Inside the Box: a participatory computer-assisted approach to scenario discovery. <em>Technological Forecasting and Social Change</em>, 77(1), 34–49. <a class="reference external" href="https://doi.org/10.1016/j.techfore.2009.08.002">→</a></p></li>
+<li><p>Bonham, N., Kasprzyk, J., &amp; Zagona, E. (2025). Taxonomy of purposes, methods, and recommendations for vulnerability analysis. <em>Environmental Modelling &amp; Software</em>, 183, 106269. <a class="reference external" href="https://doi.org/10.1016/j.envsoft.2024.106269">→</a></p></li>
+</ul>
+<p><strong>Further reading</strong></p>
+<ul class="simple">
+<li><p>Lempert, R.J. et al. (2006). A General, Analytic Method for Generating Robust Strategies and Narrative Scenarios. <em>Management Science</em>, 52, 514–528. <a class="reference external" href="https://doi.org/10.1287/mnsc.1050.0472">→</a></p></li>
+<li><p>Steinmann, P., Auping, W. L., &amp; Kwakkel, J. H. (2020). Behavior-based scenario discovery using time series clustering. <em>Technological Forecasting and Social Change</em>, 156, 120052. <a class="reference external" href="https://doi.org/10.1016/j.techfore.2020.120052">→</a></p></li>
+<li><p>Jafino, B. A., &amp; Kwakkel, J. H. (2021). A novel concurrent approach for multiclass scenario discovery. <em>Environmental Modelling &amp; Software</em>, 145, 105177. <a class="reference external" href="https://doi.org/10.1016/j.envsoft.2021.105177">→</a></p></li>
+</ul>
+<hr class="docutils" />
+<p class="rubric">Lecture 5 — Role of science and knowledge in decision making</p>
+<p><em>Wed 6 May · Tamara</em></p>
+<p>We flip the perspective from the modeller to the policy practice. We explore how and why stakeholders and decision makers use knowledge, and why not. There are at least four ways knowledge can influence decision making: (1) speaking truth to power, (2) muddling through, (3) being strategically used, (4) becoming part of controversies.</p>
+<p>In the <strong>policy lab</strong> following this lecture we engage in a negotiation game “win as much as you can” to explore the dynamics of negotiation and how to move toward collaboration and adaptive governance.</p>
+<p><strong>Required reading</strong></p>
+<ul class="simple">
+<li><p>Torgerson, D. (1986). Between Knowledge and Politics: Three Faces of Policy Analysis. <em>Policy Sciences</em>, 19(1), 33–59. <a class="reference external" href="https://doi.org/10.1007/bf02124483">→</a></p></li>
+<li><p>Metze, T. (2017). Fracking the Debate: Frame Shifts and Boundary Work in Dutch Decision Making on Shale Gas. <em>Journal of Environmental Policy &amp; Planning</em>, 19:1, 35–52. <a class="reference external" href="https://doi.org/10.1080/1523908x.2014.941462">→</a></p></li>
+</ul>
+<p><strong>Further reading</strong></p>
+<ul class="simple">
+<li><p>Lindblom, C. E. (1959). The Science of “Muddling Through.” <em>Public Administration Review</em>, 19(2), 79–88. <a class="reference external" href="https://doi.org/10.2307/973677">→</a></p></li>
+<li><p>Huber, S. et al. (2026). How are energy modelling outputs used for climate policy innovation? <em>(manuscript submitted)</em></p></li>
+</ul>
+<p><strong>Policy lab reading</strong></p>
+<ul class="simple">
+<li><p>Gupta, J. et al. (2010). The adaptive capacity wheel. <em>Environmental Science &amp; Policy</em>, 13(6), 459–471. <a class="reference external" href="https://doi.org/10.1016/j.envsci.2010.05.006">→</a></p></li>
+</ul>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+Week 4</label><div class="sd-tab-content docutils">
+<p><strong>11 &amp; 13 May 2026</strong></p>
+<hr class="docutils" />
+<p class="rubric">Lecture 6 — How can science and decision making be connected?</p>
+<p><em>Mon 11 May · Tamara</em></p>
+<p>In this lecture, we explore what makes knowledge usable in decision-making. We look at different roles sciences can play in policy and political practice and discuss criteria for co-creating usable and scientific knowledge.</p>
+<p><strong>Required reading</strong></p>
+<ul class="simple">
+<li><p>Turnhout, E. et al. (2013). New roles of science in society: Different repertoires of knowledge brokering. <em>Science and Public Policy</em>, 40(3), 354–365. <a class="reference external" href="https://doi.org/10.1093/scipol/scs114">→</a></p></li>
+<li><p>Ingold, J., &amp; Monaghan, M. (2016). Evidence translation: an exploration of policy makers’ use of evidence. <em>Policy &amp; Politics</em>, 44(2), 171–190. <a class="reference external" href="https://doi.org/10.1332/147084414x13988707323088">→</a></p></li>
+<li><p>de Roo, N., Metze, T., &amp; Leeuwis, C. University-led dialogues with society: balancing informing and listening? <em>Journal of Science Communication</em>. <a class="reference external" href="https://doi.org/10.22323/2.23010802">→</a></p></li>
+</ul>
+<hr class="docutils" />
+<p class="rubric">Lecture 7 — Directed search: many-objective optimisation</p>
+<p><em>Wed 13 May · Jazmin</em></p>
+<p>Vulnerability analyses rely on sampling. An alternative way to search through a large combinatorial space is to use many-objective optimisation. We focus specifically on the use of many-objective optimisation for finding promising strategies conditional on a reference scenario and for worst-case discovery.</p>
+<p><strong>Required reading</strong></p>
+<ul class="simple">
+<li><p>Maier, H. R. et al. (2019). Introductory overview: Optimization using evolutionary algorithms and other metaheuristics. <em>Environmental Modelling &amp; Software</em>, 114, 195–213. <a class="reference external" href="https://doi.org/10.1016/j.envsoft.2018.11.018">→</a></p></li>
+<li><p>Zatarain Salazar, J. et al. (2016). A diagnostic assessment of evolutionary algorithms for multi-objective surface water reservoir control. <em>Advances in Water Resources</em>, 92, 172–185. <a class="reference external" href="https://doi.org/10.1016/j.advwatres.2016.04.006">→</a></p></li>
+<li><p>Kasprzyk, J. R., Reed, P. M., &amp; Hadka, D. (2016). Battling Arrow’s paradox to discover robust water management alternatives. <em>Journal of Water Resources Planning and Management</em>, 142(2). <a class="reference external" href="https://doi.org/10.1061/(ASCE)WR.1943-5452.0000572">→</a></p></li>
+</ul>
+<p><strong>Further reading</strong></p>
+<ul class="simple">
+<li><p>Reed, P. M. et al. (2013). Evolutionary multi-objective optimization in water resources. <em>Advances in Water Resources</em>, 51, 438–456. <a class="reference external" href="https://doi.org/10.1016/j.advwatres.2012.01.005">→</a></p></li>
+<li><p>Coello, C. A. et al. (2007). <em>Evolutionary algorithms for solving multi-objective problems</em>. Springer.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Deadline: Assignments 4–6 due Friday 18 May, 17:00</strong></p>
+</div>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
+Week 5</label><div class="sd-tab-content docutils">
+<p><strong>18 &amp; 20 May 2026</strong></p>
+<hr class="docutils" />
+<p class="rubric">Lecture 8 — Directed search: adaptation pathways — RBF focus</p>
+<p><em>Mon 18 May · Jazmin</em></p>
+<p>One response to uncertainty is to design policies that can be adapted over time in response to how the future actually unfolds. This week, the focus switches to the structure of a plan. The assignments focus on using exploratory modelling to design adaptive plans.</p>
+<p><strong>Required reading</strong></p>
+<ul class="simple">
+<li><p>Haasnoot, M. et al. (2013). Dynamic adaptive policy pathways: A method for crafting robust decisions for a deeply uncertain world. <em>Global Environmental Change</em>, 23(2), 485–498. <a class="reference external" href="https://doi.org/10.1016/j.gloenvcha.2012.12.006">→</a></p></li>
+<li><p>Walker, W. E. et al. (2019). Dynamic Adaptive Planning (DAP). In Marchau et al. (Eds.), <em>Decision Making Under Deep Uncertainty</em>. Springer. <a class="reference external" href="https://doi.org/10.1007/978-3-030-05252-2_3">→</a></p></li>
+<li><p>Giuliani, M. et al. (2016). Curses, Tradeoffs, and Scalable Management: Advancing Evolutionary Multiobjective Direct Policy Search. <em>Journal of Water Resources Planning and Management</em>, 142(2). <a class="reference external" href="https://doi.org/10.1061/(ASCE)WR.1943-5452.0000570">→</a></p></li>
+</ul>
+<p><strong>Additional optional reading</strong></p>
+<ul class="simple">
+<li><p>Zeff, H. B. et al. (2016). Cooperative drought adaptation. <em>Water Resources Research</em>. <a class="reference external" href="https://doi.org/10.1002/2016WR018771">→</a></p></li>
+<li><p>Michas, S. et al. (2020). A transdisciplinary modelling framework for dynamic adaptive policy pathways. <em>Energy Policy</em>, 139. <a class="reference external" href="https://doi.org/10.1016/j.enpol.2020.111350">→</a></p></li>
+</ul>
+<hr class="docutils" />
+<p class="rubric">Lecture 9 — Directed search: robustness considerations</p>
+<p><em>Wed 20 May · Jan</em></p>
+<p>We are interested in both good performance in individual scenarios and good performance over a set of scenarios. How can we include robustness within the search for promising candidate solutions? We discuss various robustness metrics and their relative merits, and various strategies for including robustness considerations in the search phase of MORDM.</p>
+<p><strong>Required reading</strong></p>
+<ul class="simple">
+<li><p>McPhail, C. et al. (2018). Robustness metrics: How are they calculated, when should they be used and why do they give different results? <em>Earth’s Future</em>. <a class="reference external" href="https://doi.org/10.1002/2017EF000649">→</a></p></li>
+<li><p>Watson, A. A., &amp; Kasprzyk, J. R. (2017). Incorporating deeply uncertain factors into the many objective search process. <em>Environmental Modelling &amp; Software</em>, 89, 159–171. <a class="reference external" href="https://doi.org/10.1016/j.envsoft.2016.12.001">→</a></p></li>
+<li><p>Kwakkel, J. H., Haasnoot, M., &amp; Walker, W. E. (2015). Developing dynamic adaptive policy pathways. <em>Climatic Change</em>, 132, 373–386. <a class="reference external" href="https://doi.org/10.1007/s10584-014-1210-4">→</a></p></li>
+</ul>
+<p><strong>Further reading</strong></p>
+<ul class="simple">
+<li><p>Eker, S., &amp; Kwakkel, J. H. (2018). Including robustness considerations in the search phase of MORDM. <em>Environmental Modelling &amp; Software</em>, 105, 201–216. <a class="reference external" href="https://doi.org/10.1016/j.envsoft.2018.03.029">→</a></p></li>
+<li><p>Kwakkel, J. H. et al. (2016). Comparing Robust Decision-Making and Dynamic Adaptive Policy Pathways. <em>Environmental Modelling &amp; Software</em>, 86, 168–183. <a class="reference external" href="https://doi.org/10.1016/j.envsoft.2016.09.017">→</a></p></li>
+<li><p>Herman, J. D. et al. (2015). How should robustness be defined for water systems planning? <em>Journal of Water Resources Planning and Management</em>, 141(10). <a class="reference external" href="https://doi.org/10.1061/(ASCE)WR.1943-5452.0000509">→</a></p></li>
+</ul>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
+Week 6</label><div class="sd-tab-content docutils">
+<p><strong>27 May 2026</strong></p>
+<hr class="docutils" />
+<p class="rubric">Lecture 10 — Case study: JUSTICE integrated assessment model</p>
+<p><em>Wed 27 May · Jazmin</em></p>
+<p>The tools you have been learning are actively used in state-of-the-art research on climate change. In this lecture, we apply sensitivity analysis, many-objective optimisation, and adaptive pathways to the <strong>JUSTICE</strong> model and work on the robust design and analysis of global climate mitigation pathways.</p>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="_images/justice_regions_map.png"><img alt="JUSTICE 57 simulated world regions" src="_images/justice_regions_map.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">JUSTICE simulates 57 world regions across the RICE-50+ framework (2015–2300).</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>Required reading</strong></p>
+<ul class="simple">
+<li><p>Nordhaus, W. D. (2017). Revisiting the social cost of carbon. <em>PNAS</em>, 114(7), 1518–1523. <a class="reference external" href="https://doi.org/10.1073/pnas.1609244114">→</a></p></li>
+<li><p>Lamontagne, J. R. et al. (2019). Robust abatement pathways to tolerable climate futures require immediate global action. <em>Nature Climate Change</em>, 9(4), 290. <a class="reference external" href="https://doi.org/10.1038/s41558-019-0426-8">→</a></p></li>
+<li><p>Marangoni, G. et al. (2021). Adaptive mitigation strategies hedge against extreme climate futures. <em>Climatic Change</em>, 166(3), 37. <a class="reference external" href="https://doi.org/10.1007/s10584-021-03132-x">→</a></p></li>
+</ul>
+<p><strong>Additional optional reading</strong></p>
+<ul class="simple">
+<li><p>Butler, M. P. et al. (2014). Identifying parametric controls and dependencies in IAMs using global sensitivity analysis. <em>Environmental Modelling &amp; Software</em>, 59, 10–29. <a class="reference external" href="https://doi.org/10.1016/j.envsoft.2014.05.001">→</a></p></li>
+<li><p>Garner, G., Reed, P., &amp; Keller, K. (2016). Climate risk management requires explicit representation of societal trade-offs. <em>Climatic Change</em>, 134(4), 713–723. <a class="reference external" href="https://doi.org/10.1007/s10584-016-1607-3">→</a></p></li>
+<li><p>Hänsel, M. C. et al. (2020). Climate economics support for the UN climate targets. <em>Nature Climate Change</em>, 10(8). <a class="reference external" href="https://doi.org/10.1038/s41558-020-0833-x">→</a></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Deadline: Assignments 7–8 due Friday 1 June, 17:00</strong></p>
+</div>
+</div>
+<input id="sd-tab-item-6" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-6">
+Week 7</label><div class="sd-tab-content docutils">
+<p><strong>1 &amp; 3 June 2026</strong></p>
+<hr class="docutils" />
+<p class="rubric">Lecture 11 — Robust decision-making frameworks and decision support</p>
+<p><em>Mon 1 Jun · Jan</em></p>
+<p>Over the last weeks, you have been going through the various methods and techniques for supporting decision making under deep uncertainty. How can we put these methods together? How can we combine many-objective optimisation, scenario discovery, and ideas on adaptivity? And how can we enable non-analysts to interact with the results to support decision-making?</p>
+<p><strong>Required reading</strong></p>
+<ul class="simple">
+<li><p>Tsoukiàs, A. (2008). From decision theory to decision aiding methodology. <em>European Journal of Operational Research</em>, 187, 138–161. <a class="reference external" href="https://doi.org/10.1016/j.ejor.2007.02.039">→</a></p></li>
+<li><p>Bartholomew, E., &amp; Kwakkel, J. H. (2020). On considering robustness in the search phase of Robust Decision Making. <em>Environmental Modelling &amp; Software</em>, 127, 104699. <a class="reference external" href="https://doi.org/10.1016/j.envsoft.2020.104699">→</a></p></li>
+<li><p>Pot, W. et al. (2018). What makes long-term investment decisions forward looking. <em>Technological Forecasting &amp; Social Change</em>. <a class="reference external" href="https://doi.org/10.1016/j.techfore.2018.01.031">→</a></p></li>
+<li><p>Kwakkel, J. H., Walker, W. E., &amp; Haasnoot, M. (2016). Coping with the Wickedness of Public Policy Problems. <em>Journal of Water Resources Planning and Management</em>. <a class="reference external" href="https://doi.org/10.1061/(ASCE)WR.1943-5452.0000626">→</a></p></li>
+</ul>
+<p><strong>Additional optional reading</strong></p>
+<ul class="simple">
+<li><p>Herman, J. D. et al. (2020). Climate Adaptation as a Control Problem. <em>Water Resources Research</em>. <a class="reference external" href="https://doi.org/10.1029/2019WR025502">→</a></p></li>
+<li><p>Woodruff, M. J., Reed, P. M., &amp; Simpson, T. W. (2013). Many objective visual analytics. <em>Structural and Multidisciplinary Optimization</em>, 48, 201–219. <a class="reference external" href="https://doi.org/10.1007/s00158-013-0891-z">→</a></p></li>
+<li><p>Gong, M. et al. (2017). Testing the Scenario Hypothesis. <em>Environmental Modelling &amp; Software</em>, 91, 135–144. <a class="reference external" href="https://doi.org/10.1016/j.envsoft.2017.02.002">→</a></p></li>
+</ul>
+<hr class="docutils" />
+<p class="rubric">Lecture 12 — Student Debate: Session 1</p>
+<p><em>Wed 3 Jun · Jazmin &amp; Jan</em></p>
+<p>First session of the COP31 debate simulation. See <a class="reference internal" href="debate/index.html"><span class="doc std std-doc">Debate instructions</span></a>.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Time</p></th>
+<th class="head"><p>Activity</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>13:15–14:00</p></td>
+<td><p>Bloc negotiations (six parallel meetings)</p></td>
+</tr>
+<tr class="row-odd"><td><p>14:00–14:45</p></td>
+<td><p>Cross-bloc negotiation (open floor)</p></td>
+</tr>
+<tr class="row-even"><td><p>14:45–15:15</p></td>
+<td><p>Preliminary plenary (UNFCCC Chair presents draft agreement)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<input id="sd-tab-item-7" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-7">
+Week 8</label><div class="sd-tab-content docutils">
+<p><strong>10 June 2026</strong></p>
+<hr class="docutils" />
+<p class="rubric">Lecture 13 — Student Debate: Session 2</p>
+<p><em>Wed 10 Jun · Jazmin, Tamara &amp; Jan</em></p>
+<p>Final session of the COP31 debate simulation. See <a class="reference internal" href="debate/index.html"><span class="doc std std-doc">Debate instructions</span></a>.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Time</p></th>
+<th class="head"><p>Activity</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>13:00–13:15</p></td>
+<td><p>UNFCCC Chair presents final draft agreement</p></td>
+</tr>
+<tr class="row-odd"><td><p>13:15–13:55</p></td>
+<td><p>First round of debate</p></td>
+</tr>
+<tr class="row-even"><td><p>13:55–14:15</p></td>
+<td><p>Break — bilateral negotiations</p></td>
+</tr>
+<tr class="row-odd"><td><p>14:15–14:55</p></td>
+<td><p>Second round of debate</p></td>
+</tr>
+<tr class="row-even"><td><p>14:55–15:15</p></td>
+<td><p>Chair updates agreement; clusters vote (majority of 4 required to adopt)</p></td>
+</tr>
+<tr class="row-odd"><td><p>15:15–15:25</p></td>
+<td><p>Debrief</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Final project deadline: Friday 19 June, 17:00</strong></p>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="schedule.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Schedule</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="installation/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">🐍 Software Installation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jazmin Zatarain Salazar · TU Delft
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
