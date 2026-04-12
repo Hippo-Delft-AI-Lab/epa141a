@@ -314,7 +314,11 @@ body {
   background: var(--bg-page);
 }
 
-p, li, td, th, dt, dd, blockquote, figcaption {
+p, li, td, dt, dd, blockquote, figcaption {
+  color: var(--text-body);
+}
+
+tbody th {
   color: var(--text-body);
 }
 
@@ -385,13 +389,17 @@ table {
   margin: 1.2rem 0;
 }
 
-thead tr {
+thead tr,
+table thead tr {
   background: var(--table-head-bg) !important;
   color: var(--table-head-fg) !important;
 }
 
-thead th {
+thead th,
+table thead th,
+.bd-article-container thead th {
   color: var(--table-head-fg) !important;
+  background: var(--table-head-bg) !important;
   font-weight: 600;
   padding: 10px 14px;
   letter-spacing: 0.3px;
