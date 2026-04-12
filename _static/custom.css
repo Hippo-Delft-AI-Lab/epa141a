@@ -406,6 +406,14 @@ table thead th,
   border: none !important;
 }
 
+/* Header cells wrap text in <p> — force those white too */
+thead th p,
+thead th a,
+table thead th p,
+table thead th a {
+  color: var(--table-head-fg) !important;
+}
+
 tbody tr:nth-child(even) {
   background: var(--table-row-even);
 }
