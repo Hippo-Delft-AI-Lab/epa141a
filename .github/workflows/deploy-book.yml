@@ -1,0 +1,60 @@
+# Deploys the EPA141A course website to GitHub Pages
+# Repo: https://github.com/Hippo-Delft-AI-Lab/epa141a
+name: Deploy Jupyter Book to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Sets permissions for GitHub Pages deployment
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Only one deployment at a time
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install Jupyter Book and dependencies
+        run: |
+          # Pin to the legacy Sphinx-based Jupyter Book (v0.15.x).
+          # The docs/_config.yml uses the old format; jupyter-book>=2 uses a
+          # different (MyST-CLI) build system that is incompatible.
+          pip install "jupyter-book>=0.15,<2" sphinx-book-theme sphinx-design
+          # Install lightweight subset needed to build docs (no heavy ML stack)
+          pip install numpy pandas matplotlib seaborn
+
+      - name: Build the book
+        run: jupyter-book build docs/
+
+      - name: Upload artifact for Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/_build/html
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
