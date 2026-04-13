@@ -133,8 +133,6 @@ There are **30 actor groups** organised into **six negotiating blocs**. Each blo
 Geographic distribution of the six negotiating blocs across the JUSTICE 57 world regions.
 ```
 
-Each student group self-assigns one actor. The **Group #** column is filled in during the first lecture.
-
 ### Bloc 1 — Existential Frontline
 
 | # | Actor | Group # |
