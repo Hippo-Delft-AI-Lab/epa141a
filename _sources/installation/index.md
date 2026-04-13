@@ -31,12 +31,6 @@ The environment contains several large packages (GeoPandas, FaIR, EMA Workbench)
 A fresh install typically takes 15–30 minutes depending on your internet speed.
 ```
 
-```{admonition} Complete setup & orientation guide
-:class: seealso
-
-Need everything in one place — models, labs, assignments, and installation — with worked code examples and troubleshooting? Open the **[Setup & Orientation guide](../_static/setup_and_orientation.html)** (standalone HTML, opens in the same tab).
-```
-
 ## The big picture
 
 If you have never set up a programming environment before, the number of tools can feel overwhelming. Here is how they all fit together — read this before installing anything.
@@ -169,7 +163,17 @@ Run notebooks directly in VS Code — no browser needed.
 
 ## What gets installed
 
-The `epa141a` conda environment includes:
+A few packages are central to the course methods — it is worth knowing what they do:
+
+| Package | Role |
+|---------|------|
+| **ema-workbench** | The XLRM framework: connects your model to uncertainties, levers, and outcomes and runs reproducible experiment ensembles |
+| **SALib** | Sensitivity analysis — computes Sobol indices and other global sensitivity measures |
+| **platypus-opt** | Many-objective evolutionary optimisation algorithms (used with the Borg MOEA in Assignments 5–6) |
+| **geopandas** | Geospatial data handling — produces regional maps across the 57 RICE-50 regions in Assignment 7 |
+| **fair** | FaIR v2.1.3 climate model embedded inside JUSTICE — must stay at this exact version |
+
+The full `epa141a` conda environment includes:
 
 | Package | Version | Used in |
 |---------|---------|---------|

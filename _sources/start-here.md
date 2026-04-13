@@ -61,9 +61,13 @@ epa141a/            ──────→     .ipynb notebooks
 
 ---
 
-## Step 1 — Install two tools
+## Step 1 — Install three tools
 
-You need **Miniconda** (manages Python and packages) and **VS Code** (your editor).
+```{note}
+**Before you start — system requirements:** ~2 GB free disk space (packages + FAIR climate data) and at least 2 GB of available RAM to run the JUSTICE model.
+```
+
+You need **Miniconda** (manages Python and packages), **VS Code** (your editor), and **Git** (downloads the course files).
 
 **Install Miniconda:**
 
@@ -93,6 +97,22 @@ conda --version
 3. Open **Anaconda Prompt** from the Start Menu (use this instead of the regular terminal for all conda commands).
 :::
 
+:::{tab-item} Linux
+1. Download the installer:
+```bash
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+```
+2. Run it:
+```bash
+bash Miniconda3-latest-Linux-x86_64.sh
+```
+3. Accept the licence, keep the default install location, and say **yes** when asked to initialise conda.
+4. Open a new terminal and verify:
+```bash
+conda --version
+```
+:::
+
 ::::
 
 **Install VS Code:**
@@ -102,6 +122,38 @@ conda --version
 3. Open VS Code, click the **Extensions** icon (left sidebar), and install:
    - **Python** (by Microsoft)
    - **Jupyter** (by Microsoft)
+
+**Install Git:**
+
+::::{tab-set}
+
+:::{tab-item} macOS
+Run in a terminal:
+```bash
+xcode-select --install
+```
+A dialog will appear — click **Install**. Git is included in the Xcode Command Line Tools.
+Verify: `git --version`
+:::
+
+:::{tab-item} Windows
+1. Download the installer from [git-scm.com/download/win](https://git-scm.com/download/win).
+2. Run it and accept the defaults.
+3. Open a new **Anaconda Prompt** and verify: `git --version`
+:::
+
+:::{tab-item} Linux
+```bash
+# Ubuntu / Debian
+sudo apt install git
+
+# Fedora / RHEL
+sudo dnf install git
+```
+Verify: `git --version`
+:::
+
+::::
 
 ---
 
@@ -250,7 +302,7 @@ Close the terminal, open a new one, and try again. On macOS, make sure you opene
 
 ### `git` is not recognised
 
-Git may not be installed. Install it from [git-scm.com](https://git-scm.com) (Windows/Linux) or run `xcode-select --install` in a terminal (macOS).
+Git may not be installed. See the Git installation instructions in Step 1 above.
 
 ### `ModuleNotFoundError: No module named 'justice'`
 
@@ -267,6 +319,26 @@ Re-run the `ipykernel install` command from Step 4, then reload VS Code (`Ctrl/�
 ### `✗` next to a package in Exercise 0
 
 You are likely running the wrong kernel. Click the kernel picker in the top-right and make sure it shows `epa141a` or `EPA141A (JUSTICE)` — not `base` or any other environment.
+
+### Kernel keeps dying or restarting
+
+JUSTICE loads the full FaIR climate dataset on startup and needs at least **2 GB of free RAM**. Close other applications and try again. If it still crashes, restart your computer to free memory.
+
+### `FileNotFoundError` when running JUSTICE cells
+
+Every assignment notebook starts with a **setup cell** (clearly labelled) that handles paths. You must run this cell before any other cell — it calls `os.chdir()` to point JUSTICE at its data files. If you skip it or run cells out of order, all subsequent JUSTICE calls will fail with a `FileNotFoundError`.
+
+### `RuntimeWarning: invalid value encountered in log` from FAIR
+
+This warning is **harmless**. FaIR catches it internally and the results are still valid. You can safely ignore it.
+
+### `RecursionError` in `perform_experiments`
+
+This is a known incompatibility between Python 3.14 and `tqdm ≥ 4.67` inside Jupyter. Add this line to the top of the cell that calls `perform_experiments`, then restart the kernel and re-run:
+
+```python
+import tqdm; tqdm.tqdm = tqdm.std.tqdm
+```
 
 ### Still stuck?
 

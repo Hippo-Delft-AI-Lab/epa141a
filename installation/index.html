@@ -456,10 +456,6 @@ The environment contains several large packages (GeoPandas, FaIR, EMA Workbench)
 A fresh install typically takes 15–30 minutes depending on your internet speed.
 </pre></div>
 </div>
-<div class="seealso admonition">
-<p class="admonition-title">Complete setup &amp; orientation guide</p>
-<p>Need everything in one place — models, labs, assignments, and installation — with worked code examples and troubleshooting? Open the <strong><a class="reference download internal" download="" href="../_downloads/0dfe15063e07b7de2b911f041b55478e/setup_and_orientation.html"><span class="xref download myst">Setup &amp; Orientation guide</span></a></strong> (standalone HTML, opens in the same tab).</p>
-</div>
 </section>
 <section id="the-big-picture">
 <h2>The big picture<a class="headerlink" href="#the-big-picture" title="Permalink to this heading">#</a></h2>
@@ -612,7 +608,33 @@ Run notebooks directly in VS Code — no browser needed.</p>
 </section>
 <section id="what-gets-installed">
 <h2>What gets installed<a class="headerlink" href="#what-gets-installed" title="Permalink to this heading">#</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">epa141a</span></code> conda environment includes:</p>
+<p>A few packages are central to the course methods — it is worth knowing what they do:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Package</p></th>
+<th class="head"><p>Role</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>ema-workbench</strong></p></td>
+<td><p>The XLRM framework: connects your model to uncertainties, levers, and outcomes and runs reproducible experiment ensembles</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>SALib</strong></p></td>
+<td><p>Sensitivity analysis — computes Sobol indices and other global sensitivity measures</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>platypus-opt</strong></p></td>
+<td><p>Many-objective evolutionary optimisation algorithms (used with the Borg MOEA in Assignments 5–6)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>geopandas</strong></p></td>
+<td><p>Geospatial data handling — produces regional maps across the 57 RICE-50 regions in Assignment 7</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>fair</strong></p></td>
+<td><p>FaIR v2.1.3 climate model embedded inside JUSTICE — must stay at this exact version</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The full <code class="docutils literal notranslate"><span class="pre">epa141a</span></code> conda environment includes:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Package</p></th>

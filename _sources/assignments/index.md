@@ -9,16 +9,18 @@ on A5, which depends on A4. Skipping any assignment breaks the pipeline.
 
 ## Assignment pipeline
 
-```
-A1 → ensemble runs saved to results/
-A2 → reads A1 ensemble → sensitivity indices
-A3 → reads A1 ensemble → scenario boxes
-A4 → defines objectives & policy structure → config_student.json
-A5 → runs MOEA → Pareto CSVs in results/
-A6 → merges A5 seeds → reference_set.csv
-A7 → reads A6 reference set → plots & maps
-A8 → reads A6 reference set → robustness metrics
-```
+Each assignment reads files produced by earlier ones. The table shows exactly what gets saved and where.
+
+| Assignment | Reads | Writes to `results/` |
+|---|---|---|
+| A1 — Exploratory Modelling | *(nothing — first run)* | Ensemble experiment results |
+| A2 — Sensitivity Analysis | A1 ensemble | Sensitivity indices |
+| A3 — Scenario Discovery | A1 ensemble | Scenario boxes |
+| A4 — Problem Formulation | *(nothing)* | `config_student.json` |
+| A5 — Many-Objective Optimisation | `config_student.json` | Pareto CSVs (one per seed) |
+| A6 — MOEA Convergence | A5 Pareto CSVs | `reference_set.csv` |
+| A7 — Pareto Visualisation | `reference_set.csv` | Plots and regional maps |
+| A8 — Robustness Analysis | `reference_set.csv` | Robustness metrics, re-evaluation cache |
 
 ## Assignment list
 
@@ -69,3 +71,33 @@ applied. This normative uncertainty is a central theme of the JUSTICE assignment
 - All code must be reproducible: restart kernel → run all cells → no errors.
 - Select the **`EPA141A (JUSTICE)`** kernel before submitting.
 - Late penalty: **−10 % per 24 h** unless an extension is agreed in advance.
+
+---
+
+## Troubleshooting
+
+```{dropdown} `FileNotFoundError: reference_set_utilitarian.csv not found` (A7 or A8)
+Assignment 7 and 8 both load the reference set produced by Assignment 6. If the file is missing:
+
+1. Open `assignment_06_convergence.ipynb` and run all cells in order.
+2. Confirm that `results/reference_set.csv` (or `reference_set_utilitarian.csv`) now exists.
+3. Re-open A7 or A8 and re-run.
+
+This file is not provided — you must generate it yourself in A6.
+```
+
+```{dropdown} Assignment 8 first run takes 20–40 minutes
+A8 re-evaluates 28 Pareto policies across 50 FaIR climate ensemble members. This is slow on the first run (~20–40 min). Results are cached to `results/reeval_utilitarian_28p_50s.npy` — subsequent runs load the cache instantly.
+
+If you want to run it faster while testing, reduce `n_scenarios` in the notebook, then set it back to 50 for your final submission.
+```
+
+```{dropdown} `RecursionError` during `perform_experiments`
+This is a known incompatibility between Python 3.14 and `tqdm ≥ 4.67` inside Jupyter. Add this line at the top of the cell and restart the kernel:
+
+```python
+import tqdm; tqdm.tqdm = tqdm.std.tqdm
+```
+
+Then re-run the cell.
+```
