@@ -67,7 +67,7 @@ epa141a/            ──────→     .ipynb notebooks
 **Before you start — system requirements:** ~2 GB free disk space (packages + FAIR climate data) and at least 2 GB of available RAM to run the JUSTICE model.
 ```
 
-You need **Miniconda** (manages Python and packages), **VS Code** (your editor), and **Git** (downloads the course files).
+You need **Miniconda** (manages Python and packages), **VS Code** (your editor), and **Git** (downloads the course files). You do not need to install Python separately — Miniconda installs it for you.
 
 **Install Miniconda:**
 
