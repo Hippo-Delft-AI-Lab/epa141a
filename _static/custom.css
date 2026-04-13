@@ -47,8 +47,7 @@
   /* Code */
   --code-bg:         #EBF7FC;
   --code-fg:         #003D6C;
-  --code-block-bg:   #1E2433;
-  --code-block-fg:   #CDD6F4;
+  /* code-block-bg/fg not used in light mode — Pygments native palette applies */
 
   /* Table */
   --table-head-bg:   #003D6C;
@@ -435,6 +434,9 @@ tbody td {
 
 /* ============================================================
    CODE BLOCKS
+   Pygments already ships correct light & dark palettes via
+   html[data-theme] selectors.  We add shape/spacing only and
+   override in dark mode where we want a deeper background.
    ============================================================ */
 div.highlight {
   border-radius: 8px;
@@ -444,17 +446,22 @@ div.highlight {
 }
 
 div.highlight pre {
-  background: var(--code-block-bg) !important;
-  color: var(--code-block-fg) !important;
-  padding: 1.2rem 1.4rem;
+  /* Do NOT override background/color here — Pygments handles both themes */
+  padding: 1.2rem 1.4rem !important;
   font-size: 13px;
   line-height: 1.65;
   border-radius: 8px;
+  margin: 0;
 }
 
-/* Override Pygments token colours — code blocks always use a dark bg,
-   so force all spans to the light foreground colour for readability. */
-div.highlight span {
+/* Dark mode: deepen Pygments' dark background and unify token colours */
+[data-theme="dark"] div.highlight,
+[data-theme="dark"] div.highlight pre {
+  background: var(--code-block-bg) !important;
+  color: var(--code-block-fg) !important;
+}
+
+[data-theme="dark"] div.highlight span {
   color: var(--code-block-fg) !important;
 }
 
