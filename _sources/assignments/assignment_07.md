@@ -26,7 +26,3 @@
 ## Notebook
 
 `assignments_ema/assignment_07_pareto_visualisation.ipynb`
-
-## Submission
-
-Submit `A7_<studentnumber>.ipynb` via Brightspace with all cells executed. Make sure Plotly figures are visible (either static exports or inline widgets).

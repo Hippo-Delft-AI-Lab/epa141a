@@ -25,7 +25,3 @@ The levers are the **parameters of the RBF** — centres, radii, and weights —
 ## Notebook
 
 `assignments_ema/assignment_04_problem_formulation.ipynb`
-
-## Submission
-
-Submit `A4_<studentnumber>.ipynb` via Brightspace with all cells executed **and `config_student.json` saved**.

@@ -2,7 +2,7 @@
 
 There are **eight assignments** in EPA141A. They are **not individually graded** but build the analytical foundation for the group project — not completing them seriously will result in a poor project grade. They form a **single end-to-end MBDM pipeline** applied to the **JUSTICE** climate–economy model. Each assignment builds on outputs saved by the previous one — work through them in order.
 
-```{figure} ../_static/JUSTICE_Viz.svg
+```{figure} ../_static/JUSTICE_Viz.png
 :alt: JUSTICE model architecture — Economy, Climate, Damage, Abatement, and Social Welfare Function components
 :width: 100%
 

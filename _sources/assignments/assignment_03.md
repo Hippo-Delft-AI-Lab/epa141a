@@ -22,7 +22,3 @@
 |---------|---------|
 | `ema_workbench` | PRIM, dimensional stacking |
 | `matplotlib` | Peeling trajectory and box visualisations |
-
-## Submission
-
-Submit `A3_<studentnumber>.ipynb` via Brightspace with all cells executed.

@@ -40,7 +40,3 @@ The ensemble results are saved to `results/` and loaded by Assignments 2 and 3.
 A single JUSTICE run (2015–2300 at 1-year timestep) takes roughly 1–3 seconds.
 The 100-scenario ensemble in this assignment takes 5–15 minutes sequentially.
 ```
-
-## Submission
-
-Submit `A1_<studentnumber>.ipynb` via Brightspace with all cells executed.

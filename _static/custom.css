@@ -564,7 +564,24 @@ pre code {
 
 .sd-card-body {
   padding: 1rem 1.1rem;
-  color: var(--text-body);
+  color: var(--text-body) !important;
+}
+
+/* ── Dropdown (collapsible) — override dark card-header for summary elements ── */
+/* The summary inherits color:white from .sd-card-header; use a light style instead */
+details.sd-dropdown > summary {
+  background: var(--adm-note-bg) !important;
+  color: var(--text-body) !important;
+  border: 1px solid var(--adm-note-border) !important;
+  border-radius: 6px !important;
+  font-weight: 600;
+}
+details.sd-dropdown[open] > summary {
+  border-radius: 6px 6px 0 0 !important;
+}
+details.sd-dropdown > .sd-summary-content {
+  color: var(--text-body) !important;
+  background: var(--card-bg) !important;
 }
 
 .sd-card-footer {

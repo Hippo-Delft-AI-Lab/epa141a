@@ -152,9 +152,3 @@ The config file was not transferred. Copy it from your laptop:
 ```bash
 scp config/config_student.json <netid>@login.delftblue.tudelft.nl:~/epa141a/config/
 ```
-
----
-
-## Submission
-
-Submit `A5_<studentnumber>.ipynb` via Brightspace with all cells executed **and Pareto results saved** to `results/`.

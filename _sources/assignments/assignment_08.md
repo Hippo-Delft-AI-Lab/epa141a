@@ -30,7 +30,3 @@ The re-evaluation uses the **FaIR climate ensemble** (1001 calibrated members, e
 ## Notebook
 
 `assignments_ema/assignment_08_robustness.ipynb`
-
-## Submission
-
-Submit `A8_<studentnumber>.ipynb` via Brightspace with all cells executed and results cached.

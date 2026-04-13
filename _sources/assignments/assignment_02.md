@@ -28,7 +28,3 @@
 ## Notebook
 
 `assignments_ema/assignment_02_sensitivity_analysis.ipynb`
-
-## Submission
-
-Submit `A2_<studentnumber>.ipynb` via Brightspace with all cells executed.

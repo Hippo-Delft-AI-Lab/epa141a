@@ -19,7 +19,3 @@
 The cross-seed reference set produced here is required for Assignments 7 and 8.
 Save your results carefully.
 ```
-
-## Submission
-
-Submit `A6_<studentnumber>.ipynb` via Brightspace with all cells executed and results saved.
