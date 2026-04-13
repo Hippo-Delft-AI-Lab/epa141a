@@ -21,6 +21,14 @@ The **shallow lake eutrophication problem** is the classic teaching model used i
 
 A municipality releases phosphorus into a shallow lake year by year. If pollution exceeds a critical threshold, the lake flips into an **irreversible eutrophic state**. The question is: *how much phosphorus can we safely release each year while maximising economic benefit?*
 
+```{figure} ../_static/lake_model.png
+:alt: Diagram of the Lake Problem — town releasing anthropogenic pollution into a lake with natural inflows and removal processes
+:width: 80%
+:align: center
+
+The Lake Problem: a town gains utility from releasing pollution, but excessive phosphorus tips the lake into an irreversible eutrophic state.
+```
+
 The lake model comes in two versions:
 
 - **Intertemporal** (Labs 1–5) — the policy is a fixed schedule of 100 annual release rates. Lever space: 100-dimensional.
