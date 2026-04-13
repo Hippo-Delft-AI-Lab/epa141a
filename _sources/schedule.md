@@ -1,4 +1,4 @@
-# Schedule
+# 📅 Schedule
 
 **EPA141A Model-Based Decision Making — Academic Year 2025–2026**
 

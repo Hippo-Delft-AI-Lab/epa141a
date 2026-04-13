@@ -1,4 +1,4 @@
-# Debate Instructions
+# 🗣️ Debate Instructions
 
 ## Climate Change Negotiations
 

@@ -1,4 +1,4 @@
-# Lectures
+# 🎤 Lectures
 
 EPA141A has **13 lectures** across 8 weeks. Lectures run Monday & Wednesday **13:15–15:00**, followed by lab sessions **15:00–17:00**.
 
