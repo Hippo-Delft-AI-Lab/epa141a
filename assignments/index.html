@@ -397,7 +397,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assignment-list">Assignment list</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#justice-deep-uncertain-parameters-assignments-13">JUSTICE deep uncertain parameters (Assignments 1–3)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#justice-model-outcomes">JUSTICE model outcomes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission-guidelines">Submission guidelines</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a></li>
 </ul>
             </nav>
@@ -586,44 +585,48 @@ on A5, which depends on A4. Skipping any assignment breaks the pipeline.</p>
 applied. This normative uncertainty is a central theme of the JUSTICE assignments.</p>
 </div>
 </section>
-<section id="submission-guidelines">
-<h2>Submission guidelines<a class="headerlink" href="#submission-guidelines" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Submit via <strong>Brightspace</strong> as a <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file with all cells executed.</p></li>
-<li><p>Include your <strong>student number</strong> in the filename: <code class="docutils literal notranslate"><span class="pre">A1_5xxxxxx.ipynb</span></code>.</p></li>
-<li><p>All code must be reproducible: restart kernel → run all cells → no errors.</p></li>
-<li><p>Select the <strong><code class="docutils literal notranslate"><span class="pre">EPA141A</span> <span class="pre">(JUSTICE)</span></code></strong> kernel before submitting.</p></li>
-<li><p>Late penalty: <strong>−10 % per 24 h</strong> unless an extension is agreed in advance.</p></li>
-</ul>
-</section>
 <hr class="docutils" />
 <section id="troubleshooting">
 <h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this heading">#</a></h2>
-<p>```{dropdown} <code class="docutils literal notranslate"><span class="pre">FileNotFoundError:</span> <span class="pre">reference_set_utilitarian.csv</span> <span class="pre">not</span> <span class="pre">found</span></code> (A7 or A8)
-Assignment 7 and 8 both load the reference set produced by Assignment 6. If the file is missing:</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<code class="docutils literal notranslate"><span class="pre">FileNotFoundError:</span> <span class="pre">reference_set_utilitarian.csv</span> <span class="pre">not</span> <span class="pre">found</span></code> (A7 or A8)<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Assignment 7 and 8 both load the reference set produced by Assignment 6. If the file is missing:</p>
 <ol class="arabic simple">
-<li><p>Open <code class="docutils literal notranslate"><span class="pre">assignment_06_convergence.ipynb</span></code> and run all cells in order.</p></li>
-<li><p>Confirm that <code class="docutils literal notranslate"><span class="pre">results/reference_set.csv</span></code> (or <code class="docutils literal notranslate"><span class="pre">reference_set_utilitarian.csv</span></code>) now exists.</p></li>
-<li><p>Re-open A7 or A8 and re-run.</p></li>
+<li><p class="sd-card-text">Open <code class="docutils literal notranslate"><span class="pre">assignment_06_convergence.ipynb</span></code> and run all cells in order.</p></li>
+<li><p class="sd-card-text">Confirm that <code class="docutils literal notranslate"><span class="pre">results/reference_set.csv</span></code> (or <code class="docutils literal notranslate"><span class="pre">reference_set_utilitarian.csv</span></code>) now exists.</p></li>
+<li><p class="sd-card-text">Re-open A7 or A8 and re-run.</p></li>
 </ol>
-<p>This file is not provided — you must generate it yourself in A6.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-```{dropdown} Assignment 8 first run takes 20–40 minutes
-A8 re-evaluates 28 Pareto policies across 50 FaIR climate ensemble members. This is slow on the first run (~20–40 min). Results are cached to `results/reeval_utilitarian_28p_50s.npy` — subsequent runs load the cache instantly.
-
-If you want to run it faster while testing, reduce `n_scenarios` in the notebook, then set it back to 50 for your final submission.
-</pre></div>
+<p class="sd-card-text">This file is not provided — you must generate it yourself in A6.</p>
 </div>
-<p>```{dropdown} <code class="docutils literal notranslate"><span class="pre">RecursionError</span></code> during <code class="docutils literal notranslate"><span class="pre">perform_experiments</span></code>
-This is a known incompatibility between Python 3.14 and <code class="docutils literal notranslate"><span class="pre">tqdm</span> <span class="pre">≥</span> <span class="pre">4.67</span></code> inside Jupyter. Add this line at the top of the cell and restart the kernel:</p>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Assignment 8 first run takes 20–40 minutes<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">A8 re-evaluates 28 Pareto policies across 50 FaIR climate ensemble members. This is slow on the first run (~20–40 min). Results are cached to <code class="docutils literal notranslate"><span class="pre">results/reeval_utilitarian_28p_50s.npy</span></code> — subsequent runs load the cache instantly.</p>
+<p class="sd-card-text">If you want to run it faster while testing, reduce <code class="docutils literal notranslate"><span class="pre">n_scenarios</span></code> in the notebook, then set it back to 50 for your final submission.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<code class="docutils literal notranslate"><span class="pre">RecursionError</span></code> during <code class="docutils literal notranslate"><span class="pre">perform_experiments</span></code><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">This is a known incompatibility between Python 3.14 and <code class="docutils literal notranslate"><span class="pre">tqdm</span> <span class="pre">≥</span> <span class="pre">4.67</span></code> inside Jupyter. Add this line at the top of the cell and restart the kernel:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tqdm</span><span class="p">;</span> <span class="n">tqdm</span><span class="o">.</span><span class="n">tqdm</span> <span class="o">=</span> <span class="n">tqdm</span><span class="o">.</span><span class="n">std</span><span class="o">.</span><span class="n">tqdm</span>
 </pre></div>
 </div>
-<p>Then re-run the cell.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
+<p class="sd-card-text">Then re-run the cell.</p>
 </div>
-</section>
+</details></section>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -696,7 +699,6 @@ This is a known incompatibility between Python 3.14 and <code class="docutils li
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assignment-list">Assignment list</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#justice-deep-uncertain-parameters-assignments-13">JUSTICE deep uncertain parameters (Assignments 1–3)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#justice-model-outcomes">JUSTICE model outcomes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission-guidelines">Submission guidelines</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a></li>
 </ul>
   </nav></div>

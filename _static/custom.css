@@ -452,6 +452,12 @@ div.highlight pre {
   border-radius: 8px;
 }
 
+/* Override Pygments token colours — code blocks always use a dark bg,
+   so force all spans to the light foreground colour for readability. */
+div.highlight span {
+  color: var(--code-block-fg) !important;
+}
+
 code.literal, code {
   background: var(--code-bg);
   color: var(--code-fg);

@@ -64,19 +64,11 @@ The same emission policy can rank **very differently** depending on which welfar
 applied. This normative uncertainty is a central theme of the JUSTICE assignments.
 ```
 
-## Submission guidelines
-
-- Submit via **Brightspace** as a `.ipynb` file with all cells executed.
-- Include your **student number** in the filename: `A1_5xxxxxx.ipynb`.
-- All code must be reproducible: restart kernel → run all cells → no errors.
-- Select the **`EPA141A (JUSTICE)`** kernel before submitting.
-- Late penalty: **−10 % per 24 h** unless an extension is agreed in advance.
-
 ---
 
 ## Troubleshooting
 
-```{dropdown} `FileNotFoundError: reference_set_utilitarian.csv not found` (A7 or A8)
+:::{dropdown} `FileNotFoundError: reference_set_utilitarian.csv not found` (A7 or A8)
 Assignment 7 and 8 both load the reference set produced by Assignment 6. If the file is missing:
 
 1. Open `assignment_06_convergence.ipynb` and run all cells in order.
@@ -84,15 +76,15 @@ Assignment 7 and 8 both load the reference set produced by Assignment 6. If the 
 3. Re-open A7 or A8 and re-run.
 
 This file is not provided — you must generate it yourself in A6.
-```
+:::
 
-```{dropdown} Assignment 8 first run takes 20–40 minutes
+:::{dropdown} Assignment 8 first run takes 20–40 minutes
 A8 re-evaluates 28 Pareto policies across 50 FaIR climate ensemble members. This is slow on the first run (~20–40 min). Results are cached to `results/reeval_utilitarian_28p_50s.npy` — subsequent runs load the cache instantly.
 
 If you want to run it faster while testing, reduce `n_scenarios` in the notebook, then set it back to 50 for your final submission.
-```
+:::
 
-```{dropdown} `RecursionError` during `perform_experiments`
+:::{dropdown} `RecursionError` during `perform_experiments`
 This is a known incompatibility between Python 3.14 and `tqdm ≥ 4.67` inside Jupyter. Add this line at the top of the cell and restart the kernel:
 
 ```python
@@ -100,4 +92,4 @@ import tqdm; tqdm.tqdm = tqdm.std.tqdm
 ```
 
 Then re-run the cell.
-```
+:::
