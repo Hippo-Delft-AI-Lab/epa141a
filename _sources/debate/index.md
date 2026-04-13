@@ -15,9 +15,9 @@ The debate is designed to prepare you for the **political reflection** part of y
 | Event | Date | Time |
 |-------|------|------|
 | Debate introduced in lecture | Mon 20 April 2026 | — |
-| Actor enrolment opens (Brightspace) | Sun 4 May 2026 | 16:00 |
-| Actor enrolment closes | Mon 5 May 2026 | 16:00 |
-| Actor mandates distributed | Tue 6 May 2026 | 16:00 |
+| Actor enrolment opens (Brightspace) | Mon 4 May 2026 | 16:00 |
+| Actor enrolment closes | Tue 5 May 2026 | 16:00 |
+| Actor mandates distributed | Wed 6 May 2026 | 16:00 |
 | **Session 1** — bloc negotiations + preliminary plenary | Wed 3 June 2026 | 13:15–15:15 |
 | Pre-debate reflection submitted | Tue 9 June 2026 | 17:00 |
 | **Session 2** — final plenary + vote | Wed 10 June 2026 | 13:00–15:25 |

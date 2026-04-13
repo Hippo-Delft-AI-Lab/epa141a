@@ -38,9 +38,9 @@ Labs are not graded but suggested deadlines keep you on track for the assignment
 |----------|------|------|
 | Labs 1–3 *(suggested)* | Friday 4 May 2026 | 17:00 |
 | Assignments 1–3 | Friday 4 May 2026 | 17:00 |
-| Actor enrolment opens | Sunday 4 May 2026 | 16:00 |
-| Actor enrolment closes | Monday 5 May 2026 | 16:00 |
-| Actor mandates distributed | Tuesday 6 May 2026 | 16:00 |
+| Actor enrolment opens | Monday 4 May 2026 | 16:00 |
+| Actor enrolment closes | Tuesday 5 May 2026 | 16:00 |
+| Actor mandates distributed | Wednesday 6 May 2026 | 16:00 |
 | Labs 4–5 *(suggested)* | Friday 18 May 2026 | 17:00 |
 | Assignments 4–6 | Friday 18 May 2026 | 17:00 |
 | Lab 6 *(suggested)* | Friday 1 June 2026 | 17:00 |
