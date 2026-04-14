@@ -105,8 +105,8 @@ After completing this course, students can:
 | Lecturer | Jan Kwakkel | [j.h.kwakkel@tudelft.nl](mailto:j.h.kwakkel@tudelft.nl) |
 | Lecturer | Tamara Metze | [T.A.P.Metze@tudelft.nl](mailto:T.A.P.Metze@tudelft.nl) |
 | Lecturer | Patrick Steinmann | [P.Steinmann@tudelft.nl](mailto:P.Steinmann@tudelft.nl) |
-| Teaching assistant | Rachel Delvin Sutiono | [RachelDelvinSutiono@student.tudelft.nl](mailto:RachelDelvinSutiono@student.tudelft.nl) |
-| Teaching assistant | Move Phutthaphaiboon | [T.Phutthaphaiboon@student.tudelft.nl](mailto:T.Phutthaphaiboon@student.tudelft.nl) |
+| Teaching assistant | Rachel | [RachelDelvinSutiono@student.tudelft.nl](mailto:RachelDelvinSutiono@student.tudelft.nl) |
+| Teaching assistant | Move | [T.Phutthaphaiboon@student.tudelft.nl](mailto:T.Phutthaphaiboon@student.tudelft.nl) |
 
 **Lectures:** Monday & Wednesday · 13:15–15:00
 **Lab sessions:** Monday & Wednesday · 15:00–17:00
