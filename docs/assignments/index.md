@@ -29,6 +29,62 @@ Each assignment reads files produced by earlier ones. The table shows exactly wh
 | A7 — Pareto Visualisation | `reference_set.csv` | Plots and regional maps |
 | A8 — Robustness Analysis | `reference_set.csv` | Robustness metrics, re-evaluation cache |
 
+## JUSTICE repository layout
+
+After setup your working directory looks like this. Everything you need for the assignments lives inside these two folders.
+
+```text
+epa141a/                              ← open this folder in VS Code / JupyterLab
+│
+├── assignments_ema/                  ← your assignment notebooks
+│   ├── assignment_01_exploratory_modeling.ipynb
+│   ├── assignment_02_sensitivity_analysis.ipynb
+│   ├── assignment_03_scenario_discovery.ipynb
+│   ├── assignment_04_problem_formulation.ipynb
+│   ├── assignment_05_moea_local.ipynb
+│   ├── assignment_06_moea_convergence.ipynb
+│   ├── assignment_07_pareto_visualisation.ipynb
+│   ├── assignment_08_robustness.ipynb
+│   └── results/                      ← all outputs saved here (CSVs, pickles)
+│
+└── JUSTICE-main/                     ← the model (cloned separately)
+    │
+    ├── justice/                      ← Python package — this is what you import
+    │   ├── model.py                  ← JUSTICE class — the entry point
+    │   ├── welfare/
+    │   │   └── social_welfare_function.py   ← 8 distributive justice principles
+    │   ├── objectives/
+    │   │   └── objective_functions.py       ← years_above_temperature_threshold etc.
+    │   ├── util/
+    │   │   ├── enumerations.py       ← WelfareFunction enum (pick your principle)
+    │   │   ├── EMA_model_wrapper.py  ← bridges JUSTICE ↔ EMA Workbench
+    │   │   └── data_loader.py        ← loads SSP/RICE-50 input data
+    │   ├── economy/                  ← Cobb-Douglas production (RICE-50+)
+    │   ├── emissions/                ← GDP × carbon intensity × (1 − μ)
+    │   ├── climate/                  ← FaIR v2.1.3 coupled climate model
+    │   ├── damage/                   ← Kalkuhl (2019) damage function
+    │   └── abatement/                ← Enerdata MAC abatement cost curves
+    │
+    ├── config/
+    │   ├── JUSTICE_config.yaml       ← model settings (timestep, regions, epsilons)
+    │   └── default_parameters.py     ← default uncertainty parameter values
+    │
+    └── data/                         ← SSP scenarios, RICE-50 regional input data
+```
+
+**Key imports used across all assignments:**
+
+| What you import | Where it lives | Used in |
+|----------------|----------------|---------|
+| `from justice.model import JUSTICE` | `justice/model.py` | A1 – A8 |
+| `from justice.util.enumerations import WelfareFunction` | `justice/util/enumerations.py` | A1 – A8 |
+| `from justice.objectives.objective_functions import years_above_temperature_threshold` | `justice/objectives/objective_functions.py` | A1 – A3 |
+| `from justice.util.EMA_model_wrapper import ...` | `justice/util/EMA_model_wrapper.py` | A4 – A8 |
+
+The setup cell at the top of every notebook calls `os.chdir()` to set the working directory to `JUSTICE-main/` — this is required so the model can find its data files. **Always run the setup cell first.**
+
+---
+
 ## Assignment list
 
 | # | Title | Key methods |
