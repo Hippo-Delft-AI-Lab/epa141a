@@ -2,13 +2,7 @@
 
 **EPA141A Model-Based Decision Making — Academic Year 2025–2026**
 
-| | | |
-|---|---|---|
-| **Module manager** | Jazmin Zatarain Salazar | [J.ZatarainSalazar@tudelft.nl](mailto:J.ZatarainSalazar@tudelft.nl) |
-| **Lecturers** | Jan Kwakkel | [j.h.kwakkel@tudelft.nl](mailto:j.h.kwakkel@tudelft.nl) |
-| | Tamara Metze | [T.A.P.Metze@tudelft.nl](mailto:T.A.P.Metze@tudelft.nl) |
-| | Patrick Steinmann | [P.Steinmann@tudelft.nl](mailto:P.Steinmann@tudelft.nl) |
-| **Day / Time** | Monday & Wednesday | Lecture: 13:15–15:00 · Lab session: 15:00–17:00 |
+**Lectures:** Monday & Wednesday · 13:15–15:00 · **Lab sessions:** Monday & Wednesday · 15:00–17:00
 
 ---
 
