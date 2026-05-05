@@ -1,4 +1,4 @@
-# 🖥️ Running on DelftBlue (HPC)
+# Running on DelftBlue (HPC)
 
 DelftBlue is TU Delft's high-performance computing cluster. You will need it for **Assignment 5** when your local machine cannot run enough function evaluations in reasonable time.
 
