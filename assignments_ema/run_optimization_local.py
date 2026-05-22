@@ -175,9 +175,9 @@ def model_wrapper_local(**kwargs) -> tuple[float, float, float, float]:
     )
     c_shape, r_shape, w_shape = rbf.get_shape()
 
-    centers = np.array([kwargs.pop(f"center {i}")  for i in range(c_shape[0])])
-    radii   = np.array([kwargs.pop(f"radii {i}")   for i in range(r_shape[0])])
-    weights = np.array([kwargs.pop(f"weights {i}") for i in range(w_shape[0])])
+    centers = np.array([kwargs.pop(f"center_{i}")  for i in range(c_shape[0])])
+    radii   = np.array([kwargs.pop(f"radii_{i}")   for i in range(r_shape[0])])
+    weights = np.array([kwargs.pop(f"weights_{i}") for i in range(w_shape[0])])
     rbf.set_decision_vars(np.concatenate([centers, radii, weights]))
 
     # -- emission ramp-up constraint ----------------------------------------
@@ -374,9 +374,9 @@ def run_seed(
     n_w  = n_rbfs_actual * n_regions  # weights = 228
 
     ema_model.levers = (
-        [RealParameter(f"center {i}",  -1.0, 1.0) for i in range(n_cr)]
-        + [RealParameter(f"radii {i}",   0.0, 1.0) for i in range(n_cr)]
-        + [RealParameter(f"weights {i}", 0.0, 1.0) for i in range(n_w)]
+        [RealParameter(f"center_{i}",  -1.0, 1.0) for i in range(n_cr)]
+        + [RealParameter(f"radii_{i}",   0.0, 1.0) for i in range(n_cr)]
+        + [RealParameter(f"weights_{i}", 0.0, 1.0) for i in range(n_w)]
     )
 
     #  Outcomes: positional order matches model_wrapper_local return tuple
