@@ -16,7 +16,7 @@
 | 19 | 3 | 4 May | Open Exploration: scenario discovery *(Patrick)* | 6 May | Role of science and knowledge in decision making *(Tamara)* | |
 | 20 | 4 | 11 May | How can science and decision making be connected? *(Tamara)* | 13 May | Directed Search: many-objective optimisation *(Jazmin)* | **A4–6 due 18 May** |
 | 21 | 5 | 18 May | Adaptive policies / adaptation pathways — RBF focus *(Jazmin)* | 20 May | Directed Search: robustness considerations *(Jan)* | |
-| 22 | 6 | | | 27 May | Case study: JUSTICE IAM *(Jazmin)* | **A7–8 due 1 Jun** |
+| 22 | 6 | | | 27 May | Case study: JUSTICE IAM *(Jazmin, Guest lecturer: Palok Biswas)* | **A7–8 due 1 Jun** |
 | 23 | 7 | 1 Jun | Robust decision-making frameworks & decision support *(Jan)* | 3 Jun | **First student debate** *(Jazmin, Jan)* | |
 | 24 | 8 | | | 10 Jun | **Second student debate** *(Jazmin, Tamara, Jan)* | |
 | 25 | 9 | | | | | **Final project due 19 Jun** |
