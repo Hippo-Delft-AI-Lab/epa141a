@@ -78,45 +78,100 @@ Submit code as either a GitHub repository link or a zip file shared via a file t
 
 ---
 
-## Part 2 — Political reflection on the climate change debate (30 %)
+## Part 2 — Reflection on the use of (model-based) knowledge in the negotiations (30 %)
 
-### Goal
+Aim of this part 2 of the assignment is to show your understanding of the different roles (model-based) knowledge plays in decision making and in the concrete negotiations simulated in the debates that are needed to make the decision and create policies.
 
-Show your understanding of the different roles that (model-based) knowledge plays in decision making, drawing on the concrete negotiations of the climate change debate.
+<ol type="a">
+<li>You will write a reflection section as part of the report, that analyses the different ways in which knowledge has been used in the negotiation process</li>
+<li>Based on this analysis, you write an advice <em>for the actors</em> that participated in the negotiation on the appropriate ways in which model-based knowledge can support their decision-making processes.</li>
+</ol>
 
-### What to write
+You need to
 
-Analyse the different ways in which knowledge was used in the negotiation process, and write advice for actors on how model-based knowledge can appropriately support their decision-making.
+<ol type="a">
+<li>Use the academic literature of this course and make appropriate references to it (use APA reference system),</li>
+<li>Account for the choices you've made in the modelling that were driven by actors' positions (politics in knowledge production);</li>
+<li>Use notes and examples on the negotiation process on flood risk mitigation and adaptation to illustrate the ways in which the actors used the knowledge from the model(s) and other forms of expertise.</li>
+</ol>
 
-You need to:
-- Use academic literature from this course with correct APA references
-- Account for modelling choices driven by your actor's position (politics in knowledge production)
-- Use notes and examples from the negotiation process to illustrate the roles of knowledge
+Proposed table of content (you may deviate):
 
-### Proposed outline *(you may deviate)*
+1. Introduction
+   <ol type="a">
+   <li>Question you will answer in this section</li>
+   <li>Brief conceptualization of what roles knowledge can play in decision making, based on academic literature and by using correct references</li>
+   <li>Brief explanation of how you analyzed these roles of knowledge in the negotiations process (based on the note-taking, the grouping of your observations on the different roles of knowledge)</li>
+   </ol>
+2. Systematic analysis of different roles of knowledge in the negotiations/decision making with concrete examples of what consequences were of these different roles for the negotiations and the overall decision making process.
+3. Recommendations to actors part of the negotiations and decision making to use knowledge in different ways during the negotiations
 
-**Introduction**
-- The question you will answer
-- Brief conceptualisation of roles knowledge can play in decision making (with references)
-- How you analysed these roles in the negotiations (note-taking, grouping observations)
+Part 2 of the report should be a minimum of 2000 words and a maximum of 5000 words.
 
-**Systematic analysis**
-Different roles of knowledge in the negotiations, with concrete examples and consequences for the overall decision-making process.
+**Table 5** Rubric for the reflection on the use of (model-based) knowledge in the negotiations
 
-**Recommendations**
-Advice to actors participating in negotiations on how to use knowledge in different ways.
-
-**Length:** Minimum 2,000 words, maximum 5,000 words.
-
-### Rubric — Part 2 (10 points total)
-
-| Criterion | Points | Description |
-|-----------|--------|-------------|
-| Conceptualising roles of knowledge | 1 | Three or more distinct roles identified, drawing on course literature, specific to the policy context |
-| Analysing roles of knowledge in negotiations | 3 | Specific analytical steps to systematically illustrate how knowledge was used; impact on decision making clearly described |
-| Account of modelling choices and actor interests | 2 | Concrete description of choices made in the modelling process and why, linked to literature on roles of knowledge |
-| Recommendations for better use of knowledge | 2 | Specific strategies linked to identified challenges, grounded in course literature and specific to the policy advice |
-| Reflection on risks of proposed strategy | 2 | 3+ risks addressed in detail, with justifications and potential adaptations |
+<table>
+<thead>
+<tr>
+<th>Criterion (Total: 10 points)</th>
+<th>Insufficient</th>
+<th>Weak</th>
+<th>Sufficient (5.8)</th>
+<th>Good (7.9)</th>
+<th>Excellent (10)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Conceptualising roles of knowledge in decision making/negotiations</strong><br/><em>1 point</em></td>
+<td>Task completely or largely unaddressed<br/><strong>0 pts</strong></td>
+<td>Some roles of knowledge addressed but not described in depth<br/><strong>0.25 pts</strong></td>
+<td>Three or more distinct roles identified, but description is rather broad<br/><strong>0.8 pts</strong></td>
+<td>Three or more distinct roles identified and described well; authors draw on course literature and make these roles specific to the context and proposed policy advice<br/><strong>0.9 pts</strong></td>
+<td>Three or more distinct roles identified and described well; authors draw on course and other academic literature; roles are very clearly specified to the proposed policy advice and recommendations using relevant literature and good arguments<br/><strong>1 pt</strong></td>
+</tr>
+<tr>
+<td><strong>Analysing roles of knowledge in negotiations/decision making</strong><br/><em>3 points</em></td>
+<td>Task completely or largely unaddressed<br/><strong>0 pts</strong></td>
+<td>Vague idea of some roles of knowledge in decision making and the negotiation process students engaged in<br/><strong>0.5 pts</strong></td>
+<td>Concrete ideas on roles of knowledge in decision making and some illustrations from the negotiations and decision making process students engaged in<br/><strong>1.8 pts</strong></td>
+<td>Specific analytical steps clearly identified and conducted to illustrate how knowledge was used in different ways in the negotiations and decision making process students engaged in<br/><strong>2.5 pts</strong></td>
+<td>Multiple specific analytical steps clearly identified and conducted to systematically analyse how knowledge was used in different ways; impact of these different roles on the decision making process clearly described<br/><strong>3 pts</strong></td>
+</tr>
+<tr>
+<td><strong>Account of the choices made in the modelling process, and whether they were based on the actor's interests</strong><br/><em>2 points</em></td>
+<td>Task completely or largely unaddressed<br/><strong>0 pts</strong></td>
+<td>Vague description of choices made during the modelling process<br/><strong>0.25 pts</strong></td>
+<td>Concrete description of choices made in the modelling process<br/><strong>1.2 pts</strong></td>
+<td>Very concrete description of choices made in the modelling process and a clear explanation of why these choices were made<br/><strong>1.5 pts</strong></td>
+<td>Very concrete description of choices made in the modelling process and a clear explanation of why, linked to the academic literature on different roles of knowledge in decision making<br/><strong>2 pts</strong></td>
+</tr>
+<tr>
+<td><strong>Recommendations for making better use of different roles of knowledge in negotiations</strong><br/><em>2 points</em></td>
+<td>Task completely or largely unaddressed<br/><strong>0 pts</strong></td>
+<td>Vague idea of how to make better use of different roles of knowledge in decision making/negotiations<br/><strong>0.25 pts</strong></td>
+<td>Clear idea of how technical advice can be 'improperly' used; a strategy proposed for dealing with this<br/><strong>1 pt</strong></td>
+<td>Specific strategies for behaviour in the decision-making process linked to identified challenges, based on course literature and specific to the proposed policy advice<br/><strong>1.5 pts</strong></td>
+<td>Specific strategies for behaviour in the decision-making process linked to identified challenges, based on course literature and general academic literature, and very specific to the proposed policy advice<br/><strong>2 pts</strong></td>
+</tr>
+<tr>
+<td><strong>Reflection on the proposed strategy: risks, gaps, and potential adaptations</strong><br/><em>How well have you addressed the key roles you identify? What are you missing that might also be important?</em><br/><em>2 points</em></td>
+<td>Task completely or largely unaddressed<br/><strong>0 pts</strong></td>
+<td>Some risks addressed but not structured or clear<br/><strong>0.25 pts</strong></td>
+<td>Some risks addressed appropriately and in detail<br/><strong>1 pt</strong></td>
+<td>3 or more risks addressed in detail, with justifications (using literature and experience in the negotiations) for why these are difficult to address in this context<br/><strong>1.5 pts</strong></td>
+<td>3 or more risks addressed in detail, with justifications (using literature) for why these are difficult to address; includes potential adaptations and exploration of their impact<br/><strong>2 pts</strong></td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>0</strong></td>
+<td><strong>1.5</strong></td>
+<td><strong>5.8</strong></td>
+<td><strong>7.9</strong></td>
+<td><strong>10</strong></td>
+</tr>
+</tbody>
+</table>
 
 ---
 
