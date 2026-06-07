@@ -108,70 +108,53 @@ Proposed table of content (you may deviate):
 
 Part 2 of the report should be a minimum of 2000 words and a maximum of 5000 words.
 
-**Table 5** Rubric for the reflection on the use of (model-based) knowledge in the negotiations
+:::{list-table} Table 5 — Rubric for the reflection on the use of (model-based) knowledge in the negotiations
+:header-rows: 1
+:widths: 22 13 13 17 17 18
 
-<table>
-<thead>
-<tr>
-<th>Criterion (Total: 10 points)</th>
-<th>Insufficient</th>
-<th>Weak</th>
-<th>Sufficient (5.8)</th>
-<th>Good (7.9)</th>
-<th>Excellent (10)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Conceptualising roles of knowledge in decision making/negotiations</strong><br/><em>1 point</em></td>
-<td>Task completely or largely unaddressed<br/><strong>0 pts</strong></td>
-<td>Some roles of knowledge addressed but not described in depth<br/><strong>0.25 pts</strong></td>
-<td>Three or more distinct roles identified, but description is rather broad<br/><strong>0.8 pts</strong></td>
-<td>Three or more distinct roles identified and described well; authors draw on course literature and make these roles specific to the context and proposed policy advice<br/><strong>0.9 pts</strong></td>
-<td>Three or more distinct roles identified and described well; authors draw on course and other academic literature; roles are very clearly specified to the proposed policy advice and recommendations using relevant literature and good arguments<br/><strong>1 pt</strong></td>
-</tr>
-<tr>
-<td><strong>Analysing roles of knowledge in negotiations/decision making</strong><br/><em>3 points</em></td>
-<td>Task completely or largely unaddressed<br/><strong>0 pts</strong></td>
-<td>Vague idea of some roles of knowledge in decision making and the negotiation process students engaged in<br/><strong>0.5 pts</strong></td>
-<td>Concrete ideas on roles of knowledge in decision making and some illustrations from the negotiations and decision making process students engaged in<br/><strong>1.8 pts</strong></td>
-<td>Specific analytical steps clearly identified and conducted to illustrate how knowledge was used in different ways in the negotiations and decision making process students engaged in<br/><strong>2.5 pts</strong></td>
-<td>Multiple specific analytical steps clearly identified and conducted to systematically analyse how knowledge was used in different ways; impact of these different roles on the decision making process clearly described<br/><strong>3 pts</strong></td>
-</tr>
-<tr>
-<td><strong>Account of the choices made in the modelling process, and whether they were based on the actor's interests</strong><br/><em>2 points</em></td>
-<td>Task completely or largely unaddressed<br/><strong>0 pts</strong></td>
-<td>Vague description of choices made during the modelling process<br/><strong>0.25 pts</strong></td>
-<td>Concrete description of choices made in the modelling process<br/><strong>1.2 pts</strong></td>
-<td>Very concrete description of choices made in the modelling process and a clear explanation of why these choices were made<br/><strong>1.5 pts</strong></td>
-<td>Very concrete description of choices made in the modelling process and a clear explanation of why, linked to the academic literature on different roles of knowledge in decision making<br/><strong>2 pts</strong></td>
-</tr>
-<tr>
-<td><strong>Recommendations for making better use of different roles of knowledge in negotiations</strong><br/><em>2 points</em></td>
-<td>Task completely or largely unaddressed<br/><strong>0 pts</strong></td>
-<td>Vague idea of how to make better use of different roles of knowledge in decision making/negotiations<br/><strong>0.25 pts</strong></td>
-<td>Clear idea of how technical advice can be 'improperly' used; a strategy proposed for dealing with this<br/><strong>1 pt</strong></td>
-<td>Specific strategies for behaviour in the decision-making process linked to identified challenges, based on course literature and specific to the proposed policy advice<br/><strong>1.5 pts</strong></td>
-<td>Specific strategies for behaviour in the decision-making process linked to identified challenges, based on course literature and general academic literature, and very specific to the proposed policy advice<br/><strong>2 pts</strong></td>
-</tr>
-<tr>
-<td><strong>Reflection on the proposed strategy: risks, gaps, and potential adaptations</strong><br/><em>How well have you addressed the key roles you identify? What are you missing that might also be important?</em><br/><em>2 points</em></td>
-<td>Task completely or largely unaddressed<br/><strong>0 pts</strong></td>
-<td>Some risks addressed but not structured or clear<br/><strong>0.25 pts</strong></td>
-<td>Some risks addressed appropriately and in detail<br/><strong>1 pt</strong></td>
-<td>3 or more risks addressed in detail, with justifications (using literature and experience in the negotiations) for why these are difficult to address in this context<br/><strong>1.5 pts</strong></td>
-<td>3 or more risks addressed in detail, with justifications (using literature) for why these are difficult to address; includes potential adaptations and exploration of their impact<br/><strong>2 pts</strong></td>
-</tr>
-<tr>
-<td><strong>Total</strong></td>
-<td><strong>0</strong></td>
-<td><strong>1.5</strong></td>
-<td><strong>5.8</strong></td>
-<td><strong>7.9</strong></td>
-<td><strong>10</strong></td>
-</tr>
-</tbody>
-</table>
+* - Criterion (Total: 10 points)
+  - Insufficient
+  - Weak
+  - Sufficient (5.8)
+  - Good (7.9)
+  - Excellent (10)
+* - **Conceptualising roles of knowledge in decision making/negotiations** *(1 point)*
+  - Task completely or largely unaddressed. **0 pts**
+  - Some roles of knowledge addressed but not described in depth. **0.25 pts**
+  - Three or more distinct roles identified, but description is rather broad. **0.8 pts**
+  - Three or more distinct roles identified and described well; authors draw on course literature and make these roles specific to the context and proposed policy advice. **0.9 pts**
+  - Three or more distinct roles identified and described well; authors draw on course and other academic literature; roles very clearly specified to the proposed policy advice using relevant literature and good arguments. **1 pt**
+* - **Analysing roles of knowledge in negotiations/decision making** *(3 points)*
+  - Task completely or largely unaddressed. **0 pts**
+  - Vague idea of some roles of knowledge in decision making and the negotiation process students engaged in. **0.5 pts**
+  - Concrete ideas on roles of knowledge in decision making and some illustrations from the negotiations and decision making process students engaged in. **1.8 pts**
+  - Specific analytical steps clearly identified and conducted to illustrate how knowledge was used in different ways in the negotiations and decision making process students engaged in. **2.5 pts**
+  - Multiple specific analytical steps clearly identified and conducted to systematically analyse how knowledge was used; impact of these different roles on the decision making process clearly described. **3 pts**
+* - **Account of the choices made in the modelling process, and whether they were based on the actor's interests** *(2 points)*
+  - Task completely or largely unaddressed. **0 pts**
+  - Vague description of choices made during the modelling process. **0.25 pts**
+  - Concrete description of choices made in the modelling process. **1.2 pts**
+  - Very concrete description of choices made in the modelling process and a clear explanation of why these choices were made. **1.5 pts**
+  - Very concrete description of choices made in the modelling process and a clear explanation of why, linked to the academic literature on different roles of knowledge in decision making. **2 pts**
+* - **Recommendations for making better use of different roles of knowledge in negotiations** *(2 points)*
+  - Task completely or largely unaddressed. **0 pts**
+  - Vague idea of how to make better use of different roles of knowledge in decision making/negotiations. **0.25 pts**
+  - Clear idea of how technical advice can be 'improperly' used; a strategy proposed for dealing with this. **1 pt**
+  - Specific strategies for behaviour in the decision-making process linked to identified challenges, based on course literature and specific to the proposed policy advice. **1.5 pts**
+  - Specific strategies for behaviour in the decision-making process linked to identified challenges, based on course literature and general academic literature, and very specific to the proposed policy advice. **2 pts**
+* - **Reflection on the proposed strategy: risks, gaps, and potential adaptations** *(How well have you addressed the key roles you identify? What are you missing that might also be important?) (2 points)*
+  - Task completely or largely unaddressed. **0 pts**
+  - Some risks addressed but not structured or clear. **0.25 pts**
+  - Some risks addressed appropriately and in detail. **1 pt**
+  - 3 or more risks addressed in detail, with justifications (using literature and experience in the negotiations) for why these are difficult to address in this context. **1.5 pts**
+  - 3 or more risks addressed in detail, with justifications (using literature) for why these are difficult to address; includes potential adaptations and exploration of their impact. **2 pts**
+* - **Total**
+  - **0**
+  - **1.5**
+  - **5.8**
+  - **7.9**
+  - **10**
+:::
 
 ---
 
