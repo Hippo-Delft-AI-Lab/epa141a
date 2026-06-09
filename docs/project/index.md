@@ -92,7 +92,7 @@ You need to
 <ol type="a">
 <li>Use the academic literature of this course and make appropriate references to it (use APA reference system),</li>
 <li>Account for the choices you've made in the modelling that were driven by actors' positions (politics in knowledge production);</li>
-<li>Use notes and examples on the negotiation process on flood risk mitigation and adaptation to illustrate the ways in which the actors used the knowledge from the model(s) and other forms of expertise.</li>
+<li>Use notes and examples on the negotiation process on climate mitigation to illustrate the ways in which the actors used the knowledge from the model(s) and other forms of expertise.</li>
 </ol>
 
 Proposed table of content (you may deviate):
